@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  shunka-shop
+
+  Created by Igor Drljic on 21/05/2021.
+  
+*/
+"username" = "Username";
+"password" = "Password";
+"login" = "Login";
+
+// error mesasges
+"validateMustNotBeEmpty" = "Field can't be empty";

@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  shunka-shop
+
+  Created by Igor Drljic on 21/05/2021.
+  
+*/
+"username" = "Корисничко име";
+"password" = "Лозинка";
+"login" = "Улогуј ме";
+
+// error mesasges
+"validateMustNotBeEmpty" = "Поље не може бити празно";
