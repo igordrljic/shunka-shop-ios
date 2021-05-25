@@ -7,7 +7,7 @@
 
 import Foundation
 
-class UsernameValidator: Validator {
+class UsernameValidator: InputValidator {
     typealias Value = String
     var errors: [Error] = []
     

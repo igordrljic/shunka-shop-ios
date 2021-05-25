@@ -7,7 +7,7 @@
 
 import Foundation
 
-class PasswordValidator: Validator {
+class PasswordValidator: InputValidator {
     public typealias Value = String
     
     public static let specialChars = "!@#$%^&*"

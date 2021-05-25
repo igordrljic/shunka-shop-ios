@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		5FB2429DA1BC8EB56E32314A /* Pods_shunka_shop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F959CA8A0BC071227477926F /* Pods_shunka_shop.framework */; };
 		A820A0CB265CF87000767D6C /* UsernameValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A820A0CA265CF87000767D6C /* UsernameValidator.swift */; };
-		A820A0D0265CF88400767D6C /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A820A0CF265CF88400767D6C /* Validator.swift */; };
+		A820A0D0265CF88400767D6C /* InputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A820A0CF265CF88400767D6C /* InputValidator.swift */; };
 		A820A0D5265CF89900767D6C /* PasswordValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A820A0D4265CF89900767D6C /* PasswordValidator.swift */; };
 		A820A0DA265CF8BB00767D6C /* UsernameError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A820A0D9265CF8BB00767D6C /* UsernameError.swift */; };
 		A820A0DF265CF8CF00767D6C /* PasswordError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A820A0DE265CF8CF00767D6C /* PasswordError.swift */; };
@@ -52,7 +52,7 @@
 /* Begin PBXFileReference section */
 		421FDB19788A6AB8A55B6AFC /* Pods-shunka-shop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shunka-shop.release.xcconfig"; path = "Target Support Files/Pods-shunka-shop/Pods-shunka-shop.release.xcconfig"; sourceTree = "<group>"; };
 		A820A0CA265CF87000767D6C /* UsernameValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameValidator.swift; sourceTree = "<group>"; };
-		A820A0CF265CF88400767D6C /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
+		A820A0CF265CF88400767D6C /* InputValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputValidator.swift; sourceTree = "<group>"; };
 		A820A0D4265CF89900767D6C /* PasswordValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordValidator.swift; sourceTree = "<group>"; };
 		A820A0D9265CF8BB00767D6C /* UsernameError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameError.swift; sourceTree = "<group>"; };
 		A820A0DE265CF8CF00767D6C /* PasswordError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordError.swift; sourceTree = "<group>"; };
@@ -113,7 +113,7 @@
 		A820A0C8265CF84C00767D6C /* UserInputValidators */ = {
 			isa = PBXGroup;
 			children = (
-				A820A0CF265CF88400767D6C /* Validator.swift */,
+				A820A0CF265CF88400767D6C /* InputValidator.swift */,
 				A820A0CA265CF87000767D6C /* UsernameValidator.swift */,
 				A820A0D4265CF89900767D6C /* PasswordValidator.swift */,
 			);
@@ -471,7 +471,7 @@
 				A8B249212657F5000041B58C /* LoginView.swift in Sources */,
 				A8B248F12657F07C0041B58C /* ContentView.swift in Sources */,
 				A87A1A6F265BCDB900BCCCE4 /* Theme.swift in Sources */,
-				A820A0D0265CF88400767D6C /* Validator.swift in Sources */,
+				A820A0D0265CF88400767D6C /* InputValidator.swift in Sources */,
 				A87A1A77265BCDD700BCCCE4 /* DefaultTheme.swift in Sources */,
 				A87A1A93265BD5EA00BCCCE4 /* Color+Theme.swift in Sources */,
 				A820A0D5265CF89900767D6C /* PasswordValidator.swift in Sources */,

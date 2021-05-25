@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol Validator {
+protocol InputValidator {
     associatedtype Value
     var errors: [Error] { get }
     func validate(_ value: Value, completion: @escaping (Result<Value, Error>) -> Void)
