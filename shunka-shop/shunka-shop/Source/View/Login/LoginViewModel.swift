@@ -84,4 +84,20 @@ class LoginViewModel: ObservableObject {
             self.isFormValid = isValid
         })
     }
+    
+    func login() {
+        let request = ShunkaShop.shared.login(username: self.username, password: self.password)
+        Network.shared.run(request) { result in
+            switch result {
+            case let .success(token):
+                debugPrint("log in success!\ntoken: \(token)")
+            case let .failure(error):
+                if case let WebserviceError.wrappedData(data) = error, let error = ShunkaShopWebserviceError(data: data) {
+                    debugPrint("ShunkaShop webservice error: \(error.localizedDescription)")
+                } else {
+                    debugPrint("log in failed: \(error.localizedDescription)")
+                }
+            }
+        }
+    }
 }

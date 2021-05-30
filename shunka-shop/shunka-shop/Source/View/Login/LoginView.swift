@@ -24,7 +24,7 @@ struct LoginView: View {
                 }.autocapitalization(.none)
             }
             Button(Strings.login) {
-                debugPrint("username: \(self.viewModel.username)\npassword: \(self.viewModel.password)")
+                self.viewModel.login()
             }
             .buttonStyle(PrimaryButtonStyle())
             .disabled(!viewModel.isFormValid)
