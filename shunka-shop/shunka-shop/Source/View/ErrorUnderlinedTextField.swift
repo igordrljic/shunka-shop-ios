@@ -18,7 +18,7 @@ struct ErrorUnderlinedTextField: View {
             if let error = error, !error.isEmpty {
                 Text(error)
                     .foregroundColor(.error)
-                    .font(Font.system(.callout))
+                    .font(Font.system(.footnote))
             }
         }
     }
