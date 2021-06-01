@@ -8,8 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var userSession: UserSession
+    
     var body: some View {
-        LoginView(viewModel: LoginViewModel())
+        if userSession.isLoggedIn {
+            Text("User is now logged in")
+        } else {
+            LoginView(viewModel: LoginViewModel())
+        }
     }
 }
 
