@@ -41,6 +41,12 @@
 		A8B2490C2657F07E0041B58C /* shunka_shopUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B2490B2657F07E0041B58C /* shunka_shopUITests.swift */; };
 		A8B249212657F5000041B58C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B249202657F5000041B58C /* LoginView.swift */; };
 		A8B249332657F8320041B58C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A8B249352657F8320041B58C /* Localizable.strings */; };
+		A8EC06942664F9190047F5A7 /* AppConfigError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EC06932664F9190047F5A7 /* AppConfigError.swift */; };
+		A8EC06A926661EA40047F5A7 /* DataProviderInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EC06A826661EA40047F5A7 /* DataProviderInjector.swift */; };
+		A8EC06AF26661EC60047F5A7 /* AuthenticationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EC06AE26661EC60047F5A7 /* AuthenticationProvider.swift */; };
+		A8EC06B426661EDE0047F5A7 /* AuthenticationWebserviceAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EC06B326661EDE0047F5A7 /* AuthenticationWebserviceAdapter.swift */; };
+		A8EC06BA26661F020047F5A7 /* UseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EC06B926661F020047F5A7 /* UseCase.swift */; };
+		A8EC06BF26661F150047F5A7 /* LoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EC06BE26661F150047F5A7 /* LoginUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,7 +108,14 @@
 		A8B249202657F5000041B58C /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		A8B249342657F8320041B58C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A8B249392657F84D0041B58C /* sr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sr; path = sr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A8EC06932664F9190047F5A7 /* AppConfigError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfigError.swift; sourceTree = "<group>"; };
+		A8EC06A826661EA40047F5A7 /* DataProviderInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProviderInjector.swift; sourceTree = "<group>"; };
+		A8EC06AE26661EC60047F5A7 /* AuthenticationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationProvider.swift; sourceTree = "<group>"; };
+		A8EC06B326661EDE0047F5A7 /* AuthenticationWebserviceAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationWebserviceAdapter.swift; sourceTree = "<group>"; };
+		A8EC06B926661F020047F5A7 /* UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
+		A8EC06BE26661F150047F5A7 /* LoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCase.swift; sourceTree = "<group>"; };
 		AD14A850A89E3FA7449071C3 /* Pods-shunka-shop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shunka-shop.debug.xcconfig"; path = "Target Support Files/Pods-shunka-shop/Pods-shunka-shop.debug.xcconfig"; sourceTree = "<group>"; };
+		EB6826D6787D08A4B9ED17CA /* Pods-shunka-shop.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shunka-shop.staging.xcconfig"; path = "Target Support Files/Pods-shunka-shop/Pods-shunka-shop.staging.xcconfig"; sourceTree = "<group>"; };
 		F959CA8A0BC071227477926F /* Pods_shunka_shop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_shunka_shop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -135,6 +148,7 @@
 		A80C42A926640F3700935E44 /* DataRepo */ = {
 			isa = PBXGroup;
 			children = (
+				A8EC06A426661BEE0047F5A7 /* DataProvider */,
 				A80C43002664146B00935E44 /* Networking */,
 				A80C42AB26640F5500935E44 /* Webservice */,
 			);
@@ -223,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				A87A1A7C265BCE0300BCCCE4 /* AppConfiguration.swift */,
+				A8EC06932664F9190047F5A7 /* AppConfigError.swift */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -329,6 +344,7 @@
 		A8B2491E2657F4B70041B58C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A8EC06B826661EF70047F5A7 /* UseCase */,
 				A80C42A926640F3700935E44 /* DataRepo */,
 				A820A0C9265CF85800767D6C /* Errors */,
 				A820A0C8265CF84C00767D6C /* UserInputValidators */,
@@ -347,6 +363,33 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		A8EC06A426661BEE0047F5A7 /* DataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				A8EC06AD26661EBC0047F5A7 /* Authentication */,
+				A8EC06A826661EA40047F5A7 /* DataProviderInjector.swift */,
+			);
+			path = DataProvider;
+			sourceTree = "<group>";
+		};
+		A8EC06AD26661EBC0047F5A7 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				A8EC06AE26661EC60047F5A7 /* AuthenticationProvider.swift */,
+				A8EC06B326661EDE0047F5A7 /* AuthenticationWebserviceAdapter.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		A8EC06B826661EF70047F5A7 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				A8EC06B926661F020047F5A7 /* UseCase.swift */,
+				A8EC06BE26661F150047F5A7 /* LoginUseCase.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
 		CA4BC4751C873130EC4748C3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -360,6 +403,7 @@
 			children = (
 				AD14A850A89E3FA7449071C3 /* Pods-shunka-shop.debug.xcconfig */,
 				421FDB19788A6AB8A55B6AFC /* Pods-shunka-shop.release.xcconfig */,
+				EB6826D6787D08A4B9ED17CA /* Pods-shunka-shop.staging.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -543,6 +587,7 @@
 				A820A0DF265CF8CF00767D6C /* PasswordError.swift in Sources */,
 				A80C42E0266410CD00935E44 /* JSONEncoding.swift in Sources */,
 				A8B249212657F5000041B58C /* LoginView.swift in Sources */,
+				A8EC06A926661EA40047F5A7 /* DataProviderInjector.swift in Sources */,
 				A8B248F12657F07C0041B58C /* ContentView.swift in Sources */,
 				A87A1A6F265BCDB900BCCCE4 /* Theme.swift in Sources */,
 				A80C42C326640FA400935E44 /* Network.swift in Sources */,
@@ -554,7 +599,10 @@
 				A87A1A93265BD5EA00BCCCE4 /* Color+Theme.swift in Sources */,
 				A820A0D5265CF89900767D6C /* PasswordValidator.swift in Sources */,
 				A820A0DA265CF8BB00767D6C /* UsernameError.swift in Sources */,
+				A8EC06B426661EDE0047F5A7 /* AuthenticationWebserviceAdapter.swift in Sources */,
+				A8EC06942664F9190047F5A7 /* AppConfigError.swift in Sources */,
 				A87A1A86265BCE5400BCCCE4 /* PrimaryButtonStyle.swift in Sources */,
+				A8EC06BF26661F150047F5A7 /* LoginUseCase.swift in Sources */,
 				A87A1A54265B969F00BCCCE4 /* Strings+Generated.swift in Sources */,
 				A820A0CB265CF87000767D6C /* UsernameValidator.swift in Sources */,
 				A80C42DB2664108B00935E44 /* URLEncoding.swift in Sources */,
@@ -563,6 +611,8 @@
 				A87A1A7D265BCE0300BCCCE4 /* AppConfiguration.swift in Sources */,
 				A80C42D62664103A00935E44 /* ParameterEncoding.swift in Sources */,
 				A80C42BE26640F9A00935E44 /* Request.swift in Sources */,
+				A8EC06BA26661F020047F5A7 /* UseCase.swift in Sources */,
+				A8EC06AF26661EC60047F5A7 /* AuthenticationProvider.swift in Sources */,
 				A8B248EF2657F07C0041B58C /* shunka_shopApp.swift in Sources */,
 				A80C42CD2664101700935E44 /* HTTPMethod.swift in Sources */,
 				A87A1AAA265BD86300BCCCE4 /* UnderlinedTextField.swift in Sources */,
@@ -750,6 +800,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.igordrljic.shunka-shop.shunka-shop";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SHUNKA_SHOP_BASE_URL = "http://localhost:3000/api";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -773,6 +824,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.igordrljic.shunka-shop.shunka-shop";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SHUNKA_SHOP_BASE_URL = "https://shunka-shop.herokuapp.com/api";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -862,6 +914,134 @@
 			};
 			name = Release;
 		};
+		A8EC067F2664F3DA0047F5A7 /* Staging */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Staging;
+		};
+		A8EC06802664F3DA0047F5A7 /* Staging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EB6826D6787D08A4B9ED17CA /* Pods-shunka-shop.staging.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"shunka-shop/Preview Content\"";
+				DEVELOPMENT_TEAM = T86P32J6KM;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "shunka-shop/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.igordrljic.shunka-shop.shunka-shop";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SHUNKA_SHOP_BASE_URL = "https://staging-shunka-shop.herokuapp.com/api";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Staging;
+		};
+		A8EC06812664F3DA0047F5A7 /* Staging */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T86P32J6KM;
+				INFOPLIST_FILE = "shunka-shopTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.igordrljic.shunka-shop.shunka-shopTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/shunka-shop.app/shunka-shop";
+			};
+			name = Staging;
+		};
+		A8EC06822664F3DA0047F5A7 /* Staging */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T86P32J6KM;
+				INFOPLIST_FILE = "shunka-shopUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.igordrljic.shunka-shop.shunka-shopUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "shunka-shop";
+			};
+			name = Staging;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -869,6 +1049,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A8B2490E2657F07E0041B58C /* Debug */,
+				A8EC067F2664F3DA0047F5A7 /* Staging */,
 				A8B2490F2657F07E0041B58C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -878,6 +1059,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A8B249112657F07E0041B58C /* Debug */,
+				A8EC06802664F3DA0047F5A7 /* Staging */,
 				A8B249122657F07E0041B58C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -887,6 +1069,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A8B249142657F07E0041B58C /* Debug */,
+				A8EC06812664F3DA0047F5A7 /* Staging */,
 				A8B249152657F07E0041B58C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -896,6 +1079,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A8B249172657F07E0041B58C /* Debug */,
+				A8EC06822664F3DA0047F5A7 /* Staging */,
 				A8B249182657F07E0041B58C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;

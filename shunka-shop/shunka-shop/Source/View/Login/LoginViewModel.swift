@@ -61,6 +61,8 @@ class LoginViewModel: ObservableObject {
     private var passwordStream: AnyCancellable!
     private var validatedFormStream: AnyCancellable!
     
+    private let loginUseCase = LoginUseCase()
+    
     init() {
         usernameStream = validatedUsername.sink { result in
             debugPrint("username: \(self.username)")
@@ -86,17 +88,13 @@ class LoginViewModel: ObservableObject {
     }
     
     func login() {
-        let request = ShunkaShop.shared.login(username: self.username, password: self.password)
-        Network.shared.run(request) { result in
+        let input = LoginUseCase.Input(username: self.username, password: self.password)
+        loginUseCase.execute(input: input) { result in
             switch result {
-            case let .success(token):
-                debugPrint("log in success!\ntoken: \(token)")
+            case .success:
+                debugPrint("login success!")
             case let .failure(error):
-                if case let WebserviceError.wrappedData(data) = error, let error = ShunkaShopWebserviceError(data: data) {
-                    debugPrint("ShunkaShop webservice error: \(error.localizedDescription)")
-                } else {
-                    debugPrint("log in failed: \(error.localizedDescription)")
-                }
+                debugPrint("login failed: \(error.localizedDescription)")
             }
         }
     }
