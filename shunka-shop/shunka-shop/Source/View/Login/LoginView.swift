@@ -15,10 +15,10 @@ struct LoginView: View {
         VStack(spacing: 40) {
             VStack(spacing: 30) {
                 Group {
-                    ErrorUnderlinedTextField(placeholder: Strings.username,
+                    ErrorTextField(placeholder: Strings.username,
                                              text: $viewModel.username,
                                              error: $viewModel.usernameError)
-                    ErrorUnderlinedTextField(placeholder: Strings.password,
+                    SecureErrorTextField(placeholder: Strings.password,
                                              text: $viewModel.password,
                                              error: $viewModel.passwordError)
                 }.autocapitalization(.none)
