@@ -22,6 +22,7 @@ struct LoginView: View {
                                              text: $viewModel.password,
                                              error: $viewModel.passwordError)
                 }.autocapitalization(.none)
+                .disableAutocorrection(true)
             }
             Button(Strings.login) {
                 self.viewModel.login()
