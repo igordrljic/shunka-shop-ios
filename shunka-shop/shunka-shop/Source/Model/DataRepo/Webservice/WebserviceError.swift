@@ -7,11 +7,16 @@
 
 import Foundation
 
-enum WebserviceError: Error {
+enum WebserviceError: LocalizedError {
+    case general
     case wrappedData(data: Data)
     case noHTTPMethodSet(request: URLRequest)
     case noURL(request: URLRequest)
     case jsonEncodingFailed(error: Error)
     case responseParsingFailed(error: Error)
     case responseContainsNoData
+    
+    var errorDescription: String? {
+        Strings.generalError
+    }
 }

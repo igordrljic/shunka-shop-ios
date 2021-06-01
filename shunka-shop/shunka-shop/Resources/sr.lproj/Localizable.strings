@@ -8,6 +8,12 @@
 "username" = "Корисничко име";
 "password" = "Лозинка";
 "login" = "Улогуј ме";
+"ok" = "У реду";
 
 // error mesasges
+"error" = "Грешка";
 "validateMustNotBeEmpty" = "Поље не може бити празно";
+"generalError" = "Десила се грешка. Покушајте поново.";
+
+// login errors
+"invalidUsernameOrPassword" = "Погрешно корисничко име или шифра.";

@@ -14,6 +14,7 @@ class LoginViewModel: ObservableObject {
     @Published var usernameError: String? = nil
     @Published var passwordError: String? = nil
     @Published var isFormValid: Bool = false
+    @Published var error: PresentableError?
     
     private let usernameValidator = UsernameValidator()
     private let passwordValidator = PasswordValidator()
@@ -92,9 +93,14 @@ class LoginViewModel: ObservableObject {
         loginUseCase.execute(input: input) { result in
             switch result {
             case .success:
-                debugPrint("login success!")
+                self.error = nil
             case let .failure(error):
-                debugPrint("login failed: \(error.localizedDescription)")
+                if case let WebserviceError.wrappedData(data) = error,
+                   let shunkaShopError = ShunkaShopWebserviceError(data: data) {
+                    self.error = PresentableError(message: shunkaShopError.localizedDescription)
+                } else {
+                    self.error = PresentableError(message: WebserviceError.general.localizedDescription)
+                }
             }
         }
     }

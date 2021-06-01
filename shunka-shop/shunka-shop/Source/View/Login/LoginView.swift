@@ -28,7 +28,13 @@ struct LoginView: View {
             }
             .buttonStyle(PrimaryButtonStyle())
             .disabled(!viewModel.isFormValid)
-        }.padding()
+        }
+        .padding()
+        .alert(item: $viewModel.error) { error in
+            Alert(title: Text(error.title),
+                  message: Text(error.message),
+                  dismissButton: Alert.Button.cancel(Text(Strings.ok)))
+        }
     }
 }
 

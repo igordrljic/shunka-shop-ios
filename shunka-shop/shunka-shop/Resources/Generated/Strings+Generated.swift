@@ -10,8 +10,16 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum Strings {
+  /// Error
+  internal static let error = Strings.tr("Localizable", "error")
+  /// Something went wrong. Please try again.
+  internal static let generalError = Strings.tr("Localizable", "generalError")
+  /// Invalid username or password.
+  internal static let invalidUsernameOrPassword = Strings.tr("Localizable", "invalidUsernameOrPassword")
   /// Login
   internal static let login = Strings.tr("Localizable", "login")
+  /// OK
+  internal static let ok = Strings.tr("Localizable", "ok")
   /// Password
   internal static let password = Strings.tr("Localizable", "password")
   /// Username

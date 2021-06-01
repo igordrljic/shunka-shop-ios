@@ -36,9 +36,9 @@ struct ShunkaShopWebserviceError: LocalizedError, Decodable {
     var errorDescription: String? {
         switch code {
         case .invalidUsernameOrPassword:
-            return "Invalid username or password"
+            return Strings.invalidUsernameOrPassword
         default:
-            return "Unknown (\(code))"
+            return Strings.generalError
         }
     }
 }

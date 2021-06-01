@@ -8,6 +8,12 @@
 "username" = "Username";
 "password" = "Password";
 "login" = "Login";
+"ok" = "OK";
 
 // error mesasges
+"error" = "Error";
 "validateMustNotBeEmpty" = "Field can't be empty";
+"generalError" = "Something went wrong. Please try again.";
+
+// login errors
+"invalidUsernameOrPassword" = "Invalid username or password.";

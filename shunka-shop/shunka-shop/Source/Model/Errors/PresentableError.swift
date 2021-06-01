@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+struct PresentableError: Identifiable {
+    let id: UUID = UUID()
+    let title: String = Strings.error
+    let message: String
+}
