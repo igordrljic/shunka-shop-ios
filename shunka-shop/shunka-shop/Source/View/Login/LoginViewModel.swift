@@ -67,7 +67,6 @@ class LoginViewModel: ObservableObject {
     
     init() {
         usernameStream = validatedUsername.sink { result in
-            debugPrint("username: \(self.username)")
             switch result {
             case .success:
                 self.usernameError = nil
@@ -76,7 +75,6 @@ class LoginViewModel: ObservableObject {
             }
         }
         passwordStream = validatedPassword.sink(receiveValue: { result in
-            debugPrint("password: \(self.password)")
             switch result {
             case .success:
                 self.passwordError = nil
