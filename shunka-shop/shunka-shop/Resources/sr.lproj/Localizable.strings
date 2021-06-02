@@ -9,6 +9,18 @@
 "password" = "Лозинка";
 "login" = "Пријави ме";
 "ok" = "У реду";
+"unknown" = "Непознато";
+"kilogram" = "кг";
+"currency" = "РСД";
+
+// main tab items
+"mainTabItemProducts" = "Производи";
+"mainTabItemOrders" = "Поруџбине";
+
+// product
+"productDateOfProduction" = "Датум производње";
+"productAvailableQuantity" = "Расположива количина";
+"productPricePerKilo" = "Цена";
 
 // error mesasges
 "error" = "Грешка";
@@ -19,3 +31,17 @@
 "loggingIn" = "Пријављивање...";
 // login errors
 "invalidUsernameOrPassword" = "Погрешно корисничко име или шифра.";
+
+// months
+"january" = "Јануар";
+"february" = "Фебруар";
+"march" = "Март";
+"april" = "Април";
+"may" = "Мај";
+"june" = "Јун";
+"july" = "Јул";
+"august" = "Август";
+"september" = "Септембер";
+"october" = "Октобар";
+"november" = "Новембар";
+"december" = "Децембар";

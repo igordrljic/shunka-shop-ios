@@ -11,11 +11,11 @@ struct ContentView: View {
     @EnvironmentObject var userSession: UserSession
     
     var body: some View {
-        if userSession.isLoggedIn {
-            Text("User is now logged in")
-        } else {
-            LoginView(viewModel: LoginViewModel())
-        }
+//        if userSession.isLoggedIn {
+            HomeView()
+//        } else {
+//            LoginView(viewModel: LoginViewModel())
+//        }
     }
 }
 

@@ -9,6 +9,18 @@
 "password" = "Password";
 "login" = "Login";
 "ok" = "OK";
+"unknown" = "Unknown";
+"kilogram" = "kg";
+"currency" = "RSD";
+
+// main tab items
+"mainTabItemProducts" = "Products";
+"mainTabItemOrders" = "Orders";
+
+// product
+"productDateOfProduction" = "Production date";
+"productAvailableQuantity" = "Available quantity";
+"productPricePerKilo" = "Price";
 
 // error mesasges
 "error" = "Error";
@@ -19,3 +31,17 @@
 "loggingIn" = "Logging in...";
 // login errors
 "invalidUsernameOrPassword" = "Invalid username or password.";
+
+// months
+"january" = "January";
+"february" = "February";
+"march" = "March";
+"april" = "April";
+"may" = "May";
+"june" = "June";
+"july" = "July";
+"august" = "August";
+"september" = "September";
+"october" = "October";
+"november" = "November";
+"december" = "December";

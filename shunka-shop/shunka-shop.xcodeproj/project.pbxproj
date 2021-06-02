@@ -24,6 +24,12 @@
 		A820A0D5265CF89900767D6C /* PasswordValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A820A0D4265CF89900767D6C /* PasswordValidator.swift */; };
 		A820A0DA265CF8BB00767D6C /* UsernameError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A820A0D9265CF8BB00767D6C /* UsernameError.swift */; };
 		A820A0DF265CF8CF00767D6C /* PasswordError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A820A0DE265CF8CF00767D6C /* PasswordError.swift */; };
+		A82628AD26679AA200B49A9E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82628AC26679AA200B49A9E /* HomeView.swift */; };
+		A82628BB26679D5800B49A9E /* ProductListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82628BA26679D5800B49A9E /* ProductListView.swift */; };
+		A82628C026679D7C00B49A9E /* OrdersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82628BF26679D7C00B49A9E /* OrdersListView.swift */; };
+		A82628C626679E3000B49A9E /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82628C526679E3000B49A9E /* Product.swift */; };
+		A82628CE2667A7A400B49A9E /* Month.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82628CD2667A7A400B49A9E /* Month.swift */; };
+		A82628D42667A7DE00B49A9E /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82628D32667A7DE00B49A9E /* ProductCell.swift */; };
 		A87A1A54265B969F00BCCCE4 /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87A1A53265B969F00BCCCE4 /* Strings+Generated.swift */; };
 		A87A1A6F265BCDB900BCCCE4 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87A1A6E265BCDB900BCCCE4 /* Theme.swift */; };
 		A87A1A77265BCDD700BCCCE4 /* DefaultTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87A1A76265BCDD700BCCCE4 /* DefaultTheme.swift */; };
@@ -89,6 +95,12 @@
 		A820A0D4265CF89900767D6C /* PasswordValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordValidator.swift; sourceTree = "<group>"; };
 		A820A0D9265CF8BB00767D6C /* UsernameError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameError.swift; sourceTree = "<group>"; };
 		A820A0DE265CF8CF00767D6C /* PasswordError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordError.swift; sourceTree = "<group>"; };
+		A82628AC26679AA200B49A9E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		A82628BA26679D5800B49A9E /* ProductListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListView.swift; sourceTree = "<group>"; };
+		A82628BF26679D7C00B49A9E /* OrdersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersListView.swift; sourceTree = "<group>"; };
+		A82628C526679E3000B49A9E /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		A82628CD2667A7A400B49A9E /* Month.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Month.swift; sourceTree = "<group>"; };
+		A82628D32667A7DE00B49A9E /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 		A87A1A53265B969F00BCCCE4 /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
 		A87A1A6E265BCDB900BCCCE4 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		A87A1A76265BCDD700BCCCE4 /* DefaultTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTheme.swift; sourceTree = "<group>"; };
@@ -226,6 +238,32 @@
 			path = Errors;
 			sourceTree = "<group>";
 		};
+		A82628AB26679A8E00B49A9E /* MainTab */ = {
+			isa = PBXGroup;
+			children = (
+				A82628AC26679AA200B49A9E /* HomeView.swift */,
+			);
+			path = MainTab;
+			sourceTree = "<group>";
+		};
+		A82628C426679E2100B49A9E /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				A82628C526679E3000B49A9E /* Product.swift */,
+				A82628CD2667A7A400B49A9E /* Month.swift */,
+			);
+			path = Objects;
+			sourceTree = "<group>";
+		};
+		A82628D22667A7D000B49A9E /* Product */ = {
+			isa = PBXGroup;
+			children = (
+				A82628BA26679D5800B49A9E /* ProductListView.swift */,
+				A82628D32667A7DE00B49A9E /* ProductCell.swift */,
+			);
+			path = Product;
+			sourceTree = "<group>";
+		};
 		A87A1A52265B960500BCCCE4 /* Generated */ = {
 			isa = PBXGroup;
 			children = (
@@ -356,6 +394,7 @@
 			isa = PBXGroup;
 			children = (
 				A890903D26664FE200B9A080 /* UserSession.swift */,
+				A82628C426679E2100B49A9E /* Objects */,
 				A8EC06B826661EF70047F5A7 /* UseCase */,
 				A80C42A926640F3700935E44 /* DataRepo */,
 				A820A0C9265CF85800767D6C /* Errors */,
@@ -369,8 +408,11 @@
 			children = (
 				A8B248F02657F07C0041B58C /* ContentView.swift */,
 				A8DAE99926675E4700508CE0 /* ActivityIndicatorView.swift */,
+				A82628AB26679A8E00B49A9E /* MainTab */,
 				A8EC06C9266623870047F5A7 /* TextFields */,
 				A87A1AB6265BF6CF00BCCCE4 /* Login */,
+				A82628D22667A7D000B49A9E /* Product */,
+				A82628BF26679D7C00B49A9E /* OrdersListView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -607,9 +649,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				A87A1AB2265BF60700BCCCE4 /* ErrorUnderlinedTextField.swift in Sources */,
+				A82628C026679D7C00B49A9E /* OrdersListView.swift in Sources */,
 				A820A0DF265CF8CF00767D6C /* PasswordError.swift in Sources */,
+				A82628BB26679D5800B49A9E /* ProductListView.swift in Sources */,
 				A80C42E0266410CD00935E44 /* JSONEncoding.swift in Sources */,
 				A8B249212657F5000041B58C /* LoginView.swift in Sources */,
+				A82628AD26679AA200B49A9E /* HomeView.swift in Sources */,
 				A8EC06A926661EA40047F5A7 /* DataProviderInjector.swift in Sources */,
 				A8B248F12657F07C0041B58C /* ContentView.swift in Sources */,
 				A87A1A6F265BCDB900BCCCE4 /* Theme.swift in Sources */,
@@ -622,6 +667,7 @@
 				A87A1A77265BCDD700BCCCE4 /* DefaultTheme.swift in Sources */,
 				A87A1A93265BD5EA00BCCCE4 /* Color+Theme.swift in Sources */,
 				A820A0D5265CF89900767D6C /* PasswordValidator.swift in Sources */,
+				A82628C626679E3000B49A9E /* Product.swift in Sources */,
 				A820A0DA265CF8BB00767D6C /* UsernameError.swift in Sources */,
 				A8EC06B426661EDE0047F5A7 /* AuthenticationWebserviceAdapter.swift in Sources */,
 				A8EC06942664F9190047F5A7 /* AppConfigError.swift in Sources */,
@@ -638,11 +684,13 @@
 				A80C42D62664103A00935E44 /* ParameterEncoding.swift in Sources */,
 				A890903E26664FE200B9A080 /* UserSession.swift in Sources */,
 				A80C42BE26640F9A00935E44 /* Request.swift in Sources */,
+				A82628CE2667A7A400B49A9E /* Month.swift in Sources */,
 				A8EC06BA26661F020047F5A7 /* UseCase.swift in Sources */,
 				A8EC06AF26661EC60047F5A7 /* AuthenticationProvider.swift in Sources */,
 				A8B248EF2657F07C0041B58C /* shunka_shopApp.swift in Sources */,
 				A8EC06CB2666239D0047F5A7 /* SecureUnderlinedTextField.swift in Sources */,
 				A80C42CD2664101700935E44 /* HTTPMethod.swift in Sources */,
+				A82628D42667A7DE00B49A9E /* ProductCell.swift in Sources */,
 				A87A1AAA265BD86300BCCCE4 /* UnderlinedTextField.swift in Sources */,
 				A80C42C826640FBC00935E44 /* WebserviceError.swift in Sources */,
 			);

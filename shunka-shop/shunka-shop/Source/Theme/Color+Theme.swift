@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UIKit
 
 public extension Color {
     private static var theme: Theme {
@@ -23,5 +24,11 @@ public extension Color {
     }
     static var disabled: Color {
         theme.disabled
+    }
+    static var primaryText: Color {
+        Color(UIColor.label)
+    }
+    static var secondaryText: Color {
+        Color(UIColor.secondaryLabel)
     }
 }
