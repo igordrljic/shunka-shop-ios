@@ -16,6 +16,8 @@ internal enum Strings {
   internal static let generalError = Strings.tr("Localizable", "generalError")
   /// Invalid username or password.
   internal static let invalidUsernameOrPassword = Strings.tr("Localizable", "invalidUsernameOrPassword")
+  /// Logging in...
+  internal static let loggingIn = Strings.tr("Localizable", "loggingIn")
   /// Login
   internal static let login = Strings.tr("Localizable", "login")
   /// OK

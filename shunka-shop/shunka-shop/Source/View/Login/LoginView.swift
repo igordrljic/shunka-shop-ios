@@ -12,29 +12,34 @@ struct LoginView: View {
     @ObservedObject var viewModel: LoginViewModel
     
     var body: some View {
-        VStack(spacing: 40) {
-            VStack(spacing: 30) {
-                Group {
-                    ErrorTextField(placeholder: Strings.username,
-                                             text: $viewModel.username,
-                                             error: $viewModel.usernameError)
-                    SecureErrorTextField(placeholder: Strings.password,
-                                             text: $viewModel.password,
-                                             error: $viewModel.passwordError)
-                }.autocapitalization(.none)
-                .disableAutocorrection(true)
+        ZStack {
+            VStack(spacing: 40) {
+                VStack(spacing: 30) {
+                    Group {
+                        ErrorTextField(placeholder: Strings.username,
+                                                 text: $viewModel.username,
+                                                 error: $viewModel.usernameError)
+                        SecureErrorTextField(placeholder: Strings.password,
+                                                 text: $viewModel.password,
+                                                 error: $viewModel.passwordError)
+                    }.autocapitalization(.none)
+                    .disableAutocorrection(true)
+                }
+                Button(Strings.login) {
+                    viewModel.login()
+                }
+                .buttonStyle(PrimaryButtonStyle())
+                .disabled(!viewModel.isFormValid)
             }
-            Button(Strings.login) {
-                self.viewModel.login()
+            .padding()
+            .alert(item: $viewModel.error) { error in
+                Alert(title: Text(error.title),
+                      message: Text(error.message),
+                      dismissButton: Alert.Button.cancel(Text(Strings.ok)))
             }
-            .buttonStyle(PrimaryButtonStyle())
-            .disabled(!viewModel.isFormValid)
-        }
-        .padding()
-        .alert(item: $viewModel.error) { error in
-            Alert(title: Text(error.title),
-                  message: Text(error.message),
-                  dismissButton: Alert.Button.cancel(Text(Strings.ok)))
+            if viewModel.isWorking {
+                ActivityIndicatorView(caption: Strings.loggingIn)
+            }
         }
     }
 }

@@ -43,6 +43,7 @@
 		A8B2490C2657F07E0041B58C /* shunka_shopUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B2490B2657F07E0041B58C /* shunka_shopUITests.swift */; };
 		A8B249212657F5000041B58C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B249202657F5000041B58C /* LoginView.swift */; };
 		A8B249332657F8320041B58C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A8B249352657F8320041B58C /* Localizable.strings */; };
+		A8DAE99A26675E4700508CE0 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DAE99926675E4700508CE0 /* ActivityIndicatorView.swift */; };
 		A8EC06942664F9190047F5A7 /* AppConfigError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EC06932664F9190047F5A7 /* AppConfigError.swift */; };
 		A8EC06A926661EA40047F5A7 /* DataProviderInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EC06A826661EA40047F5A7 /* DataProviderInjector.swift */; };
 		A8EC06AF26661EC60047F5A7 /* AuthenticationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EC06AE26661EC60047F5A7 /* AuthenticationProvider.swift */; };
@@ -114,6 +115,7 @@
 		A8B249202657F5000041B58C /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		A8B249342657F8320041B58C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A8B249392657F84D0041B58C /* sr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sr; path = sr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A8DAE99926675E4700508CE0 /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
 		A8EC06932664F9190047F5A7 /* AppConfigError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfigError.swift; sourceTree = "<group>"; };
 		A8EC06A826661EA40047F5A7 /* DataProviderInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProviderInjector.swift; sourceTree = "<group>"; };
 		A8EC06AE26661EC60047F5A7 /* AuthenticationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationProvider.swift; sourceTree = "<group>"; };
@@ -365,9 +367,10 @@
 		A8B2491F2657F4C90041B58C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A8B248F02657F07C0041B58C /* ContentView.swift */,
+				A8DAE99926675E4700508CE0 /* ActivityIndicatorView.swift */,
 				A8EC06C9266623870047F5A7 /* TextFields */,
 				A87A1AB6265BF6CF00BCCCE4 /* Login */,
-				A8B248F02657F07C0041B58C /* ContentView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -627,6 +630,7 @@
 				A87A1A54265B969F00BCCCE4 /* Strings+Generated.swift in Sources */,
 				A820A0CB265CF87000767D6C /* UsernameValidator.swift in Sources */,
 				A80C42DB2664108B00935E44 /* URLEncoding.swift in Sources */,
+				A8DAE99A26675E4700508CE0 /* ActivityIndicatorView.swift in Sources */,
 				A89090362666448900B9A080 /* PresentableError.swift in Sources */,
 				A87A1ACF265BF79800BCCCE4 /* LoginViewModel.swift in Sources */,
 				A80C4302266414A100935E44 /* ShunkaShopWebservice.swift in Sources */,

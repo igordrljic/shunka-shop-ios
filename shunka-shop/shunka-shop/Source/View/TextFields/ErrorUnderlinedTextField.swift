@@ -15,8 +15,8 @@ struct ErrorTextField: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
             UnderlinedTextField(placeholder: placeholder, text: $text)
-            if let error = error, !error.isEmpty {
-                Text(error)
+            if !(error?.isEmpty ?? true) {
+                Text(error!)
                     .foregroundColor(.error)
                     .font(Font.system(.footnote))
             }

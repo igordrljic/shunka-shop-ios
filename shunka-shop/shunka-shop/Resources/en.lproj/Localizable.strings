@@ -15,5 +15,7 @@
 "validateMustNotBeEmpty" = "Field can't be empty";
 "generalError" = "Something went wrong. Please try again.";
 
+// login
+"loggingIn" = "Logging in...";
 // login errors
 "invalidUsernameOrPassword" = "Invalid username or password.";

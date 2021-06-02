@@ -15,9 +15,11 @@ struct UnderlinedTextField: View {
         VStack(spacing: 4) {
             TextField(placeholder, text: $text)
                 .font(Font.system(.title3))
+                .frame(minHeight: 30, idealHeight: 30, maxHeight: 30)
             Rectangle()
                 .frame(height: 1)
                 .foregroundColor(.primary)
+                .padding(.top, 4)
         }
     }
 }

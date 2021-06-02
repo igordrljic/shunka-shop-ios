@@ -7,7 +7,7 @@
 */
 "username" = "Корисничко име";
 "password" = "Лозинка";
-"login" = "Улогуј ме";
+"login" = "Пријави ме";
 "ok" = "У реду";
 
 // error mesasges
@@ -15,5 +15,7 @@
 "validateMustNotBeEmpty" = "Поље не може бити празно";
 "generalError" = "Десила се грешка. Покушајте поново.";
 
+// login
+"loggingIn" = "Пријављивање...";
 // login errors
 "invalidUsernameOrPassword" = "Погрешно корисничко име или шифра.";

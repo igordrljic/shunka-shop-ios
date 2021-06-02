@@ -15,6 +15,7 @@ class LoginViewModel: ObservableObject {
     @Published var passwordError: String? = nil
     @Published var isFormValid: Bool = false
     @Published var error: PresentableError?
+    @Published var isWorking: Bool = false
     
     private let usernameValidator = UsernameValidator()
     private let passwordValidator = PasswordValidator()
@@ -89,6 +90,10 @@ class LoginViewModel: ObservableObject {
     }
     
     func login() {
+        guard !isWorking else {
+            return
+        }
+        isWorking = true
         let input = LoginUseCase.Input(username: self.username, password: self.password)
         loginUseCase.execute(input: input) { result in
             switch result {
@@ -102,6 +107,7 @@ class LoginViewModel: ObservableObject {
                     self.error = PresentableError(message: WebserviceError.general.localizedDescription)
                 }
             }
+            self.isWorking = false
         }
     }
 }

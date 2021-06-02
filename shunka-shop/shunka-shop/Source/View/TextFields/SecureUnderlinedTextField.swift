@@ -18,9 +18,11 @@ struct SecureUnderlinedTextField: View {
                 if isTextHidden {
                     SecureField(placeholder, text: $text)
                         .font(Font.system(.title3))
+                        .frame(minHeight: 30, idealHeight: 30, maxHeight: 30)
                 } else {
                     TextField(placeholder, text: $text)
                         .font(Font.system(.title3))
+                        .frame(minHeight: 30, idealHeight: 30, maxHeight: 30)
                 }
                 Button(action: {
                     self.isTextHidden.toggle()
@@ -31,6 +33,7 @@ struct SecureUnderlinedTextField: View {
             Rectangle()
                 .frame(height: 1)
                 .foregroundColor(.primary)
+                .padding(.top, 4)
         }
     }
 }
