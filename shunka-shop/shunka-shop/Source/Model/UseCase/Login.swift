@@ -7,8 +7,8 @@
 
 import Foundation
 
-class LoginUseCase: UseCase {
-    typealias InputType = LoginUseCase.Input
+class Login: UseCase {
+    typealias InputType = Login.Input
     typealias OutputType = Void
     
     struct Input {
@@ -16,9 +16,9 @@ class LoginUseCase: UseCase {
         let password: String
     }
     
-    private let authenticationProvider: AuthenticationProvider
+    private let authenticationProvider: AuthenticationService
     
-    init(authenticationProvider: AuthenticationProvider = DataProviderInjector.shared.authenticationProvider) {
+    init(authenticationProvider: AuthenticationService = ServiceInjector.shared.authentication) {
         self.authenticationProvider = authenticationProvider
     }
     

@@ -24,7 +24,7 @@ struct ProductCell: View {
             .font(.footnote)
             .foregroundColor(.secondaryText)
         }
-        .padding()
+        .padding(.vertical)
     }
 }
 
@@ -39,7 +39,7 @@ private extension Product {
         "\(Strings.productPricePerKilo): \(pricePerKilo)\(Strings.currency)/\(Strings.kilogram)"
     }
     var productionDateCaption: String {
-        if let month = Month(rawValue: pruductionMonth)?.name {
+        if let month = Month(rawValue: productionMonth)?.name {
             return "\(Strings.productDateOfProduction): \(month) \(productionYear)"
         } else {
             return "\(Strings.productDateOfProduction): \(productionYear)"
@@ -54,5 +54,5 @@ private var product = Product(id: "1",
                               name: "Name",
                               pricePerKilo: 1300,
                               productionYear: 2021,
-                              pruductionMonth: 3,
+                              productionMonth: 3,
                               availableQuantity: 25.5)

@@ -15,7 +15,7 @@ struct HomeView: View {
                     Label(Strings.mainTabItemOrders,
                           systemImage: "shippingbox")
                 }
-            ProductListView()
+            ProductListView(viewModel: ProductListViewModel())
                 .tabItem {
                     Label(Strings.mainTabItemProducts,
                           systemImage: "bag")

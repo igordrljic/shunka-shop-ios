@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol AuthenticationProvider {
+protocol AuthenticationService {
     func login(username: String, password: String, completion: @escaping (Result<LoginResponse, Error>) -> Void)
 }

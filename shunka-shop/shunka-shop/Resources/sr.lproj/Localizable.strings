@@ -12,12 +12,14 @@
 "unknown" = "Непознато";
 "kilogram" = "кг";
 "currency" = "РСД";
+"loading" = "Учитавање...";
 
 // main tab items
 "mainTabItemProducts" = "Производи";
 "mainTabItemOrders" = "Поруџбине";
 
 // product
+"noProducts" = "Нема производа";
 "productDateOfProduction" = "Датум производње";
 "productAvailableQuantity" = "Расположива количина";
 "productPricePerKilo" = "Цена";

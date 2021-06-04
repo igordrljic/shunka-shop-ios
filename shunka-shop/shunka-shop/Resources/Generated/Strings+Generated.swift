@@ -34,6 +34,8 @@ internal enum Strings {
   internal static let june = Strings.tr("Localizable", "june")
   /// kg
   internal static let kilogram = Strings.tr("Localizable", "kilogram")
+  /// Loading...
+  internal static let loading = Strings.tr("Localizable", "loading")
   /// Logging in...
   internal static let loggingIn = Strings.tr("Localizable", "loggingIn")
   /// Login
@@ -46,6 +48,8 @@ internal enum Strings {
   internal static let march = Strings.tr("Localizable", "march")
   /// May
   internal static let may = Strings.tr("Localizable", "may")
+  /// No products
+  internal static let noProducts = Strings.tr("Localizable", "noProducts")
   /// November
   internal static let november = Strings.tr("Localizable", "november")
   /// October

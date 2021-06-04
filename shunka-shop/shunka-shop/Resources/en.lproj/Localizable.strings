@@ -12,12 +12,14 @@
 "unknown" = "Unknown";
 "kilogram" = "kg";
 "currency" = "RSD";
+"loading" = "Loading...";
 
 // main tab items
 "mainTabItemProducts" = "Products";
 "mainTabItemOrders" = "Orders";
 
 // product
+"noProducts" = "No products";
 "productDateOfProduction" = "Production date";
 "productAvailableQuantity" = "Available quantity";
 "productPricePerKilo" = "Price";

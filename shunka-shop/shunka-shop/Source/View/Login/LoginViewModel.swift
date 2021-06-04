@@ -63,7 +63,7 @@ class LoginViewModel: ObservableObject {
     private var passwordStream: AnyCancellable!
     private var validatedFormStream: AnyCancellable!
     
-    private let loginUseCase = LoginUseCase()
+    private let loginUseCase = Login()
     
     init() {
         usernameStream = validatedUsername.sink { result in
@@ -92,7 +92,7 @@ class LoginViewModel: ObservableObject {
             return
         }
         isWorking = true
-        let input = LoginUseCase.Input(username: self.username, password: self.password)
+        let input = Login.Input(username: self.username, password: self.password)
         loginUseCase.execute(input: input) { result in
             switch result {
             case .success:

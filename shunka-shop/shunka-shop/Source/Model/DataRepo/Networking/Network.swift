@@ -24,6 +24,8 @@ class Network {
             } else {
                 urlRequest = try request.urlRequest(encoding: defaultEncoding)
             }
+            urlRequest.allHTTPHeaderFields = request.httpHeader
+            urlRequest.cachePolicy = .reloadIgnoringLocalAndRemoteCacheData
             urlSession.dataTaskPublisher(for: urlRequest)
                 .retry(1)
                 .tryMap({ data, response in

@@ -48,6 +48,19 @@ extension ShunkaShop {
                             return try JSONDecoder().decode(Order.self, from: data)
                         })
     }
+    
+    var products: Request<[Product]> {
+        Request<[Product]>(url: baseUrl.appendingPathComponent("product"),
+                           httpMethod: .get,
+                           httpHeader: headers,
+                           parse: { data in
+                            guard let data = data else {
+                                throw WebserviceError.responseContainsNoData
+                            }
+                            debugPrint("*** parsing products....")
+                            return try JSONDecoder().decode([Product].self, from: data)
+                           })
+    }
 }
 
 struct Order: Codable {

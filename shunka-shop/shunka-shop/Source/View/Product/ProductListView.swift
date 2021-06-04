@@ -8,26 +8,36 @@
 import SwiftUI
 
 struct ProductListView: View {
-    var products: [Product] = mockProducts
+    @ObservedObject var viewModel: ProductListViewModel
     
     var body: some View {
-        List(products) { product in
-            ProductCell(product: product)
+        Group {
+            if viewModel.products.isEmpty {
+                Text(Strings.noProducts)
+            } else {
+                ZStack {
+                    List(viewModel.products) { product in
+                        ProductCell(product: product)
+                    }
+                    .alert(item: $viewModel.error) { error in
+                        Alert(title: Text(error.title),
+                              message: Text(error.message),
+                              dismissButton: Alert.Button.cancel(Text(Strings.ok)))
+                    }
+                    if viewModel.isWorking {
+                        ActivityIndicatorView(caption: Strings.loading)
+                    }
+                }
+            }
         }
+        .onAppear(perform: {
+            viewModel.load()
+        })
     }
 }
 
 struct ProductListView_Previews: PreviewProvider {
     static var previews: some View {
-        ProductListView(products: mockProducts)
+        ProductListView(viewModel: ProductListViewModel())
     }
 }
-
-private var mockProducts = [
-        Product(id: "1",
-            name: "Name",
-            pricePerKilo: 1300,
-            productionYear: 2021,
-            pruductionMonth: 3,
-            availableQuantity: 25.5)
-    ]

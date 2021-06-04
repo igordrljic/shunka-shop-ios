@@ -30,6 +30,9 @@
 		A82628C626679E3000B49A9E /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82628C526679E3000B49A9E /* Product.swift */; };
 		A82628CE2667A7A400B49A9E /* Month.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82628CD2667A7A400B49A9E /* Month.swift */; };
 		A82628D42667A7DE00B49A9E /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82628D32667A7DE00B49A9E /* ProductCell.swift */; };
+		A82628DF2667C04A00B49A9E /* GetProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82628DE2667C04A00B49A9E /* GetProducts.swift */; };
+		A82628F12667C25500B49A9E /* ProductService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82628F02667C25500B49A9E /* ProductService.swift */; };
+		A82628F62667C26500B49A9E /* ProductWebservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82628F52667C26500B49A9E /* ProductWebservice.swift */; };
 		A87A1A54265B969F00BCCCE4 /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87A1A53265B969F00BCCCE4 /* Strings+Generated.swift */; };
 		A87A1A6F265BCDB900BCCCE4 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87A1A6E265BCDB900BCCCE4 /* Theme.swift */; };
 		A87A1A77265BCDD700BCCCE4 /* DefaultTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87A1A76265BCDD700BCCCE4 /* DefaultTheme.swift */; };
@@ -39,6 +42,10 @@
 		A87A1AAA265BD86300BCCCE4 /* UnderlinedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87A1AA9265BD86300BCCCE4 /* UnderlinedTextField.swift */; };
 		A87A1AB2265BF60700BCCCE4 /* ErrorUnderlinedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87A1AB1265BF60700BCCCE4 /* ErrorUnderlinedTextField.swift */; };
 		A87A1ACF265BF79800BCCCE4 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87A1ACE265BF79800BCCCE4 /* LoginViewModel.swift */; };
+		A87BBF44266A1E4000712DF4 /* ProductListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87BBF43266A1E4000712DF4 /* ProductListViewModel.swift */; };
+		A87BBF76266A559300712DF4 /* DataStorageInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87BBF75266A559300712DF4 /* DataStorageInjector.swift */; };
+		A87BBF7F266A55B500712DF4 /* ProductStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87BBF7E266A55B500712DF4 /* ProductStorage.swift */; };
+		A87BBF87266A55CA00712DF4 /* ProductCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87BBF86266A55CA00712DF4 /* ProductCache.swift */; };
 		A89090362666448900B9A080 /* PresentableError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89090352666448900B9A080 /* PresentableError.swift */; };
 		A890903E26664FE200B9A080 /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A890903D26664FE200B9A080 /* UserSession.swift */; };
 		A8B248EF2657F07C0041B58C /* shunka_shopApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B248EE2657F07C0041B58C /* shunka_shopApp.swift */; };
@@ -51,11 +58,11 @@
 		A8B249332657F8320041B58C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A8B249352657F8320041B58C /* Localizable.strings */; };
 		A8DAE99A26675E4700508CE0 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DAE99926675E4700508CE0 /* ActivityIndicatorView.swift */; };
 		A8EC06942664F9190047F5A7 /* AppConfigError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EC06932664F9190047F5A7 /* AppConfigError.swift */; };
-		A8EC06A926661EA40047F5A7 /* DataProviderInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EC06A826661EA40047F5A7 /* DataProviderInjector.swift */; };
-		A8EC06AF26661EC60047F5A7 /* AuthenticationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EC06AE26661EC60047F5A7 /* AuthenticationProvider.swift */; };
-		A8EC06B426661EDE0047F5A7 /* AuthenticationWebserviceAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EC06B326661EDE0047F5A7 /* AuthenticationWebserviceAdapter.swift */; };
+		A8EC06A926661EA40047F5A7 /* ServiceInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EC06A826661EA40047F5A7 /* ServiceInjector.swift */; };
+		A8EC06AF26661EC60047F5A7 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EC06AE26661EC60047F5A7 /* AuthenticationService.swift */; };
+		A8EC06B426661EDE0047F5A7 /* AuthenticationWebservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EC06B326661EDE0047F5A7 /* AuthenticationWebservice.swift */; };
 		A8EC06BA26661F020047F5A7 /* UseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EC06B926661F020047F5A7 /* UseCase.swift */; };
-		A8EC06BF26661F150047F5A7 /* LoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EC06BE26661F150047F5A7 /* LoginUseCase.swift */; };
+		A8EC06BF26661F150047F5A7 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EC06BE26661F150047F5A7 /* Login.swift */; };
 		A8EC06CB2666239D0047F5A7 /* SecureUnderlinedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EC06CA2666239D0047F5A7 /* SecureUnderlinedTextField.swift */; };
 		A8EC06D0266623BD0047F5A7 /* SecureErrorTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EC06CF266623BD0047F5A7 /* SecureErrorTextField.swift */; };
 /* End PBXBuildFile section */
@@ -101,6 +108,9 @@
 		A82628C526679E3000B49A9E /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		A82628CD2667A7A400B49A9E /* Month.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Month.swift; sourceTree = "<group>"; };
 		A82628D32667A7DE00B49A9E /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
+		A82628DE2667C04A00B49A9E /* GetProducts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProducts.swift; sourceTree = "<group>"; };
+		A82628F02667C25500B49A9E /* ProductService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductService.swift; sourceTree = "<group>"; };
+		A82628F52667C26500B49A9E /* ProductWebservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductWebservice.swift; sourceTree = "<group>"; };
 		A87A1A53265B969F00BCCCE4 /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
 		A87A1A6E265BCDB900BCCCE4 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		A87A1A76265BCDD700BCCCE4 /* DefaultTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTheme.swift; sourceTree = "<group>"; };
@@ -110,6 +120,10 @@
 		A87A1AA9265BD86300BCCCE4 /* UnderlinedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlinedTextField.swift; sourceTree = "<group>"; };
 		A87A1AB1265BF60700BCCCE4 /* ErrorUnderlinedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorUnderlinedTextField.swift; sourceTree = "<group>"; };
 		A87A1ACE265BF79800BCCCE4 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		A87BBF43266A1E4000712DF4 /* ProductListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewModel.swift; sourceTree = "<group>"; };
+		A87BBF75266A559300712DF4 /* DataStorageInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStorageInjector.swift; sourceTree = "<group>"; };
+		A87BBF7E266A55B500712DF4 /* ProductStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductStorage.swift; sourceTree = "<group>"; };
+		A87BBF86266A55CA00712DF4 /* ProductCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCache.swift; sourceTree = "<group>"; };
 		A89090352666448900B9A080 /* PresentableError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentableError.swift; sourceTree = "<group>"; };
 		A890903D26664FE200B9A080 /* UserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
 		A8B248EB2657F07C0041B58C /* shunka-shop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "shunka-shop.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,11 +143,11 @@
 		A8B249392657F84D0041B58C /* sr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sr; path = sr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A8DAE99926675E4700508CE0 /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
 		A8EC06932664F9190047F5A7 /* AppConfigError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfigError.swift; sourceTree = "<group>"; };
-		A8EC06A826661EA40047F5A7 /* DataProviderInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProviderInjector.swift; sourceTree = "<group>"; };
-		A8EC06AE26661EC60047F5A7 /* AuthenticationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationProvider.swift; sourceTree = "<group>"; };
-		A8EC06B326661EDE0047F5A7 /* AuthenticationWebserviceAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationWebserviceAdapter.swift; sourceTree = "<group>"; };
+		A8EC06A826661EA40047F5A7 /* ServiceInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceInjector.swift; sourceTree = "<group>"; };
+		A8EC06AE26661EC60047F5A7 /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
+		A8EC06B326661EDE0047F5A7 /* AuthenticationWebservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationWebservice.swift; sourceTree = "<group>"; };
 		A8EC06B926661F020047F5A7 /* UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
-		A8EC06BE26661F150047F5A7 /* LoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCase.swift; sourceTree = "<group>"; };
+		A8EC06BE26661F150047F5A7 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		A8EC06CA2666239D0047F5A7 /* SecureUnderlinedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureUnderlinedTextField.swift; sourceTree = "<group>"; };
 		A8EC06CF266623BD0047F5A7 /* SecureErrorTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureErrorTextField.swift; sourceTree = "<group>"; };
 		AD14A850A89E3FA7449071C3 /* Pods-shunka-shop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shunka-shop.debug.xcconfig"; path = "Target Support Files/Pods-shunka-shop/Pods-shunka-shop.debug.xcconfig"; sourceTree = "<group>"; };
@@ -170,7 +184,7 @@
 		A80C42A926640F3700935E44 /* DataRepo */ = {
 			isa = PBXGroup;
 			children = (
-				A8EC06A426661BEE0047F5A7 /* DataProvider */,
+				A8EC06A426661BEE0047F5A7 /* DataStorage */,
 				A80C43002664146B00935E44 /* Networking */,
 				A80C42AB26640F5500935E44 /* Webservice */,
 			);
@@ -180,6 +194,7 @@
 		A80C42AB26640F5500935E44 /* Webservice */ = {
 			isa = PBXGroup;
 			children = (
+				A8EC06A826661EA40047F5A7 /* ServiceInjector.swift */,
 				A80C42B826640F9200935E44 /* Webservice.swift */,
 				A80C42C726640FBC00935E44 /* WebserviceError.swift */,
 				A80C4309266414E200935E44 /* ShunkaShop */,
@@ -214,6 +229,8 @@
 			children = (
 				A80C4301266414A100935E44 /* ShunkaShopWebservice.swift */,
 				A80C430A266414F700935E44 /* ShunkaShopWebserviceError.swift */,
+				A82628EF2667C24C00B49A9E /* Product */,
+				A8EC06AD26661EBC0047F5A7 /* Authentication */,
 			);
 			path = ShunkaShop;
 			sourceTree = "<group>";
@@ -258,8 +275,18 @@
 		A82628D22667A7D000B49A9E /* Product */ = {
 			isa = PBXGroup;
 			children = (
+				A87BBF43266A1E4000712DF4 /* ProductListViewModel.swift */,
 				A82628BA26679D5800B49A9E /* ProductListView.swift */,
 				A82628D32667A7DE00B49A9E /* ProductCell.swift */,
+			);
+			path = Product;
+			sourceTree = "<group>";
+		};
+		A82628EF2667C24C00B49A9E /* Product */ = {
+			isa = PBXGroup;
+			children = (
+				A82628F02667C25500B49A9E /* ProductService.swift */,
+				A82628F52667C26500B49A9E /* ProductWebservice.swift */,
 			);
 			path = Product;
 			sourceTree = "<group>";
@@ -306,6 +333,15 @@
 				A87A1ACE265BF79800BCCCE4 /* LoginViewModel.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		A87BBF7D266A55AD00712DF4 /* Product */ = {
+			isa = PBXGroup;
+			children = (
+				A87BBF7E266A55B500712DF4 /* ProductStorage.swift */,
+				A87BBF86266A55CA00712DF4 /* ProductCache.swift */,
+			);
+			path = Product;
 			sourceTree = "<group>";
 		};
 		A8B248E22657F07C0041B58C = {
@@ -417,20 +453,20 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		A8EC06A426661BEE0047F5A7 /* DataProvider */ = {
+		A8EC06A426661BEE0047F5A7 /* DataStorage */ = {
 			isa = PBXGroup;
 			children = (
-				A8EC06AD26661EBC0047F5A7 /* Authentication */,
-				A8EC06A826661EA40047F5A7 /* DataProviderInjector.swift */,
+				A87BBF75266A559300712DF4 /* DataStorageInjector.swift */,
+				A87BBF7D266A55AD00712DF4 /* Product */,
 			);
-			path = DataProvider;
+			path = DataStorage;
 			sourceTree = "<group>";
 		};
 		A8EC06AD26661EBC0047F5A7 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
-				A8EC06AE26661EC60047F5A7 /* AuthenticationProvider.swift */,
-				A8EC06B326661EDE0047F5A7 /* AuthenticationWebserviceAdapter.swift */,
+				A8EC06AE26661EC60047F5A7 /* AuthenticationService.swift */,
+				A8EC06B326661EDE0047F5A7 /* AuthenticationWebservice.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -439,7 +475,8 @@
 			isa = PBXGroup;
 			children = (
 				A8EC06B926661F020047F5A7 /* UseCase.swift */,
-				A8EC06BE26661F150047F5A7 /* LoginUseCase.swift */,
+				A8EC06BE26661F150047F5A7 /* Login.swift */,
+				A82628DE2667C04A00B49A9E /* GetProducts.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -655,9 +692,11 @@
 				A80C42E0266410CD00935E44 /* JSONEncoding.swift in Sources */,
 				A8B249212657F5000041B58C /* LoginView.swift in Sources */,
 				A82628AD26679AA200B49A9E /* HomeView.swift in Sources */,
-				A8EC06A926661EA40047F5A7 /* DataProviderInjector.swift in Sources */,
+				A8EC06A926661EA40047F5A7 /* ServiceInjector.swift in Sources */,
 				A8B248F12657F07C0041B58C /* ContentView.swift in Sources */,
 				A87A1A6F265BCDB900BCCCE4 /* Theme.swift in Sources */,
+				A87BBF44266A1E4000712DF4 /* ProductListViewModel.swift in Sources */,
+				A82628DF2667C04A00B49A9E /* GetProducts.swift in Sources */,
 				A8EC06D0266623BD0047F5A7 /* SecureErrorTextField.swift in Sources */,
 				A80C42C326640FA400935E44 /* Network.swift in Sources */,
 				A80C430B266414F700935E44 /* ShunkaShopWebserviceError.swift in Sources */,
@@ -669,13 +708,17 @@
 				A820A0D5265CF89900767D6C /* PasswordValidator.swift in Sources */,
 				A82628C626679E3000B49A9E /* Product.swift in Sources */,
 				A820A0DA265CF8BB00767D6C /* UsernameError.swift in Sources */,
-				A8EC06B426661EDE0047F5A7 /* AuthenticationWebserviceAdapter.swift in Sources */,
+				A8EC06B426661EDE0047F5A7 /* AuthenticationWebservice.swift in Sources */,
 				A8EC06942664F9190047F5A7 /* AppConfigError.swift in Sources */,
 				A87A1A86265BCE5400BCCCE4 /* PrimaryButtonStyle.swift in Sources */,
-				A8EC06BF26661F150047F5A7 /* LoginUseCase.swift in Sources */,
+				A8EC06BF26661F150047F5A7 /* Login.swift in Sources */,
 				A87A1A54265B969F00BCCCE4 /* Strings+Generated.swift in Sources */,
 				A820A0CB265CF87000767D6C /* UsernameValidator.swift in Sources */,
+				A82628F62667C26500B49A9E /* ProductWebservice.swift in Sources */,
+				A87BBF87266A55CA00712DF4 /* ProductCache.swift in Sources */,
 				A80C42DB2664108B00935E44 /* URLEncoding.swift in Sources */,
+				A87BBF76266A559300712DF4 /* DataStorageInjector.swift in Sources */,
+				A82628F12667C25500B49A9E /* ProductService.swift in Sources */,
 				A8DAE99A26675E4700508CE0 /* ActivityIndicatorView.swift in Sources */,
 				A89090362666448900B9A080 /* PresentableError.swift in Sources */,
 				A87A1ACF265BF79800BCCCE4 /* LoginViewModel.swift in Sources */,
@@ -686,13 +729,14 @@
 				A80C42BE26640F9A00935E44 /* Request.swift in Sources */,
 				A82628CE2667A7A400B49A9E /* Month.swift in Sources */,
 				A8EC06BA26661F020047F5A7 /* UseCase.swift in Sources */,
-				A8EC06AF26661EC60047F5A7 /* AuthenticationProvider.swift in Sources */,
+				A8EC06AF26661EC60047F5A7 /* AuthenticationService.swift in Sources */,
 				A8B248EF2657F07C0041B58C /* shunka_shopApp.swift in Sources */,
 				A8EC06CB2666239D0047F5A7 /* SecureUnderlinedTextField.swift in Sources */,
 				A80C42CD2664101700935E44 /* HTTPMethod.swift in Sources */,
 				A82628D42667A7DE00B49A9E /* ProductCell.swift in Sources */,
 				A87A1AAA265BD86300BCCCE4 /* UnderlinedTextField.swift in Sources */,
 				A80C42C826640FBC00935E44 /* WebserviceError.swift in Sources */,
+				A87BBF7F266A55B500712DF4 /* ProductStorage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
