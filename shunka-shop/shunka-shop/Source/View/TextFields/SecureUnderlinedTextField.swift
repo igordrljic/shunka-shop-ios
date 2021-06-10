@@ -15,14 +15,15 @@ struct SecureUnderlinedTextField: View {
     var body: some View {
         VStack(spacing: 4) {
             HStack {
-                if isTextHidden {
+                ZStack {
                     SecureField(placeholder, text: $text)
                         .font(Font.system(.title3))
                         .frame(minHeight: 30, idealHeight: 30, maxHeight: 30)
-                } else {
+                        .opacity(isTextHidden ? 1 : 0)
                     TextField(placeholder, text: $text)
                         .font(Font.system(.title3))
                         .frame(minHeight: 30, idealHeight: 30, maxHeight: 30)
+                        .opacity(isTextHidden ? 0 : 1)
                 }
                 Button(action: {
                     self.isTextHidden.toggle()
