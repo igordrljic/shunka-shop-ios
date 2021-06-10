@@ -16,20 +16,20 @@ struct Request<ResultType: Decodable> {
     let httpHeader: HTTPHeader
     let parameters: Parameters?
     let encoding: ParameterEncoding?
-    let parse: (Data?) throws -> ResultType
+    let decoding: ResponseDecoding
     
     init(url: URL,
          httpMethod: HTTPMethod,
          httpHeader: HTTPHeader = [:],
          parameters: Parameters? = nil,
          encoding: ParameterEncoding? = nil,
-         parse: @escaping (Data?) throws -> ResultType) {
+         decoding: ResponseDecoding) {
         self.url = url
         self.httpMethod = httpMethod
         self.httpHeader = httpHeader
         self.parameters = parameters
         self.encoding = encoding
-        self.parse = parse
+        self.decoding = decoding
     }
 }
 

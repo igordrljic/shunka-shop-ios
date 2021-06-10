@@ -11,18 +11,15 @@ import Combine
 class Network {
     static let shared = Network()
     let urlSession: URLSession = URLSession.shared
-    let defaultEncoding: ParameterEncoding = JSONEncoding()
     private (set) var subscribers = Set<AnyCancellable>()
     
     func run<ResultType>(_ request: Request<ResultType>, completion: @escaping (Result<ResultType, Error>) -> Void) {
         do {
             var urlRequest: URLRequest
-            if request.parameters?.isEmpty ?? true {
-                urlRequest = URLRequest(url: request.url)
-            } else if let encoding = request.encoding {
+            if let encoding = request.encoding {
                 urlRequest = try request.urlRequest(encoding: encoding)
             } else {
-                urlRequest = try request.urlRequest(encoding: defaultEncoding)
+                urlRequest = URLRequest(url: request.url)
             }
             urlRequest.allHTTPHeaderFields = request.httpHeader
             urlRequest.cachePolicy = .reloadIgnoringLocalAndRemoteCacheData
@@ -33,7 +30,7 @@ class Network {
                           httpResponse.statusCode >= 200 && httpResponse.statusCode < 300 else {
                         throw WebserviceError.wrappedData(data: data)
                     }
-                    return try request.parse(data)
+                    return try request.decoding.decode(data)
                 })
                 .receive(on: DispatchQueue.main)
                 .sink { subscribersCompletion in
