@@ -12,6 +12,7 @@ class ProductListViewModel: ObservableObject {
     @Published var products: [Product] = []
     @Published var isWorking = false
     @Published var error: PresentableError? = nil
+    private var isLoaded = false
     private let getProductsUseCase = GetProducts()
     private let productStorage = DataStorageInjector.shared.productStorage
     private lazy var productStream: AnyCancellable = {
@@ -26,6 +27,14 @@ class ProductListViewModel: ObservableObject {
     }
     
     func load() {
+        guard !isLoaded else {
+            return
+        }
+        isLoaded = true
+        reload()
+    }
+    
+    func reload() {
         guard !isWorking else {
             return
         }
