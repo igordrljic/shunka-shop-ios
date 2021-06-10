@@ -25,7 +25,6 @@ class GetProducts: UseCase {
         productService.getProducts(completion: { result in
             switch result {
             case let .success(products):
-                debugPrint("*** fetched products: \(products)")
                 self.productStorage.set(products: products) { result in
                     switch result {
                     case .success:

@@ -19,7 +19,6 @@ class ProductCache: ProductStorage {
     
     func set(products: [Product], completion: (Result<Void, Error>) -> Void) {
         self.products = products
-        debugPrint("*** publish products: \(products)")
         storageUpdatePublisher.send(products)
         completion(.success(()))
     }

@@ -18,7 +18,6 @@ class ProductListViewModel: ObservableObject {
     private lazy var productStream: AnyCancellable = {
         productStorage.storageUpdatePublisher.sink { products in
             self.products = products
-            debugPrint("*** products: \(products)")
         }
     }()
     
