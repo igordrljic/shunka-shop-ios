@@ -270,13 +270,14 @@
 			path = MainTab;
 			sourceTree = "<group>";
 		};
-		A82628C426679E2100B49A9E /* Objects */ = {
+		A82628C426679E2100B49A9E /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
+				A890903D26664FE200B9A080 /* UserSession.swift */,
 				A82628C526679E3000B49A9E /* Product.swift */,
 				A82628CD2667A7A400B49A9E /* Month.swift */,
 			);
-			path = Objects;
+			path = DataModel;
 			sourceTree = "<group>";
 		};
 		A82628D22667A7D000B49A9E /* Product */ = {
@@ -466,9 +467,8 @@
 		A8B2491E2657F4B70041B58C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A890903D26664FE200B9A080 /* UserSession.swift */,
-				A82628C426679E2100B49A9E /* Objects */,
 				A8EC06B826661EF70047F5A7 /* UseCase */,
+				A82628C426679E2100B49A9E /* DataModel */,
 				A80C42A926640F3700935E44 /* DataRepo */,
 				A820A0C9265CF85800767D6C /* Errors */,
 				A820A0C8265CF84C00767D6C /* UserInputValidators */,
