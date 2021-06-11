@@ -11,7 +11,7 @@ import Combine
 class Network {
     static let shared = Network()
     let urlSession: URLSession = URLSession.shared
-    private (set) var subscribers = Set<AnyCancellable>()
+    private (set) var subscribers = [URLRequest: AnyCancellable]()
     
     func run<ResultType>(_ request: Request<ResultType>, completion: @escaping (Result<ResultType, Error>) -> Void) {
         do {
@@ -23,9 +23,9 @@ class Network {
             }
             urlRequest.allHTTPHeaderFields = request.httpHeader
             urlRequest.cachePolicy = .reloadIgnoringLocalAndRemoteCacheData
-            urlSession.dataTaskPublisher(for: urlRequest)
+            subscribers[urlRequest] = urlSession.dataTaskPublisher(for: urlRequest)
                 .retry(1)
-                .tryMap({ data, response in
+                .tryMap({ data, response -> ResultType in
                     guard let httpResponse = response as? HTTPURLResponse,
                           httpResponse.statusCode >= 200 && httpResponse.statusCode < 300 else {
                         throw WebserviceError.wrappedData(data: data)
@@ -36,11 +36,12 @@ class Network {
                 .sink { subscribersCompletion in
                     if case let .failure(error) = subscribersCompletion {
                         completion(.failure(error))
+                        self.subscribers.removeValue(forKey: urlRequest)
                     }
                 } receiveValue: { result in
                     completion(.success(result))
+                    self.subscribers.removeValue(forKey: urlRequest)
                 }
-                .store(in: &subscribers)
         } catch {
             completion(.failure(error))
         }
