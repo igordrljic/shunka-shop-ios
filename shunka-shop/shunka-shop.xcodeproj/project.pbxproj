@@ -195,7 +195,6 @@
 			isa = PBXGroup;
 			children = (
 				A8EC06A426661BEE0047F5A7 /* DataStorage */,
-				A80C43002664146B00935E44 /* Networking */,
 				A80C42AB26640F5500935E44 /* Webservice */,
 			);
 			path = DataRepo;
@@ -470,6 +469,7 @@
 				A8EC06B826661EF70047F5A7 /* UseCase */,
 				A82628C426679E2100B49A9E /* DataModel */,
 				A80C42A926640F3700935E44 /* DataRepo */,
+				A80C43002664146B00935E44 /* Networking */,
 				A820A0C9265CF85800767D6C /* Errors */,
 				A820A0C8265CF84C00767D6C /* UserInputValidators */,
 			);

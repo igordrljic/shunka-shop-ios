@@ -8,17 +8,33 @@
 import SwiftUI
 
 struct HomeView: View {
+    @StateObject var productListViewModel = ProductListViewModel()
+    
     var body: some View {
         TabView {
-            OrdersListView()
-                .tabItem {
-                    Label(Strings.mainTabItemOrders,
-                          systemImage: "shippingbox")
-                }
-            ProductListView(viewModel: ProductListViewModel())
-                .tabItem {
-                    Label(Strings.mainTabItemProducts,
-                          systemImage: "bag")
+            NavigationView {
+                OrdersListView()
+                    .navigationBarTitle(Strings.mainTabItemOrders)
+                    .navigationBarTitleDisplayMode(.inline)
+            }
+            .tabItem {
+                Label(Strings.mainTabItemOrders,
+                      systemImage: "shippingbox")
+            }
+            NavigationView {
+                ProductListView(viewModel: productListViewModel)
+                    .navigationBarTitle(Strings.mainTabItemProducts)
+                    .navigationBarTitleDisplayMode(.inline)
+                    .navigationBarItems(trailing:
+                                            Button(action: {
+                                                productListViewModel.reload()
+                    }, label: {
+                        Image(systemName: "arrow.counterclockwise")
+                    }))
+            }
+            .tabItem {
+                Label(Strings.mainTabItemProducts,
+                      systemImage: "bag")
             }
         }
     }
