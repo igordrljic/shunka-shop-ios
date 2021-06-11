@@ -23,7 +23,7 @@ class Network {
             }
             urlRequest.allHTTPHeaderFields = request.httpHeader
             urlRequest.cachePolicy = .reloadIgnoringLocalAndRemoteCacheData
-            subscribers[urlRequest]  = urlSession.dataTaskPublisher(for: urlRequest)
+            subscribers[urlRequest] = urlSession.dataTaskPublisher(for: urlRequest)
                 .retry(1)
                 .tryMap({ data, response -> ResultType in
                     guard let httpResponse = response as? HTTPURLResponse,
