@@ -27,7 +27,7 @@ class Network {
                 .retry(1)
                 .tryMap({ data, response -> ResultType in
                     guard let httpResponse = response as? HTTPURLResponse,
-                          httpResponse.statusCode >= 200 && httpResponse.statusCode < 300 else {
+                          (200...299).contains(httpResponse.statusCode) else {
                         throw WebserviceError.wrappedData(data: data)
                     }
                     return try request.decoding.decode(data)
