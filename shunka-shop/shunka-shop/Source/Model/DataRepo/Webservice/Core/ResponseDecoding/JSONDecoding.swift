@@ -8,7 +8,9 @@
 import Foundation
 
 class JSONDecoding: ResponseDecoding {
+    private let jsonDecoder = JSONDecoder()
+    
     func decode<ResultType: Decodable>(_ data: Data) throws -> ResultType {
-        return try JSONDecoder().decode(ResultType.self, from: data)
+        return try jsonDecoder.decode(ResultType.self, from: data)
     }
 }

@@ -8,10 +8,10 @@
 import Foundation
 
 extension ShunkaShop {
-    var products: Request<[Product]> {
-        Request<[Product]>(url: baseUrl.appendingPathComponent("product"),
-                           httpMethod: .get,
-                           httpHeader: headers,
-                           decoding: decoding)
+    var products: Request {
+        Request(url: baseUrl.appendingPathComponent("product"),
+                httpMethod: .get,
+                httpHeader: headers,
+                decoding: decoding)
     }
 }

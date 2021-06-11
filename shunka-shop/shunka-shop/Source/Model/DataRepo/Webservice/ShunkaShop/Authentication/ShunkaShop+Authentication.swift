@@ -8,13 +8,13 @@
 import Foundation
 
 extension ShunkaShop {
-    func login(username: String, password: String) -> Request<LoginResponse> {
+    func login(username: String, password: String) -> Request {
         let params = ["username": username,
                       "password": password]
-        return Request<LoginResponse>(url: baseUrl.appendingPathComponent("login"),
-                        httpMethod: .post,
-                        parameters: params,
-                        encoding: encoding,
-                        decoding: decoding)
+        return Request(url: baseUrl.appendingPathComponent("login"),
+                       httpMethod: .post,
+                       parameters: params,
+                       encoding: encoding,
+                       decoding: decoding)
     }
 }

@@ -10,7 +10,8 @@ import Foundation
 typealias HTTPHeader = [String: String]
 typealias Parameters = [String: Any]
 
-struct Request<ResultType: Decodable> {
+struct Request: Identifiable {
+    let id = UUID()
     let url: URL
     let httpMethod: HTTPMethod
     let httpHeader: HTTPHeader
@@ -30,6 +31,18 @@ struct Request<ResultType: Decodable> {
         self.parameters = parameters
         self.encoding = encoding
         self.decoding = decoding
+    }
+}
+
+extension Request: Hashable {
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+}
+
+extension Request: Equatable {
+    static func == (lhs: Request, rhs: Request) -> Bool {
+        lhs.id == rhs.id
     }
 }
 
