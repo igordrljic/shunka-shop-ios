@@ -9,15 +9,12 @@ import Foundation
 
 class ShunkaShop: Webservice {
     static let shared = ShunkaShop()
-    
-    let defaultEncoding = JSONEncoding()
-    let defaultDecoding = JSONDecoding()
-    private (set) var baseUrl: URL
+    let baseUrl: URL = AppConfiguration.shared.shunkaShopBaseUrl
+    let encoding: ParameterEncoding = JSONEncoding()
+    let decoding: ResponseDecoding = JSONDecoding()
     private (set) var headers: HTTPHeader = [:]
     
-    private init() {
-        baseUrl = AppConfiguration.shared.shunkaShopBaseUrl
-    }
+    private init() {}
     
     func set(authenticationToken token: String) {
         headers["x-auth-token"] = token

@@ -9,4 +9,6 @@ import Foundation
 
 protocol Webservice {
     var baseUrl: URL { get }
+    var encoding: ParameterEncoding { get }
+    var decoding: ResponseDecoding { get }
 }
