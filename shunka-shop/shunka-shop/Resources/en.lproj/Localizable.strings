@@ -13,6 +13,8 @@
 "kilogram" = "kg";
 "currency" = "RSD";
 "loading" = "Loading...";
+"register" = "Register";
+"cancel" = "Cancel";
 
 // main tab items
 "mainTabItemProducts" = "Products";
@@ -23,6 +25,14 @@
 "productDateOfProduction" = "Production date";
 "productAvailableQuantity" = "Available quantity";
 "productPricePerKilo" = "Price";
+
+// create product
+"registerProduct" = "Register product";
+"productName" = "Product name";
+"pricePerKilo" = "Price per kg";
+"productionYear" = "Production year";
+"productionMonth" = "Prodcution month";
+"availableQuantity" = "Available quantity";
 
 // error mesasges
 "error" = "Error";

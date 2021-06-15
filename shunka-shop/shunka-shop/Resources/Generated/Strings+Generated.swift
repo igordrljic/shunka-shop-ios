@@ -14,6 +14,10 @@ internal enum Strings {
   internal static let april = Strings.tr("Localizable", "april")
   /// August
   internal static let august = Strings.tr("Localizable", "august")
+  /// Available quantity
+  internal static let availableQuantity = Strings.tr("Localizable", "availableQuantity")
+  /// Cancel
+  internal static let cancel = Strings.tr("Localizable", "cancel")
   /// RSD
   internal static let currency = Strings.tr("Localizable", "currency")
   /// December
@@ -58,12 +62,24 @@ internal enum Strings {
   internal static let ok = Strings.tr("Localizable", "ok")
   /// Password
   internal static let password = Strings.tr("Localizable", "password")
+  /// Price per kg
+  internal static let pricePerKilo = Strings.tr("Localizable", "pricePerKilo")
   /// Available quantity
   internal static let productAvailableQuantity = Strings.tr("Localizable", "productAvailableQuantity")
   /// Production date
   internal static let productDateOfProduction = Strings.tr("Localizable", "productDateOfProduction")
+  /// Prodcution month
+  internal static let productionMonth = Strings.tr("Localizable", "productionMonth")
+  /// Production year
+  internal static let productionYear = Strings.tr("Localizable", "productionYear")
+  /// Product name
+  internal static let productName = Strings.tr("Localizable", "productName")
   /// Price
   internal static let productPricePerKilo = Strings.tr("Localizable", "productPricePerKilo")
+  /// Register
+  internal static let register = Strings.tr("Localizable", "register")
+  /// Register product
+  internal static let registerProduct = Strings.tr("Localizable", "registerProduct")
   /// September
   internal static let september = Strings.tr("Localizable", "september")
   /// Unknown

@@ -13,6 +13,8 @@
 "kilogram" = "кг";
 "currency" = "РСД";
 "loading" = "Учитавање...";
+"register" = "Додај";
+"cancel" = "Откажи";
 
 // main tab items
 "mainTabItemProducts" = "Производи";
@@ -23,6 +25,14 @@
 "productDateOfProduction" = "Датум производње";
 "productAvailableQuantity" = "Расположива количина";
 "productPricePerKilo" = "Цена";
+
+// create product
+"registerProduct" = "Додај производ";
+"productName" = "Име производа";
+"pricePerKilo" = "Цена за кг";
+"productionYear" = "Година производње";
+"productionMonth" = "Месец производње";
+"availableQuantity" = "Количина";
 
 // error mesasges
 "error" = "Грешка";
