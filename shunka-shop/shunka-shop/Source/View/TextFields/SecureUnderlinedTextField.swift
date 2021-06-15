@@ -20,10 +20,12 @@ struct SecureUnderlinedTextField: View {
                         .font(Font.system(.title3))
                         .frame(minHeight: 30, idealHeight: 30, maxHeight: 30)
                         .opacity(isTextHidden ? 1 : 0)
+                        .disabled(!isTextHidden)
                     TextField(placeholder, text: $text)
                         .font(Font.system(.title3))
                         .frame(minHeight: 30, idealHeight: 30, maxHeight: 30)
                         .opacity(isTextHidden ? 0 : 1)
+                        .disabled(isTextHidden)
                 }
                 Button(action: {
                     self.isTextHidden.toggle()
