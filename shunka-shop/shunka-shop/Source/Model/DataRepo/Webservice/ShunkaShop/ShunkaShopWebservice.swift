@@ -13,9 +13,7 @@ class ShunkaShop: Webservice {
     let encoding: ParameterEncoding = JSONEncoding()
     let decoding: ResponseDecoding = JSONDecoding()
     private (set) var headers: HTTPHeader = [:]
-    
-    private init() {}
-    
+        
     func set(authenticationToken token: String) {
         headers["x-auth-token"] = token
     }

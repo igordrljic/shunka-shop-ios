@@ -15,26 +15,26 @@ struct CreateProductView: View {
             VStack(spacing: 30) {
                 ErrorTextField(placeholder: Strings.productName,
                                text: $viewModel.productName,
-                               error: $viewModel.productNameError)
+                               error: $viewModel.validator.productNameError)
                 ErrorTextField(placeholder: Strings.pricePerKilo,
                                text: $viewModel.pricePerKilo,
-                               error: $viewModel.pricePerKiloError)
+                               error: $viewModel.validator.pricePerKiloError)
                 ErrorTextField(placeholder: Strings.productAvailableQuantity,
                                text: $viewModel.availableQuantity,
-                               error: $viewModel.availableQuantityError)
+                               error: $viewModel.validator.availableQuantityError)
                 ErrorTextField(placeholder: Strings.productionYear,
                                text: $viewModel.productionYear,
-                               error: $viewModel.productionYearError)
+                               error: $viewModel.validator.productionYearError)
                 ErrorTextField(placeholder: Strings.productionMonth,
                                text: $viewModel.productionMonth,
-                               error: $viewModel.productionMonthError)
+                               error: $viewModel.validator.productionMonthError)
             }
             .padding()
             Button(Strings.register) {
                 viewModel.create()
             }
             .buttonStyle(PrimaryButtonStyle())
-            .disabled(!viewModel.isFormValid)
+            .disabled(!viewModel.validator.isFormValid)
             .padding()
         }
     }
