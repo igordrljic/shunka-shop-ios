@@ -9,6 +9,18 @@ import Foundation
 import Combine
 
 extension CreateProductViewModel {
+    
+    enum Field: Int, CaseIterable, Identifiable {
+        case productName
+        case pricePerKilo
+        case availableQuantity
+        case productionYear
+        case productionMonth
+        
+        typealias ID = Int
+        var id: ID { rawValue }
+    }
+    
     struct Output {
         var productName: String
         var pricePerKilo: Float
@@ -16,9 +28,7 @@ extension CreateProductViewModel {
         var productionYear: Int
         var productionMonth: Month
     }
-}
-
-extension CreateProductViewModel {
+    
     private class ValidationResults {
         var productNameValidationResult: ValidationResult<String>? {
             didSet { calculateIsFormValid() }
@@ -73,12 +83,19 @@ class CreateProductViewModel: ObservableObject {
         validationResults.isFormValid
     }
 
+    private (set) var fields: [Field] = [] {
+        didSet {
+            subscribers.removeAll()
+            createFieldValidators()
+        }
+    }
+    
     private var validatorFactory = CreateProductValidatorFactory()
     private var validationResults = ValidationResults()
     private var subscribers = Set<AnyCancellable>()
     
     init() {
-        createFieldValidators()
+        setFieldsOrder()
     }
     
     func create() {
@@ -86,36 +103,53 @@ class CreateProductViewModel: ObservableObject {
         debugPrint("output: \(output)")
     }
 
+    private func setFieldsOrder() {
+        fields = [.productName,
+                  .pricePerKilo,
+                  .availableQuantity,
+                  .productionYear,
+                  .productionMonth]
+    }
+        
     private func createFieldValidators() {
-        validatorFactory.validatorFor(productName: $productName)
-            .sink { result in
-                self.productNameError = result.error?.localizedDescription
-                self.validationResults.productNameValidationResult = result
+        fields.forEach { field in
+            switch field {
+            case .productName:
+                validatorFactory.validatorFor(productName: $productName.eraseToAnyPublisher())
+                    .sink { result in
+                        self.productNameError = result.error?.localizedDescription
+                        self.validationResults.productNameValidationResult = result
+                    }
+                    .store(in: &subscribers)
+            case .pricePerKilo:
+                validatorFactory.validatorFor(pricePerKilo: $pricePerKilo.eraseToAnyPublisher())
+                    .sink { result in
+                        self.pricePerKiloError = result.error?.localizedDescription
+                        self.validationResults.pricePerKiloValidationResult = result
+                    }
+                    .store(in: &subscribers)
+            case .availableQuantity:
+                validatorFactory.validatorFor(availableQuantity: $availableQuantity.eraseToAnyPublisher())
+                    .sink { result in
+                        self.availableQuantityError = result.error?.localizedDescription
+                        self.validationResults.availableQuantityValidationResult = result
+                    }
+                    .store(in: &subscribers)
+            case .productionYear:
+                validatorFactory.validatorFor(productionYear: $productionYear.eraseToAnyPublisher())
+                    .sink { result in
+                        self.productionYearError = result.error?.localizedDescription
+                        self.validationResults.productionYearValidationResult = result
+                    }
+                    .store(in: &subscribers)
+            case .productionMonth:
+                validatorFactory.validatorFor(productionMonth: $productionMonth.eraseToAnyPublisher())
+                    .sink { result in
+                        self.productionMonthError = result.error?.localizedDescription
+                        self.validationResults.productionMonthValidationResult = result
+                    }
+                    .store(in: &subscribers)
             }
-            .store(in: &subscribers)
-        validatorFactory.validatorFor(pricePerKilo: $pricePerKilo)
-            .sink { result in
-                self.pricePerKiloError = result.error?.localizedDescription
-                self.validationResults.pricePerKiloValidationResult = result
-            }
-            .store(in: &subscribers)
-        validatorFactory.validatorFor(availableQuantity: $availableQuantity)
-            .sink { result in
-                self.availableQuantityError = result.error?.localizedDescription
-                self.validationResults.availableQuantityValidationResult = result
-            }
-            .store(in: &subscribers)
-        validatorFactory.validatorFor(productionYear: $productionYear)
-            .sink { result in
-                self.productionYearError = result.error?.localizedDescription
-                self.validationResults.productionYearValidationResult = result
-            }
-            .store(in: &subscribers)
-        validatorFactory.validatorFor(productionMonth: $productionMonth)
-            .sink { result in
-                self.productionMonthError = result.error?.localizedDescription
-                self.validationResults.productionMonthValidationResult = result
-            }
-            .store(in: &subscribers)
+        }
     }
 }

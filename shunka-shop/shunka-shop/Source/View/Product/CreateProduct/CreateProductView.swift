@@ -13,21 +13,9 @@ struct CreateProductView: View {
     var body: some View {
         return ScrollView(.vertical) {
             VStack(spacing: 30) {
-                ErrorTextField(placeholder: Strings.productName,
-                               text: $viewModel.productName,
-                               error: $viewModel.productNameError)
-                ErrorTextField(placeholder: Strings.pricePerKilo,
-                               text: $viewModel.pricePerKilo,
-                               error: $viewModel.pricePerKiloError)
-                ErrorTextField(placeholder: Strings.productAvailableQuantity,
-                               text: $viewModel.availableQuantity,
-                               error: $viewModel.availableQuantityError)
-                ErrorTextField(placeholder: Strings.productionYear,
-                               text: $viewModel.productionYear,
-                               error: $viewModel.productionYearError)
-                ErrorTextField(placeholder: Strings.productionMonth,
-                               text: $viewModel.productionMonth,
-                               error: $viewModel.productionMonthError)
+                ForEach(viewModel.fields, id: \.id) { field in
+                    view(for: field)
+                }
             }
             .padding()
             Button(Strings.register) {
@@ -36,6 +24,41 @@ struct CreateProductView: View {
             .buttonStyle(PrimaryButtonStyle())
             .disabled(!viewModel.isFormValid)
             .padding()
+        }
+    }
+    
+    private func view(for field: CreateProductViewModel.Field) -> AnyView {
+        switch field {
+        case .productName:
+            return AnyView (
+                ErrorTextField(placeholder: Strings.productName,
+                               text: $viewModel.productName,
+                               error: $viewModel.productNameError)
+            )
+        case .pricePerKilo:
+            return AnyView(
+                ErrorTextField(placeholder: Strings.pricePerKilo,
+                               text: $viewModel.pricePerKilo,
+                               error: $viewModel.pricePerKiloError)
+            )
+        case .availableQuantity:
+            return AnyView(
+                ErrorTextField(placeholder: Strings.productAvailableQuantity,
+                               text: $viewModel.availableQuantity,
+                               error: $viewModel.availableQuantityError)
+            )
+        case .productionYear:
+            return AnyView(
+                ErrorTextField(placeholder: Strings.productionYear,
+                               text: $viewModel.productionYear,
+                               error: $viewModel.productionYearError)
+            )
+        case .productionMonth:
+            return AnyView(
+                ErrorTextField(placeholder: Strings.productionMonth,
+                               text: $viewModel.productionMonth,
+                               error: $viewModel.productionMonthError)
+            )
         }
     }
 }

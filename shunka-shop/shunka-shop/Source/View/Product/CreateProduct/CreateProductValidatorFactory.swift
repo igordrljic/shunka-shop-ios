@@ -9,8 +9,7 @@ import Foundation
 import Combine
 
 class CreateProductValidatorFactory {
-        
-    func validatorFor(productName: Published<String>.Publisher) -> AnyPublisher<ValidationResult<String>, Never> {
+    func validatorFor(productName: AnyPublisher<String, Never>) -> AnyPublisher<ValidationResult<String>, Never> {
         productName
             .dropFirst()
             .debounce(for: 0.5, scheduler: RunLoop.main)
@@ -28,7 +27,7 @@ class CreateProductValidatorFactory {
             .eraseToAnyPublisher()
     }
     
-    func validatorFor(pricePerKilo: Published<String>.Publisher) -> AnyPublisher<ValidationResult<Float>, Never> {
+    func validatorFor(pricePerKilo: AnyPublisher<String, Never>) -> AnyPublisher<ValidationResult<Float>, Never> {
         pricePerKilo
             .dropFirst()
             .debounce(for: 0.5, scheduler: RunLoop.main)
@@ -50,7 +49,7 @@ class CreateProductValidatorFactory {
             .eraseToAnyPublisher()
     }
     
-    func validatorFor(availableQuantity: Published<String>.Publisher) -> AnyPublisher<ValidationResult<Float>, Never> {
+    func validatorFor(availableQuantity: AnyPublisher<String, Never>) -> AnyPublisher<ValidationResult<Float>, Never> {
         availableQuantity
             .dropFirst()
             .debounce(for: 0.5, scheduler: RunLoop.main)
@@ -72,7 +71,7 @@ class CreateProductValidatorFactory {
             .eraseToAnyPublisher()
     }
     
-    func validatorFor(productionYear: Published<String>.Publisher) -> AnyPublisher<ValidationResult<Int>, Never> {
+    func validatorFor(productionYear: AnyPublisher<String, Never>) -> AnyPublisher<ValidationResult<Int>, Never> {
         productionYear
             .dropFirst()
             .debounce(for: 0.5, scheduler: RunLoop.main)
@@ -94,7 +93,7 @@ class CreateProductValidatorFactory {
             .eraseToAnyPublisher()
     }
     
-    func validatorFor(productionMonth: Published<String>.Publisher) -> AnyPublisher<ValidationResult<Month>, Never> {
+    func validatorFor(productionMonth: AnyPublisher<String, Never>) -> AnyPublisher<ValidationResult<Month>, Never> {
         productionMonth
             .dropFirst()
             .debounce(for: 0.5, scheduler: RunLoop.main)
