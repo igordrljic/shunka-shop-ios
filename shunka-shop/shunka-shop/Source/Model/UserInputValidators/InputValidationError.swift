@@ -13,6 +13,7 @@ enum InputValidationError: LocalizedError {
     case integerNumberExpected
     case positiveNumberExpected
     case closedInterval(start: Int, end: Int)
+    case mustBeLongerThan(count: Int)
 
     var errorDescription: String? {
         switch self {
@@ -26,6 +27,8 @@ enum InputValidationError: LocalizedError {
             return "Positive number expected"
         case let .closedInterval(start: start, end: end):
             return "Expected value between \(start) and \(end) including these values"
+        case let .mustBeLongerThan(count):
+            return "Input must be longer than \(count) character\(count > 1 ? "s" : "")."
         }
     }
 }
