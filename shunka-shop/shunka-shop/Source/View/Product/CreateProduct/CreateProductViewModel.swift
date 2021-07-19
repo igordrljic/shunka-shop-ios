@@ -18,6 +18,44 @@ extension CreateProductViewModel {
     }
 }
 
+extension CreateProductViewModel {
+    private class ValidationResults {
+        var productNameValidationResult: ValidationResult<String>? {
+            didSet { calculateIsFormValid() }
+        }
+        var pricePerKiloValidationResult: ValidationResult<Float>? {
+            didSet { calculateIsFormValid() }
+        }
+        var availableQuantityValidationResult: ValidationResult<Float>? {
+            didSet { calculateIsFormValid() }
+        }
+        var productionYearValidationResult: ValidationResult<Int>? {
+            didSet { calculateIsFormValid() }
+        }
+        var productionMonthValidationResult: ValidationResult<Month>? {
+            didSet { calculateIsFormValid() }
+        }
+        
+        private (set) var isFormValid: Bool = false
+        
+        func calculateIsFormValid() {
+            isFormValid = productNameValidationResult?.isValid ?? false
+                && pricePerKiloValidationResult?.isValid ?? false
+                && availableQuantityValidationResult?.isValid ?? false
+                && productionYearValidationResult?.isValid ?? false
+                && productionMonthValidationResult?.isValid ?? false
+        }
+        
+        func generateOutput() -> Output {
+            Output(productName: productNameValidationResult!.value!,
+                   pricePerKilo: pricePerKiloValidationResult!.value!,
+                   availableQuantity: availableQuantityValidationResult!.value!,
+                   productionYear: productionYearValidationResult!.value!,
+                   productionMonth: productionMonthValidationResult!.value!)
+        }
+    }
+}
+
 class CreateProductViewModel: ObservableObject {
     @Published var productName: String = ""
     @Published var pricePerKilo: String = ""
@@ -31,40 +69,12 @@ class CreateProductViewModel: ObservableObject {
     @Published var productionYearError: String?
     @Published var productionMonthError: String?
     
-    @Published var isFormValid = false
+    var isFormValid: Bool {
+        validationResults.isFormValid
+    }
 
-    private var productNameValidationResult: ValidationResult<String>? {
-        didSet {
-            productNameError = productNameValidationResult?.error?.localizedDescription
-            calculateIsFormValid()
-        }
-    }
-    private var pricePerKiloValidationResult: ValidationResult<Float>? {
-        didSet {
-            pricePerKiloError = pricePerKiloValidationResult?.error?.localizedDescription
-            calculateIsFormValid()
-        }
-    }
-    private var availableQuantityValidationResult: ValidationResult<Float>? {
-        didSet {
-            availableQuantityError = availableQuantityValidationResult?.error?.localizedDescription
-            calculateIsFormValid()
-        }
-    }
-    private var productionYearValidationResult: ValidationResult<Int>? {
-        didSet {
-            productNameError = productNameValidationResult?.error?.localizedDescription
-            calculateIsFormValid()
-        }
-    }
-    private var productionMonthValidationResult: ValidationResult<Month>? {
-        didSet {
-            productionMonthError = productionMonthValidationResult?.error?.localizedDescription
-            calculateIsFormValid()
-        }
-    }
-    
     private var validatorFactory = CreateProductValidatorFactory()
+    private var validationResults = ValidationResults()
     private var subscribers = Set<AnyCancellable>()
     
     init() {
@@ -72,51 +82,40 @@ class CreateProductViewModel: ObservableObject {
     }
     
     func create() {
-        let output = generateOutput()
+        let output = validationResults.generateOutput()
         debugPrint("output: \(output)")
     }
 
     private func createFieldValidators() {
         validatorFactory.validatorFor(productName: $productName)
             .sink { result in
-                self.productNameValidationResult = result
+                self.productNameError = result.error?.localizedDescription
+                self.validationResults.productNameValidationResult = result
             }
             .store(in: &subscribers)
         validatorFactory.validatorFor(pricePerKilo: $pricePerKilo)
             .sink { result in
-                self.pricePerKiloValidationResult = result
+                self.pricePerKiloError = result.error?.localizedDescription
+                self.validationResults.pricePerKiloValidationResult = result
             }
             .store(in: &subscribers)
         validatorFactory.validatorFor(availableQuantity: $availableQuantity)
             .sink { result in
-                self.availableQuantityValidationResult = result
+                self.availableQuantityError = result.error?.localizedDescription
+                self.validationResults.availableQuantityValidationResult = result
             }
             .store(in: &subscribers)
         validatorFactory.validatorFor(productionYear: $productionYear)
             .sink { result in
-                self.productionYearValidationResult = result
+                self.productionYearError = result.error?.localizedDescription
+                self.validationResults.productionYearValidationResult = result
             }
             .store(in: &subscribers)
         validatorFactory.validatorFor(productionMonth: $productionMonth)
             .sink { result in
-                self.productionMonthValidationResult = result
+                self.productionMonthError = result.error?.localizedDescription
+                self.validationResults.productionMonthValidationResult = result
             }
             .store(in: &subscribers)
-    }
-    
-    private func calculateIsFormValid() {
-        isFormValid = productNameValidationResult?.isValid ?? false
-            && pricePerKiloValidationResult?.isValid ?? false
-            && availableQuantityValidationResult?.isValid ?? false
-            && productionYearValidationResult?.isValid ?? false
-            && productionMonthValidationResult?.isValid ?? false
-    }
-    
-    private func generateOutput() -> Output {
-        Output(productName: productNameValidationResult!.value!,
-               pricePerKilo: pricePerKiloValidationResult!.value!,
-               availableQuantity: availableQuantityValidationResult!.value!,
-               productionYear: productionYearValidationResult!.value!,
-               productionMonth: productionMonthValidationResult!.value!)
     }
 }
