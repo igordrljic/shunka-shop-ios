@@ -11,7 +11,6 @@ struct CreateProductView: View {
     @ObservedObject var viewModel: CreateProductViewModel
     
     var body: some View {
-        debugPrint("*** draw...")
         return ScrollView(.vertical) {
             VStack(spacing: 30) {
                 ErrorTextField(placeholder: Strings.productName,

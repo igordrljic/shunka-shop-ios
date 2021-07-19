@@ -64,14 +64,11 @@ class CreateProductViewModel: ObservableObject {
         }
     }
     
+    private var validatorFactory = CreateProductValidatorFactory()
     private var subscribers = Set<AnyCancellable>()
     
     init() {
-        registerValidatorFor(productName: $productName)
-        registerValidatorFor(pricePerKilo: $pricePerKilo)
-        registerValidatorFor(availableQuantity: $availableQuantity)
-        registerValidatorFor(productionYear: $productionYear)
-        registerValidatorFor(productionMonth: $productionMonth)
+        createFieldValidators()
     }
     
     func create() {
@@ -79,146 +76,47 @@ class CreateProductViewModel: ObservableObject {
         debugPrint("output: \(output)")
     }
 
-    private func generateOutput() -> Output {
-        Output(productName: productNameValidationResult!.value!,
-               pricePerKilo: pricePerKiloValidationResult!.value!,
-               availableQuantity: availableQuantityValidationResult!.value!,
-               productionYear: productionYearValidationResult!.value!,
-               productionMonth: productionMonthValidationResult!.value!)
+    private func createFieldValidators() {
+        validatorFactory.validatorFor(productName: $productName)
+            .sink { result in
+                self.productNameValidationResult = result
+            }
+            .store(in: &subscribers)
+        validatorFactory.validatorFor(pricePerKilo: $pricePerKilo)
+            .sink { result in
+                self.pricePerKiloValidationResult = result
+            }
+            .store(in: &subscribers)
+        validatorFactory.validatorFor(availableQuantity: $availableQuantity)
+            .sink { result in
+                self.availableQuantityValidationResult = result
+            }
+            .store(in: &subscribers)
+        validatorFactory.validatorFor(productionYear: $productionYear)
+            .sink { result in
+                self.productionYearValidationResult = result
+            }
+            .store(in: &subscribers)
+        validatorFactory.validatorFor(productionMonth: $productionMonth)
+            .sink { result in
+                self.productionMonthValidationResult = result
+            }
+            .store(in: &subscribers)
     }
-}
-
-// MARK: - Validation
-
-extension CreateProductViewModel {
     
     private func calculateIsFormValid() {
-        isFormValid =
-            productNameValidationResult?.isValid ?? false
+        isFormValid = productNameValidationResult?.isValid ?? false
             && pricePerKiloValidationResult?.isValid ?? false
             && availableQuantityValidationResult?.isValid ?? false
             && productionYearValidationResult?.isValid ?? false
             && productionMonthValidationResult?.isValid ?? false
     }
     
-    private func registerValidatorFor(productName: Published<String>.Publisher) {
-        productName
-            .dropFirst()
-            .debounce(for: 0.5, scheduler: RunLoop.main)
-            .validate({ (input: String, result: @escaping (ValidationResult<String>) -> Void) in
-                guard !input.isEmpty else {
-                    result(.failure([InputValidationError.mandatoryField]))
-                    return
-                }
-                guard input.count >= 2 else {
-                    result(.failure([InputValidationError.mustBeLongerThan(count: 1)]))
-                    return
-                }
-                result(.success(input))
-            })
-            .sink { result in
-                self.productNameValidationResult = result
-            }
-            .store(in: &subscribers)
-    }
-    
-    private func registerValidatorFor(pricePerKilo: Published<String>.Publisher) {
-        pricePerKilo
-            .dropFirst()
-            .debounce(for: 0.5, scheduler: RunLoop.main)
-            .validate { (input: String, result: @escaping (ValidationResult<Float>) -> Void) in
-                guard !input.isEmpty else {
-                    result(.failure([InputValidationError.mandatoryField]))
-                    return
-                }
-                guard let value = Float(input) else {
-                    result(.failure([InputValidationError.decimalNumberExpected]))
-                    return
-                }
-                guard value >= 0 else {
-                    result(.failure([InputValidationError.positiveNumberExpected]))
-                    return
-                }
-                result(.success(value))
-            }
-            .sink { result in
-                self.pricePerKiloValidationResult = result
-            }
-            .store(in: &subscribers)
-    }
-    
-    private func registerValidatorFor(availableQuantity: Published<String>.Publisher) {
-        availableQuantity
-            .dropFirst()
-            .debounce(for: 0.5, scheduler: RunLoop.main)
-            .validate { (input: String, result: @escaping (ValidationResult<Float>) -> Void) in
-                guard !input.isEmpty else {
-                    result(.failure([InputValidationError.mandatoryField]))
-                    return
-                }
-                guard let value = Float(input) else {
-                    result(.failure([InputValidationError.decimalNumberExpected]))
-                    return
-                }
-                guard value >= 0 else {
-                    result(.failure([InputValidationError.positiveNumberExpected]))
-                    return
-                }
-                result(.success(value))
-            }
-            .sink { result in
-                self.availableQuantityValidationResult = result
-            }
-            .store(in: &subscribers)
-    }
-    
-    private func registerValidatorFor(productionYear: Published<String>.Publisher) {
-        productionYear
-            .dropFirst()
-            .debounce(for: 0.5, scheduler: RunLoop.main)
-            .validate { (input: String, result: @escaping (ValidationResult<Int>) -> Void) in
-                guard !input.isEmpty else {
-                    result(.failure([InputValidationError.mandatoryField]))
-                    return
-                }
-                guard let value = Int(input) else {
-                    result(.failure([InputValidationError.integerNumberExpected]))
-                    return
-                }
-                guard value >= 0 else {
-                    result(.failure([InputValidationError.positiveNumberExpected]))
-                    return
-                }
-                result(.success(value))
-            }
-            .sink { result in
-                self.productionYearValidationResult = result
-            }
-            .store(in: &subscribers)
-    }
-    
-    private func registerValidatorFor(productionMonth: Published<String>.Publisher) {
-        productionMonth
-            .dropFirst()
-            .debounce(for: 0.5, scheduler: RunLoop.main)
-            .validate { (input: String, result: @escaping (ValidationResult<Month>) -> Void) in
-                guard !input.isEmpty else {
-                    result(.failure([InputValidationError.mandatoryField]))
-                    return
-                }
-                guard let value = Int(input) else {
-                    result(.failure([InputValidationError.integerNumberExpected]))
-                    return
-                }
-                guard let month = Month(rawValue: value) else {
-                    result(.failure([InputValidationError.closedInterval(start: 1, end: 12)]))
-                    return
-                }
-                result(.success(month))
-            }
-            .sink { result in
-                self.productionMonthValidationResult = result
-            }
-            .store(in: &subscribers)
+    private func generateOutput() -> Output {
+        Output(productName: productNameValidationResult!.value!,
+               pricePerKilo: pricePerKiloValidationResult!.value!,
+               availableQuantity: availableQuantityValidationResult!.value!,
+               productionYear: productionYearValidationResult!.value!,
+               productionMonth: productionMonthValidationResult!.value!)
     }
 }
