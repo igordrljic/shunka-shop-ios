@@ -31,7 +31,16 @@ extension ValidationResult {
         }
     }
     
-    var error: InputValidationError? {
+    var errors: [InputValidationError]? {
+        switch self {
+        case .success:
+            return nil
+        case let .failure(errors):
+            return errors
+        }
+    }
+    
+    var firstError: InputValidationError? {
         switch self {
         case .success:
             return nil

@@ -9,7 +9,6 @@ import Foundation
 import Combine
 
 extension CreateProductViewModel {
-    
     enum Field: Int, CaseIterable, Identifiable {
         case productName
         case pricePerKilo
@@ -27,42 +26,6 @@ extension CreateProductViewModel {
         var availableQuantity: Float
         var productionYear: Int
         var productionMonth: Month
-    }
-    
-    private class ValidationResults {
-        var productNameValidationResult: ValidationResult<String>? {
-            didSet { calculateIsFormValid() }
-        }
-        var pricePerKiloValidationResult: ValidationResult<Float>? {
-            didSet { calculateIsFormValid() }
-        }
-        var availableQuantityValidationResult: ValidationResult<Float>? {
-            didSet { calculateIsFormValid() }
-        }
-        var productionYearValidationResult: ValidationResult<Int>? {
-            didSet { calculateIsFormValid() }
-        }
-        var productionMonthValidationResult: ValidationResult<Month>? {
-            didSet { calculateIsFormValid() }
-        }
-        
-        private (set) var isFormValid: Bool = false
-        
-        func calculateIsFormValid() {
-            isFormValid = productNameValidationResult?.isValid ?? false
-                && pricePerKiloValidationResult?.isValid ?? false
-                && availableQuantityValidationResult?.isValid ?? false
-                && productionYearValidationResult?.isValid ?? false
-                && productionMonthValidationResult?.isValid ?? false
-        }
-        
-        func generateOutput() -> Output {
-            Output(productName: productNameValidationResult!.value!,
-                   pricePerKilo: pricePerKiloValidationResult!.value!,
-                   availableQuantity: availableQuantityValidationResult!.value!,
-                   productionYear: productionYearValidationResult!.value!,
-                   productionMonth: productionMonthValidationResult!.value!)
-        }
     }
 }
 
@@ -91,7 +54,7 @@ class CreateProductViewModel: ObservableObject {
     }
     
     private var validatorFactory = CreateProductValidatorFactory()
-    private var validationResults = ValidationResults()
+    private var validationResults = FormValidationResults<Field>()
     private var subscribers = Set<AnyCancellable>()
     
     init() {
@@ -99,7 +62,7 @@ class CreateProductViewModel: ObservableObject {
     }
     
     func create() {
-        let output = validationResults.generateOutput()
+        let output = generateOutput()
         debugPrint("output: \(output)")
     }
 
@@ -117,39 +80,47 @@ class CreateProductViewModel: ObservableObject {
             case .productName:
                 validatorFactory.validatorFor(productName: $productName.eraseToAnyPublisher())
                     .sink { result in
-                        self.productNameError = result.error?.localizedDescription
-                        self.validationResults.productNameValidationResult = result
+                        self.productNameError = result.firstError?.localizedDescription
+                        self.validationResults.set(result, for: .productName)
                     }
                     .store(in: &subscribers)
             case .pricePerKilo:
                 validatorFactory.validatorFor(pricePerKilo: $pricePerKilo.eraseToAnyPublisher())
                     .sink { result in
-                        self.pricePerKiloError = result.error?.localizedDescription
-                        self.validationResults.pricePerKiloValidationResult = result
+                        self.pricePerKiloError = result.firstError?.localizedDescription
+                        self.validationResults.set(result, for: .pricePerKilo)
                     }
                     .store(in: &subscribers)
             case .availableQuantity:
                 validatorFactory.validatorFor(availableQuantity: $availableQuantity.eraseToAnyPublisher())
                     .sink { result in
-                        self.availableQuantityError = result.error?.localizedDescription
-                        self.validationResults.availableQuantityValidationResult = result
+                        self.availableQuantityError = result.firstError?.localizedDescription
+                        self.validationResults.set(result, for: .availableQuantity)
                     }
                     .store(in: &subscribers)
             case .productionYear:
                 validatorFactory.validatorFor(productionYear: $productionYear.eraseToAnyPublisher())
                     .sink { result in
-                        self.productionYearError = result.error?.localizedDescription
-                        self.validationResults.productionYearValidationResult = result
+                        self.productionYearError = result.firstError?.localizedDescription
+                        self.validationResults.set(result, for: .productionYear)
                     }
                     .store(in: &subscribers)
             case .productionMonth:
                 validatorFactory.validatorFor(productionMonth: $productionMonth.eraseToAnyPublisher())
                     .sink { result in
-                        self.productionMonthError = result.error?.localizedDescription
-                        self.validationResults.productionMonthValidationResult = result
+                        self.productionMonthError = result.firstError?.localizedDescription
+                        self.validationResults.set(result, for: .productionMonth)
                     }
                     .store(in: &subscribers)
             }
         }
+    }
+    
+    func generateOutput() -> Output {
+        Output(productName: validationResults.getResult(for: .productName)!.value!,
+               pricePerKilo: validationResults.getResult(for: .pricePerKilo)!.value!,
+               availableQuantity: validationResults.getResult(for: .availableQuantity)!.value!,
+               productionYear: validationResults.getResult(for: .productionYear)!.value!,
+               productionMonth: validationResults.getResult(for: .productionMonth)!.value!)
     }
 }

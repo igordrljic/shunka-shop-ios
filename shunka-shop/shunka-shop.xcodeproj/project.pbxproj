@@ -59,6 +59,7 @@
 		A89090362666448900B9A080 /* PresentableError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89090352666448900B9A080 /* PresentableError.swift */; };
 		A890903E26664FE200B9A080 /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A890903D26664FE200B9A080 /* UserSession.swift */; };
 		A8B1732126A60CC900572A37 /* CreateProductValidatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B1732026A60CC900572A37 /* CreateProductValidatorFactory.swift */; };
+		A8B1732326A6AFBF00572A37 /* FormValidationResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B1732226A6AFBF00572A37 /* FormValidationResults.swift */; };
 		A8B248EF2657F07C0041B58C /* shunka_shopApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B248EE2657F07C0041B58C /* shunka_shopApp.swift */; };
 		A8B248F12657F07C0041B58C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B248F02657F07C0041B58C /* ContentView.swift */; };
 		A8B248F32657F07D0041B58C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8B248F22657F07D0041B58C /* Assets.xcassets */; };
@@ -149,6 +150,7 @@
 		A89090352666448900B9A080 /* PresentableError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentableError.swift; sourceTree = "<group>"; };
 		A890903D26664FE200B9A080 /* UserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
 		A8B1732026A60CC900572A37 /* CreateProductValidatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProductValidatorFactory.swift; sourceTree = "<group>"; };
+		A8B1732226A6AFBF00572A37 /* FormValidationResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormValidationResults.swift; sourceTree = "<group>"; };
 		A8B248EB2657F07C0041B58C /* shunka-shop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "shunka-shop.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8B248EE2657F07C0041B58C /* shunka_shopApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shunka_shopApp.swift; sourceTree = "<group>"; };
 		A8B248F02657F07C0041B58C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -265,6 +267,7 @@
 				A860FEC726A19E2E00C5EC0B /* ValidationResult.swift */,
 				A860FEC926A19E4900C5EC0B /* InputValidationPublisher.swift */,
 				A860FECB26A19E7800C5EC0B /* Publisher+InputValidation.swift */,
+				A8B1732226A6AFBF00572A37 /* FormValidationResults.swift */,
 			);
 			path = UserInputValidators;
 			sourceTree = "<group>";
@@ -775,6 +778,7 @@
 				A860FEC626A19DF500C5EC0B /* InputValidationError.swift in Sources */,
 				A8B248F12657F07C0041B58C /* ContentView.swift in Sources */,
 				A87A1A6F265BCDB900BCCCE4 /* Theme.swift in Sources */,
+				A8B1732326A6AFBF00572A37 /* FormValidationResults.swift in Sources */,
 				A87BBF44266A1E4000712DF4 /* ProductListViewModel.swift in Sources */,
 				A88DEDD026726E4600D87F90 /* ShunkaShop+Authentication.swift in Sources */,
 				A82628DF2667C04A00B49A9E /* GetProducts.swift in Sources */,
