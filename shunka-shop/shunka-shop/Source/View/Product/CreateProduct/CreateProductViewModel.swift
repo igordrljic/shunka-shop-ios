@@ -116,7 +116,7 @@ class CreateProductViewModel: ObservableObject {
         }
     }
     
-    func generateOutput() -> Output {
+    private func generateOutput() -> Output {
         Output(productName: validationResults.getResult(for: .productName)!.value!,
                pricePerKilo: validationResults.getResult(for: .pricePerKilo)!.value!,
                availableQuantity: validationResults.getResult(for: .availableQuantity)!.value!,
