@@ -34,7 +34,6 @@ struct HomeView: View {
     
     private var productListView: some View {
         ProductListView(viewModel: productListViewModel)
-            .padding(.vertical)
             .navigationBarTitle(Strings.mainTabItemProducts)
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarItems(
