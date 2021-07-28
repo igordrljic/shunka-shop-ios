@@ -9,21 +9,42 @@ import SwiftUI
 
 struct CreateProductView: View {
     @ObservedObject var viewModel: CreateProductViewModel
+    @Binding var isPresented: Bool
     
     var body: some View {
-        return ScrollView(.vertical) {
-            VStack(spacing: 30) {
-                ForEach(viewModel.fields, id: \.id) { field in
-                    view(for: field)
+        ZStack {
+            ScrollView(.vertical) {
+                VStack(spacing: 30) {
+                    ForEach(viewModel.fields, id: \.id) { field in
+                        view(for: field)
+                    }
+                }
+                .padding()
+                Button(Strings.register) {
+                    viewModel.create()
+                }
+                .buttonStyle(PrimaryButtonStyle())
+                .disabled(!viewModel.isFormValid)
+                .padding()
+            }
+            .alert(item: $viewModel.createProductResult) { result in
+                switch result {
+                case let .success(message):
+                    let button = Alert.Button.default(Text(Strings.ok)) {
+                        self.isPresented = false
+                    }
+                    return Alert(title: Text(""),
+                                 message: Text(message),
+                                 dismissButton: button)
+                case let .failure(error):
+                    return Alert(title: Text(Strings.error),
+                                 message: Text(error.localizedDescription),
+                                 dismissButton: Alert.Button.default(Text(Strings.ok)))
                 }
             }
-            .padding()
-            Button(Strings.register) {
-                viewModel.create()
+            if viewModel.isWorking {
+                ActivityIndicatorView(caption: Strings.loading)
             }
-            .buttonStyle(PrimaryButtonStyle())
-            .disabled(!viewModel.isFormValid)
-            .padding()
         }
     }
     
@@ -63,8 +84,10 @@ struct CreateProductView: View {
     }
 }
 
-struct CreateProductView_Previews: PreviewProvider {
-    static var previews: some View {
-        CreateProductView(viewModel: CreateProductViewModel())
-    }
-}
+//struct CreateProductView_Previews: PreviewProvider {
+//    @State var isPresented: Bool = true
+//    
+//    static var previews: some View {
+//        CreateProductView(viewModel: CreateProductViewModel(), isPresented: $isPresented)
+//    }
+//}

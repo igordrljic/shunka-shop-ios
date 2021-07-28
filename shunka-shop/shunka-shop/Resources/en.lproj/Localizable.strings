@@ -33,6 +33,7 @@
 "productionYear" = "Production year";
 "productionMonth" = "Prodcution month";
 "availableQuantity" = "Available quantity";
+"createProductSuccess" = "Product created successfuly";
 
 // error mesasges
 "error" = "Error";

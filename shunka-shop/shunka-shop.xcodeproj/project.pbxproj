@@ -78,6 +78,7 @@
 		A8EC06BF26661F150047F5A7 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EC06BE26661F150047F5A7 /* Login.swift */; };
 		A8EC06CB2666239D0047F5A7 /* SecureUnderlinedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EC06CA2666239D0047F5A7 /* SecureUnderlinedTextField.swift */; };
 		A8EC06D0266623BD0047F5A7 /* SecureErrorTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EC06CF266623BD0047F5A7 /* SecureErrorTextField.swift */; };
+		A8FA2A6326B16D8C00836000 /* Encodable+ToParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FA2A6226B16D8C00836000 /* Encodable+ToParameters.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -176,6 +177,7 @@
 		A8EC06BE26661F150047F5A7 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		A8EC06CA2666239D0047F5A7 /* SecureUnderlinedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureUnderlinedTextField.swift; sourceTree = "<group>"; };
 		A8EC06CF266623BD0047F5A7 /* SecureErrorTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureErrorTextField.swift; sourceTree = "<group>"; };
+		A8FA2A6226B16D8C00836000 /* Encodable+ToParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+ToParameters.swift"; sourceTree = "<group>"; };
 		AD14A850A89E3FA7449071C3 /* Pods-shunka-shop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shunka-shop.debug.xcconfig"; path = "Target Support Files/Pods-shunka-shop/Pods-shunka-shop.debug.xcconfig"; sourceTree = "<group>"; };
 		EB6826D6787D08A4B9ED17CA /* Pods-shunka-shop.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shunka-shop.staging.xcconfig"; path = "Target Support Files/Pods-shunka-shop/Pods-shunka-shop.staging.xcconfig"; sourceTree = "<group>"; };
 		F959CA8A0BC071227477926F /* Pods_shunka_shop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_shunka_shop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -232,6 +234,7 @@
 				A80C42DA2664108B00935E44 /* URLEncoding.swift */,
 				A80C42DF266410CD00935E44 /* JSONEncoding.swift */,
 				A80C42E92664114A00935E44 /* CharacterSet+Extension.swift */,
+				A8FA2A6226B16D8C00836000 /* Encodable+ToParameters.swift */,
 			);
 			path = ParameterEncoding;
 			sourceTree = "<group>";
@@ -814,6 +817,7 @@
 				A89090362666448900B9A080 /* PresentableError.swift in Sources */,
 				A87A1ACF265BF79800BCCCE4 /* LoginViewModel.swift in Sources */,
 				A80C4302266414A100935E44 /* ShunkaShopWebservice.swift in Sources */,
+				A8FA2A6326B16D8C00836000 /* Encodable+ToParameters.swift in Sources */,
 				A87A1A7D265BCE0300BCCCE4 /* AppConfiguration.swift in Sources */,
 				A80C42D62664103A00935E44 /* ParameterEncoding.swift in Sources */,
 				A890903E26664FE200B9A080 /* UserSession.swift in Sources */,

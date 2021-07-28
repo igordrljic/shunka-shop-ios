@@ -14,4 +14,13 @@ extension ShunkaShop {
                 httpHeader: headers,
                 decoding: decoding)
     }
+    
+    func create(_ product: CreateProductData) throws -> Request {
+        Request(url: baseUrl.appendingPathComponent("product"),
+                httpMethod: .post,
+                httpHeader: headers,
+                parameters: try product.toParameters(),
+                encoding: JSONEncoding(),
+                decoding: JSONDecoding())
+    }
 }

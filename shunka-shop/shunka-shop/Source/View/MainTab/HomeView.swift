@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     @StateObject var productListViewModel = ProductListViewModel()
-    @State var isCreateProductPresented = false
+    @State private var isCreateProductPresented = false
     
     var body: some View {
         TabView {
@@ -51,21 +51,25 @@ struct HomeView: View {
                     .fullScreenCover(
                         isPresented: $isCreateProductPresented,
                         content: {
-                            NavigationView {
-                                CreateProductView(viewModel: CreateProductViewModel())
-                                    .navigationBarTitle(Strings.registerProduct)
-                                    .navigationBarTitleDisplayMode(.inline)
-                                    .navigationBarItems(trailing:
-                                            Button(
-                                                action: { isCreateProductPresented = false },
-                                                label: { Text(Strings.cancel) }
-                                            )
-                                    )
-                            }
+                            createProductView
                         }
                     )
                 }
             )
+    }
+    
+    private var createProductView: some View {
+        NavigationView {
+            CreateProductView(viewModel: CreateProductViewModel(), isPresented: $isCreateProductPresented)
+                .navigationBarTitle(Strings.registerProduct)
+                .navigationBarTitleDisplayMode(.inline)
+                .navigationBarItems(trailing:
+                        Button(
+                            action: { isCreateProductPresented = false },
+                            label: { Text(Strings.cancel) }
+                        )
+                )
+        }
     }
 }
 

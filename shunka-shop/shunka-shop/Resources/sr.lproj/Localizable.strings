@@ -33,6 +33,7 @@
 "productionYear" = "Година производње";
 "productionMonth" = "Месец производње";
 "availableQuantity" = "Количина";
+"createProductSuccess" = "Производ је успешно креиран";
 
 // error mesasges
 "error" = "Грешка";

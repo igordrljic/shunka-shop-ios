@@ -8,6 +8,17 @@
 import Foundation
 import Combine
 
+extension Result: Identifiable {
+    public var id: Int {
+        switch self {
+        case .success:
+            return 1
+        case .failure:
+            return 2
+        }
+    }
+}
+
 extension CreateProductViewModel {
     enum Field: Int, CaseIterable, Identifiable {
         case productName
@@ -18,14 +29,6 @@ extension CreateProductViewModel {
         
         typealias ID = Int
         var id: ID { rawValue }
-    }
-    
-    struct Output {
-        var productName: String
-        var pricePerKilo: Float
-        var availableQuantity: Float
-        var productionYear: Int
-        var productionMonth: Month
     }
 }
 
@@ -42,6 +45,9 @@ class CreateProductViewModel: ObservableObject {
     @Published var productionYearError: String?
     @Published var productionMonthError: String?
     
+    @Published var createProductResult: Result<String, Error>?
+    @Published var isWorking: Bool = false
+    
     var isFormValid: Bool {
         validationResults.isFormValid
     }
@@ -56,14 +62,28 @@ class CreateProductViewModel: ObservableObject {
     private var validatorFactory = CreateProductValidatorFactory()
     private var validationResults = FormValidationResults<Field>()
     private var subscribers = Set<AnyCancellable>()
+    private let productService: ProductService
     
-    init() {
+    init(productService: ProductService = ServiceInjector.shared.product) {
+        self.productService = productService
         setFieldsOrder()
     }
     
     func create() {
-        let output = generateOutput()
-        debugPrint("output: \(output)")
+        guard !isWorking else {
+            return
+        }
+        isWorking = true
+        let createProductData = generateOutput()
+        productService.create(product: createProductData) { result in
+            switch result {
+            case .success:
+                self.createProductResult = .success(Strings.createProductSuccess)
+            case let .failure(error):
+                self.createProductResult = .failure(error)
+            }
+            self.isWorking = false
+        }
     }
 
     private func setFieldsOrder() {
@@ -81,46 +101,46 @@ class CreateProductViewModel: ObservableObject {
                 validatorFactory.validatorFor(productName: $productName.eraseToAnyPublisher())
                     .sink { result in
                         self.productNameError = result.firstError?.localizedDescription
-                        self.validationResults.set(result, for: .productName)
+                        self.validationResults.set(result, for: field)
                     }
                     .store(in: &subscribers)
             case .pricePerKilo:
                 validatorFactory.validatorFor(pricePerKilo: $pricePerKilo.eraseToAnyPublisher())
                     .sink { result in
                         self.pricePerKiloError = result.firstError?.localizedDescription
-                        self.validationResults.set(result, for: .pricePerKilo)
+                        self.validationResults.set(result, for: field)
                     }
                     .store(in: &subscribers)
             case .availableQuantity:
                 validatorFactory.validatorFor(availableQuantity: $availableQuantity.eraseToAnyPublisher())
                     .sink { result in
                         self.availableQuantityError = result.firstError?.localizedDescription
-                        self.validationResults.set(result, for: .availableQuantity)
+                        self.validationResults.set(result, for: field)
                     }
                     .store(in: &subscribers)
             case .productionYear:
                 validatorFactory.validatorFor(productionYear: $productionYear.eraseToAnyPublisher())
                     .sink { result in
                         self.productionYearError = result.firstError?.localizedDescription
-                        self.validationResults.set(result, for: .productionYear)
+                        self.validationResults.set(result, for: field)
                     }
                     .store(in: &subscribers)
             case .productionMonth:
                 validatorFactory.validatorFor(productionMonth: $productionMonth.eraseToAnyPublisher())
                     .sink { result in
                         self.productionMonthError = result.firstError?.localizedDescription
-                        self.validationResults.set(result, for: .productionMonth)
+                        self.validationResults.set(result, for: field)
                     }
                     .store(in: &subscribers)
             }
         }
     }
     
-    private func generateOutput() -> Output {
-        Output(productName: validationResults.getResult(for: .productName)!.value!,
-               pricePerKilo: validationResults.getResult(for: .pricePerKilo)!.value!,
-               availableQuantity: validationResults.getResult(for: .availableQuantity)!.value!,
-               productionYear: validationResults.getResult(for: .productionYear)!.value!,
-               productionMonth: validationResults.getResult(for: .productionMonth)!.value!)
+    private func generateOutput() -> CreateProductData {
+        CreateProductData(name: validationResults.getResult(for: .productName)!.value!,
+                          pricePerKilo: validationResults.getResult(for: .pricePerKilo)!.value!,
+                          productionYear: validationResults.getResult(for: .productionYear)!.value!,
+                          productionMonth: validationResults.getResult(for: .productionMonth)!.value!,
+                          availableQuantity: validationResults.getResult(for: .availableQuantity)!.value!)
     }
 }
