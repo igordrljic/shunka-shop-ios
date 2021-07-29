@@ -8,8 +8,14 @@
 import Foundation
 
 class AuthenticationWebservice: AuthenticationService {
+    private let webservice: ShunkaShop
+    
+    init(webservice: ShunkaShop = ShunkaShop.shared) {
+        self.webservice = webservice
+    }
+    
     func login(username: String, password: String, completion: @escaping (Result<LoginResponse, Error>) -> Void) {
-        let request = ShunkaShop.shared.login(username: username, password: password)
-        Network.shared.run(request, completion: completion)
+        let request = webservice.login(username: username, password: password)
+        webservice.run(request, completion: completion)
     }
 }

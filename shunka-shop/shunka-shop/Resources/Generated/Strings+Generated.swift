@@ -18,6 +18,8 @@ internal enum Strings {
   internal static let availableQuantity = Strings.tr("Localizable", "availableQuantity")
   /// Cancel
   internal static let cancel = Strings.tr("Localizable", "cancel")
+  /// Product name is alredy taken. Choose some other name.
+  internal static let createProductNameTaken = Strings.tr("Localizable", "createProductNameTaken")
   /// Product created successfuly
   internal static let createProductSuccess = Strings.tr("Localizable", "createProductSuccess")
   /// RSD

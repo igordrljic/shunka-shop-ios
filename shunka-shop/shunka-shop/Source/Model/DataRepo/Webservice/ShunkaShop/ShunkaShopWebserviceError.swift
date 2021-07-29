@@ -37,6 +37,8 @@ struct ShunkaShopWebserviceError: LocalizedError, Decodable {
         switch code {
         case .invalidUsernameOrPassword:
             return Strings.invalidUsernameOrPassword
+        case .productNameNotUnique:
+            return Strings.createProductNameTaken
         default:
             return Strings.generalError
         }

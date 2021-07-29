@@ -35,6 +35,9 @@
 "availableQuantity" = "Количина";
 "createProductSuccess" = "Производ је успешно креиран";
 
+// create product error messages
+"createProductNameTaken" = "Име производа је заузето. Изаберите друго име.";
+
 // error mesasges
 "error" = "Грешка";
 "validateMustNotBeEmpty" = "Поље не може бити празно";

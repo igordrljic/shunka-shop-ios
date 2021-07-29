@@ -98,12 +98,7 @@ class LoginViewModel: ObservableObject {
             case .success:
                 self.error = nil
             case let .failure(error):
-                if case let WebserviceError.wrappedData(data) = error,
-                   let shunkaShopError = ShunkaShopWebserviceError(data: data) {
-                    self.error = PresentableError(message: shunkaShopError.localizedDescription)
-                } else {
-                    self.error = PresentableError(message: WebserviceError.general.localizedDescription)
-                }
+                self.error = PresentableError(message: error.localizedDescription)
             }
             self.isWorking = false
         }

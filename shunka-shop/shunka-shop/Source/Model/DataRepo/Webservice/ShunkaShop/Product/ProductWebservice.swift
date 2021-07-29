@@ -8,14 +8,20 @@
 import Foundation
 
 class ProductWebservice: ProductService {
+    private let webservice: ShunkaShop
+
+    init(webservice: ShunkaShop = ShunkaShop.shared) {
+        self.webservice = webservice
+    }
+    
     func getProducts(completion: @escaping (Result<[Product], Error>) -> Void) {
-        Network.shared.run(ShunkaShop.shared.products, completion: completion)
+        webservice.run(webservice.products, completion: completion)
     }
     
     func create(product: CreateProductData, completion: @escaping (Result<Void, Error>) -> Void) {
         do {
-            let request = try ShunkaShop.shared.create(product)
-            Network.shared.run(request, completion: completion)
+            let request = try webservice.create(product)
+            webservice.run(request, completion: completion)
         } catch let error {
             completion(.failure(error))
         }

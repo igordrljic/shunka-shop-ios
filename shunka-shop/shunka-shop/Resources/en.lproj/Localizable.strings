@@ -35,6 +35,9 @@
 "availableQuantity" = "Available quantity";
 "createProductSuccess" = "Product created successfuly";
 
+// create product error messages
+"createProductNameTaken" = "Product name is alredy taken. Choose some other name.";
+
 // error mesasges
 "error" = "Error";
 "validateMustNotBeEmpty" = "Field can't be empty";

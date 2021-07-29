@@ -43,13 +43,8 @@ class ProductListViewModel: ObservableObject {
             switch result {
             case .success:
                 self.error = nil
-            case let .failure(err):
-                if case let WebserviceError.wrappedData(data) = err,
-                   let error = ShunkaShopWebserviceError(data: data) {
-                    self.error = PresentableError(message: error.localizedDescription)
-                } else {
-                    self.error = PresentableError(message: WebserviceError.general.localizedDescription)
-                }
+            case let .failure(error):
+                self.error = PresentableError(message: error.localizedDescription)
             }
         }
     }
