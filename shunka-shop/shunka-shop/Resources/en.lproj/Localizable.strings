@@ -23,6 +23,7 @@
 // product
 "noProducts" = "No products";
 "productDateOfProduction" = "Production date";
+"productProducedQuantity" = "Produced quantity";
 "productAvailableQuantity" = "Available quantity";
 "productPricePerKilo" = "Price";
 
@@ -32,7 +33,8 @@
 "pricePerKilo" = "Price per kg";
 "productionYear" = "Production year";
 "productionMonth" = "Prodcution month";
-"availableQuantity" = "Available quantity";
+"producedQuantity" = "Produced quantity";
+"availableQuantity" = "Available quantity (optional)";
 "createProductSuccess" = "Product created successfuly";
 
 // create product error messages

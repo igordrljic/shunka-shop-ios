@@ -49,6 +49,28 @@ class CreateProductValidatorFactory {
             .eraseToAnyPublisher()
     }
     
+    func validatorFor(producedQuantity: AnyPublisher<String, Never>) -> AnyPublisher<ValidationResult<Float>, Never> {
+        producedQuantity
+            .dropFirst()
+            .debounce(for: 0.5, scheduler: RunLoop.main)
+            .validate { (input: String, result: @escaping (ValidationResult<Float>) -> Void) in
+                guard !input.isEmpty else {
+                    result(.failure([InputValidationError.mandatoryField]))
+                    return
+                }
+                guard let value = Float(input) else {
+                    result(.failure([InputValidationError.decimalNumberExpected]))
+                    return
+                }
+                guard value >= 0 else {
+                    result(.failure([InputValidationError.positiveNumberExpected]))
+                    return
+                }
+                result(.success(value))
+            }
+            .eraseToAnyPublisher()
+    }
+    
     func validatorFor(availableQuantity: AnyPublisher<String, Never>) -> AnyPublisher<ValidationResult<Float>, Never> {
         availableQuantity
             .dropFirst()

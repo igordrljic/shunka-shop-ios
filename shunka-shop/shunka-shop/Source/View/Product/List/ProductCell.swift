@@ -19,6 +19,7 @@ struct ProductCell: View {
             Group {
                 Text(product.productionDateCaption)
                 Text(product.priceCaption)
+                Text(product.producedQuantityCaption)
                 Text(product.availableQuantityCaption)
             }
             .font(.footnote)
@@ -36,7 +37,7 @@ struct ProductCell_Previews: PreviewProvider {
 
 private extension Product {
     var priceCaption: String {
-        "\(Strings.productPricePerKilo): \(pricePerKilo)\(Strings.currency)/\(Strings.kilogram)"
+        "\(Strings.productPricePerKilo): \(pricePerKilo) \(Strings.currency)/\(Strings.kilogram)"
     }
     var productionDateCaption: String {
         if let month = Month(rawValue: productionMonth)?.name {
@@ -45,8 +46,11 @@ private extension Product {
             return "\(Strings.productDateOfProduction): \(productionYear)"
         }
     }
+    var producedQuantityCaption: String {
+        "\(Strings.productProducedQuantity): \(producedQuantity) \(Strings.kilogram)"
+    }
     var availableQuantityCaption: String {
-        "\(Strings.productAvailableQuantity): \(availableQuantity)\(Strings.kilogram)"
+        "\(Strings.productAvailableQuantity): \(availableQuantity) \(Strings.kilogram)"
     }
 }
 
@@ -55,4 +59,5 @@ private var product = Product(id: "1",
                               pricePerKilo: 1300,
                               productionYear: 2021,
                               productionMonth: 3,
-                              availableQuantity: 25.5)
+                              producedQuantity: 25.5,
+                              availableQuantity: 20.7)

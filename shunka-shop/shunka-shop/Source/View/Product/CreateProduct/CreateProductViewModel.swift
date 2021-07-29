@@ -23,9 +23,10 @@ extension CreateProductViewModel {
     enum Field: Int, CaseIterable, Identifiable {
         case productName
         case pricePerKilo
-        case availableQuantity
+        case producedQuantity
         case productionYear
         case productionMonth
+        case availableQuantity
         
         typealias ID = Int
         var id: ID { rawValue }
@@ -35,12 +36,14 @@ extension CreateProductViewModel {
 class CreateProductViewModel: ObservableObject {
     @Published var productName: String = ""
     @Published var pricePerKilo: String = ""
+    @Published var producedQuantity: String = ""
     @Published var availableQuantity: String = ""
     @Published var productionYear: String = ""
     @Published var productionMonth: String = ""
         
     @Published var productNameError: String?
     @Published var pricePerKiloError: String?
+    @Published var producedQuantityError: String?
     @Published var availableQuantityError: String?
     @Published var productionYearError: String?
     @Published var productionMonthError: String?
@@ -89,6 +92,7 @@ class CreateProductViewModel: ObservableObject {
     private func setFieldsOrder() {
         fields = [.productName,
                   .pricePerKilo,
+                  .producedQuantity,
                   .availableQuantity,
                   .productionYear,
                   .productionMonth]
@@ -108,6 +112,13 @@ class CreateProductViewModel: ObservableObject {
                 validatorFactory.validatorFor(pricePerKilo: $pricePerKilo.eraseToAnyPublisher())
                     .sink { result in
                         self.pricePerKiloError = result.firstError?.localizedDescription
+                        self.validationResults.set(result, for: field)
+                    }
+                    .store(in: &subscribers)
+            case .producedQuantity:
+                validatorFactory.validatorFor(producedQuantity: $producedQuantity.eraseToAnyPublisher())
+                    .sink { result in
+                        self.producedQuantityError = result.firstError?.localizedDescription
                         self.validationResults.set(result, for: field)
                     }
                     .store(in: &subscribers)
@@ -141,6 +152,7 @@ class CreateProductViewModel: ObservableObject {
                           pricePerKilo: validationResults.getResult(for: .pricePerKilo)!.value!,
                           productionYear: validationResults.getResult(for: .productionYear)!.value!,
                           productionMonth: validationResults.getResult(for: .productionMonth)!.value!,
-                          availableQuantity: validationResults.getResult(for: .availableQuantity)!.value!)
+                          producedQuantity: validationResults.getResult(for: .producedQuantity)!.value!,
+                          availableQuantity: validationResults.getResult(for: .availableQuantity)?.value)
     }
 }

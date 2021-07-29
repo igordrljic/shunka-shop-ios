@@ -23,7 +23,8 @@
 // product
 "noProducts" = "Нема производа";
 "productDateOfProduction" = "Датум производње";
-"productAvailableQuantity" = "Расположива количина";
+"productProducedQuantity" = "Произведена количина";
+"productAvailableQuantity" = "Available quantity";
 "productPricePerKilo" = "Цена";
 
 // create product
@@ -32,7 +33,8 @@
 "pricePerKilo" = "Цена за кг";
 "productionYear" = "Година производње";
 "productionMonth" = "Месец производње";
-"availableQuantity" = "Количина";
+"producedQuantity" = "Произведена количина";
+"availableQuantity" = "Available quantity (optional)";
 "createProductSuccess" = "Производ је успешно креиран";
 
 // create product error messages

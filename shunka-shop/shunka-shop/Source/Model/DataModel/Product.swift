@@ -13,9 +13,10 @@ struct Product: Identifiable, Codable {
     let pricePerKilo: Int
     let productionYear: Int
     let productionMonth: Int
-    let availableQuantity: Double
+    let producedQuantity: Float
+    let availableQuantity: Float
     
     enum CodingKeys: String, CodingKey {
-        case id = "_id", name, pricePerKilo, productionYear, productionMonth, availableQuantity
+        case id = "_id", name, pricePerKilo, productionYear, productionMonth, producedQuantity, availableQuantity
     }
 }

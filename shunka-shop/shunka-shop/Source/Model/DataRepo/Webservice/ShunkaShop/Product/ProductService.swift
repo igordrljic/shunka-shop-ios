@@ -12,7 +12,8 @@ struct CreateProductData: Encodable {
     let pricePerKilo: Float
     let productionYear: Int
     let productionMonth: Month
-    let availableQuantity: Float
+    let producedQuantity: Float
+    let availableQuantity: Float?
 }
 
 protocol ProductService {

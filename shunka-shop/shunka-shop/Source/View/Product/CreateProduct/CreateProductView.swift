@@ -62,9 +62,15 @@ struct CreateProductView: View {
                                text: $viewModel.pricePerKilo,
                                error: $viewModel.pricePerKiloError)
             )
+        case .producedQuantity:
+            return AnyView(
+                ErrorTextField(placeholder: Strings.productProducedQuantity,
+                               text: $viewModel.producedQuantity,
+                               error: $viewModel.producedQuantityError)
+            )
         case .availableQuantity:
             return AnyView(
-                ErrorTextField(placeholder: Strings.productAvailableQuantity,
+                ErrorTextField(placeholder: Strings.availableQuantity,
                                text: $viewModel.availableQuantity,
                                error: $viewModel.availableQuantityError)
             )
