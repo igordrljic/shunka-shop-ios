@@ -10,10 +10,18 @@ import Combine
 
 class Network {
     static let shared = Network()
-    let urlSession: URLSession = URLSession.shared
-    let requestRetryCount: Int = 1
-    let completionQueue: DispatchQueue = .main
-    private (set) var subscribers = [Request: AnyCancellable]()
+    private let urlSession: URLSession
+    private let requestRetryCount: Int
+    private let completionQueue: DispatchQueue
+    private var subscribers = [Request: AnyCancellable]()
+    
+    init(urlSession: URLSession = URLSession.shared,
+         requestRetryCount: Int = 1,
+         completionQueue: DispatchQueue = .main) {
+        self.urlSession = urlSession
+        self.requestRetryCount = requestRetryCount
+        self.completionQueue = completionQueue
+    }
     
     func run<ResultType: Decodable>(_ request: Request, completion: @escaping (Result<ResultType, Error>) -> Void) {
         do {
@@ -61,6 +69,14 @@ class Network {
         } catch {
             completion(.failure(error))
         }
+    }
+    
+    func cancel(_ request: Request) {
+        guard let cancelable = subscribers[request] else {
+            return
+        }
+        subscribers.removeValue(forKey: request)
+        cancelable.cancel()
     }
     
     private func map(_ request: Request) throws -> URLRequest {
