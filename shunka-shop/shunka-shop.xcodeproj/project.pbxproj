@@ -92,6 +92,7 @@
 		A8FA2A8426B413B000836000 /* CreateProductData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FA2A8326B413B000836000 /* CreateProductData.swift */; };
 		A8FA2A8E26B42B8A00836000 /* AmountFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FA2A8D26B42B8A00836000 /* AmountFormatter.swift */; };
 		A8FA2A9026B42BB100836000 /* Date+Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FA2A8F26B42BB100836000 /* Date+Presentable.swift */; };
+		A8FA2A9226B42EEB00836000 /* Locale+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FA2A9126B42EEB00836000 /* Locale+Default.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -204,6 +205,7 @@
 		A8FA2A8326B413B000836000 /* CreateProductData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProductData.swift; sourceTree = "<group>"; };
 		A8FA2A8D26B42B8A00836000 /* AmountFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountFormatter.swift; sourceTree = "<group>"; };
 		A8FA2A8F26B42BB100836000 /* Date+Presentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Presentable.swift"; sourceTree = "<group>"; };
+		A8FA2A9126B42EEB00836000 /* Locale+Default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Locale+Default.swift"; sourceTree = "<group>"; };
 		AD14A850A89E3FA7449071C3 /* Pods-shunka-shop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shunka-shop.debug.xcconfig"; path = "Target Support Files/Pods-shunka-shop/Pods-shunka-shop.debug.xcconfig"; sourceTree = "<group>"; };
 		EB6826D6787D08A4B9ED17CA /* Pods-shunka-shop.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shunka-shop.staging.xcconfig"; path = "Target Support Files/Pods-shunka-shop/Pods-shunka-shop.staging.xcconfig"; sourceTree = "<group>"; };
 		F959CA8A0BC071227477926F /* Pods_shunka_shop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_shunka_shop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -678,6 +680,7 @@
 			children = (
 				A8FA2A8D26B42B8A00836000 /* AmountFormatter.swift */,
 				A8FA2A8F26B42BB100836000 /* Date+Presentable.swift */,
+				A8FA2A9126B42EEB00836000 /* Locale+Default.swift */,
 			);
 			path = PresentableFormatters;
 			sourceTree = "<group>";
@@ -909,6 +912,7 @@
 				A860FEC626A19DF500C5EC0B /* InputValidationError.swift in Sources */,
 				A8B248F12657F07C0041B58C /* ContentView.swift in Sources */,
 				A87A1A6F265BCDB900BCCCE4 /* Theme.swift in Sources */,
+				A8FA2A9226B42EEB00836000 /* Locale+Default.swift in Sources */,
 				A8B1732326A6AFBF00572A37 /* FormValidationResults.swift in Sources */,
 				A87BBF44266A1E4000712DF4 /* ProductListViewModel.swift in Sources */,
 				A88DEDD026726E4600D87F90 /* ShunkaShop+Authentication.swift in Sources */,

@@ -12,7 +12,7 @@ class AmountFormatter {
     
     private let numberFormatter: NumberFormatter
     
-    init(locale: Locale = Locale(identifier: "sr_Latn_RS")) {
+    init(locale: Locale = Locale.appDefault) {
         self.numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .currency
         numberFormatter.locale = locale

@@ -11,7 +11,7 @@ extension Date {
     private static let presentableDateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.timeZone = TimeZone(identifier: "UTC")
-        dateFormatter.locale = Locale(identifier: "sr_Latn_RS")
+        dateFormatter.locale = Locale.appDefault
         dateFormatter.setLocalizedDateFormatFromTemplate("EEEE dd MMMM yyyy")
         return dateFormatter
     }()
