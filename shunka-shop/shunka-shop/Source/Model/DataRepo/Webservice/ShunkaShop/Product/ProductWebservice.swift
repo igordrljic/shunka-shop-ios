@@ -15,7 +15,7 @@ class ProductWebservice: ProductService {
     }
     
     func getProducts(completion: @escaping (Result<[Product], Error>) -> Void) {
-        webservice.run(webservice.products, completion: completion)
+        webservice.run(webservice.products(), completion: completion)
     }
     
     func create(product: CreateProductData, completion: @escaping (Result<Void, Error>) -> Void) {

@@ -1,31 +1,31 @@
 //
-//  GetProducts.swift
+//  GetOrders.swift
 //  shunka-shop
 //
-//  Created by Igor Drljic on 02/06/2021.
+//  Created by Igor Drljic on 30.7.21..
 //
 
 import Foundation
 import Combine
 
-class GetProducts: UseCase {
+class GetOrders: UseCase {
     typealias InputType = Void
     typealias OutputType = Void
     
-    private var productService: ProductService
-    private var productStorage: ProductStorage
+    private let orderService: OrderService
+    private let orderStorage: OrderStorage
     
-    init(productService: ProductService = ServiceInjector.shared.product,
-         productStorage: ProductStorage = DataStorageInjector.shared.product) {
-        self.productService = productService
-        self.productStorage = productStorage
+    init(orderService: OrderService = ServiceInjector.shared.order,
+         orderStorage: OrderStorage = DataStorageInjector.shared.order) {
+        self.orderService = orderService
+        self.orderStorage = orderStorage
     }
     
     func execute(input: Void = (), completion: @escaping (Result<Void, Error>) -> Void = { _ in }) {
-        productService.getProducts(completion: { result in
+        orderService.getOrders { result in
             switch result {
-            case let .success(products):
-                self.productStorage.set(products: products) { result in
+            case let .success(orders):
+                self.orderStorage.set(orders) { result in
                     switch result {
                     case .success:
                         completion(.success(Void()))
@@ -36,6 +36,6 @@ class GetProducts: UseCase {
             case let .failure(error):
                 completion(.failure(error))
             }
-        })
+        }
     }
 }

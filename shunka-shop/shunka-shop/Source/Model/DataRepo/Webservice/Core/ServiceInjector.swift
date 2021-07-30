@@ -17,4 +17,8 @@ class ServiceInjector {
     var product: ProductService {
         ProductWebservice()
     }
+    
+    var order: OrderService {
+        OrderWebservice()
+    }
 }

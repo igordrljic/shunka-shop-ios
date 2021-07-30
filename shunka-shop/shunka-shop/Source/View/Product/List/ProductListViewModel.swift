@@ -12,16 +12,21 @@ class ProductListViewModel: ObservableObject {
     @Published var products: [Product] = []
     @Published var isWorking = false
     @Published var error: PresentableError? = nil
+    
     private var isLoaded = false
-    private let getProductsUseCase = GetProducts()
-    private let productStorage = DataStorageInjector.shared.productStorage
+    private let getProductsUseCase: GetProducts
+    private let productStorage: ProductStorage
     private lazy var productStream: AnyCancellable = {
         productStorage.storageUpdatePublisher.sink { products in
             self.products = products
         }
     }()
     
-    init() {
+    init(productService: ProductService = ServiceInjector.shared.product,
+         productStorage: ProductStorage = DataStorageInjector.shared.product) {
+        self.productStorage = productStorage
+        self.getProductsUseCase = GetProducts(productService: productService,
+                                              productStorage: productStorage)
         _ = productStream
     }
     

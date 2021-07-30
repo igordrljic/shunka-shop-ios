@@ -11,7 +11,11 @@ class DataStorageInjector {
     static let shared = DataStorageInjector()
     private init() {}
     
-    var productStorage: ProductStorage {
+    var product: ProductStorage {
         ProductCache.shared
+    }
+    
+    var order: OrderStorage {
+        OrderCache.shared
     }
 }

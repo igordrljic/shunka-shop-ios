@@ -8,7 +8,7 @@
 import Foundation
 
 extension ShunkaShop {
-    var products: Request {
+    func products() -> Request {
         Request(url: baseUrl.appendingPathComponent("product"),
                 httpMethod: .get,
                 httpHeader: headers,
@@ -20,7 +20,7 @@ extension ShunkaShop {
                 httpMethod: .post,
                 httpHeader: headers,
                 parameters: try product.toParameters(),
-                encoding: JSONEncoding(),
-                decoding: JSONDecoding())
+                encoding: encoding,
+                decoding: decoding)
     }
 }

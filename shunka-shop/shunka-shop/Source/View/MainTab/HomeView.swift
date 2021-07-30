@@ -9,12 +9,13 @@ import SwiftUI
 
 struct HomeView: View {
     @StateObject var productListViewModel = ProductListViewModel()
+    @StateObject var orderListViewModel = OrderListViewModel()
     @State private var isCreateProductPresented = false
     
     var body: some View {
         TabView {
             NavigationView {
-                OrdersListView()
+                OrdersListView(viewModel: orderListViewModel)
                     .navigationBarTitle(Strings.mainTabItemOrders)
                     .navigationBarTitleDisplayMode(.inline)
             }

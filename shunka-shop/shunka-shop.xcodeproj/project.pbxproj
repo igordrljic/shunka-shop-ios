@@ -79,6 +79,14 @@
 		A8EC06CB2666239D0047F5A7 /* SecureUnderlinedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EC06CA2666239D0047F5A7 /* SecureUnderlinedTextField.swift */; };
 		A8EC06D0266623BD0047F5A7 /* SecureErrorTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EC06CF266623BD0047F5A7 /* SecureErrorTextField.swift */; };
 		A8FA2A6326B16D8C00836000 /* Encodable+ToParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FA2A6226B16D8C00836000 /* Encodable+ToParameters.swift */; };
+		A8FA2A6526B2D60700836000 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FA2A6426B2D60700836000 /* Order.swift */; };
+		A8FA2A6926B3C8EC00836000 /* OrderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FA2A6826B3C8EC00836000 /* OrderService.swift */; };
+		A8FA2A6D26B3E69B00836000 /* OrderWebservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FA2A6C26B3E69B00836000 /* OrderWebservice.swift */; };
+		A8FA2A6F26B3E6B000836000 /* ShunkaShop+Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FA2A6E26B3E6B000836000 /* ShunkaShop+Order.swift */; };
+		A8FA2A7226B3E9A900836000 /* OrderListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FA2A7126B3E9A900836000 /* OrderListViewModel.swift */; };
+		A8FA2A7426B3ECCF00836000 /* GetOrders.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FA2A7326B3ECCF00836000 /* GetOrders.swift */; };
+		A8FA2A7726B3EE2200836000 /* OrderStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FA2A7626B3EE2200836000 /* OrderStorage.swift */; };
+		A8FA2A7926B3EF4300836000 /* OrderCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FA2A7826B3EF4300836000 /* OrderCache.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -178,6 +186,14 @@
 		A8EC06CA2666239D0047F5A7 /* SecureUnderlinedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureUnderlinedTextField.swift; sourceTree = "<group>"; };
 		A8EC06CF266623BD0047F5A7 /* SecureErrorTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureErrorTextField.swift; sourceTree = "<group>"; };
 		A8FA2A6226B16D8C00836000 /* Encodable+ToParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+ToParameters.swift"; sourceTree = "<group>"; };
+		A8FA2A6426B2D60700836000 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		A8FA2A6826B3C8EC00836000 /* OrderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderService.swift; sourceTree = "<group>"; };
+		A8FA2A6C26B3E69B00836000 /* OrderWebservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderWebservice.swift; sourceTree = "<group>"; };
+		A8FA2A6E26B3E6B000836000 /* ShunkaShop+Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShunkaShop+Order.swift"; sourceTree = "<group>"; };
+		A8FA2A7126B3E9A900836000 /* OrderListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListViewModel.swift; sourceTree = "<group>"; };
+		A8FA2A7326B3ECCF00836000 /* GetOrders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetOrders.swift; sourceTree = "<group>"; };
+		A8FA2A7626B3EE2200836000 /* OrderStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStorage.swift; sourceTree = "<group>"; };
+		A8FA2A7826B3EF4300836000 /* OrderCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCache.swift; sourceTree = "<group>"; };
 		AD14A850A89E3FA7449071C3 /* Pods-shunka-shop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shunka-shop.debug.xcconfig"; path = "Target Support Files/Pods-shunka-shop/Pods-shunka-shop.debug.xcconfig"; sourceTree = "<group>"; };
 		EB6826D6787D08A4B9ED17CA /* Pods-shunka-shop.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shunka-shop.staging.xcconfig"; path = "Target Support Files/Pods-shunka-shop/Pods-shunka-shop.staging.xcconfig"; sourceTree = "<group>"; };
 		F959CA8A0BC071227477926F /* Pods_shunka_shop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_shunka_shop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -256,6 +272,7 @@
 				A80C430A266414F700935E44 /* ShunkaShopWebserviceError.swift */,
 				A8EC06AD26661EBC0047F5A7 /* Authentication */,
 				A82628EF2667C24C00B49A9E /* Product */,
+				A8FA2A6726B3C8D400836000 /* Order */,
 			);
 			path = ShunkaShop;
 			sourceTree = "<group>";
@@ -299,6 +316,7 @@
 				A890903D26664FE200B9A080 /* UserSession.swift */,
 				A82628C526679E3000B49A9E /* Product.swift */,
 				A82628CD2667A7A400B49A9E /* Month.swift */,
+				A8FA2A6426B2D60700836000 /* Order.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -508,7 +526,7 @@
 				A8EC06C9266623870047F5A7 /* TextFields */,
 				A87A1AB6265BF6CF00BCCCE4 /* Login */,
 				A82628D22667A7D000B49A9E /* Product */,
-				A82628BF26679D7C00B49A9E /* OrdersListView.swift */,
+				A8FA2A6A26B3C9D400836000 /* Order */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -538,6 +556,7 @@
 			children = (
 				A87BBF75266A559300712DF4 /* DataStorageInjector.swift */,
 				A87BBF7D266A55AD00712DF4 /* Product */,
+				A8FA2A7526B3EE0900836000 /* OrderStorage */,
 			);
 			path = DataStorage;
 			sourceTree = "<group>";
@@ -559,6 +578,7 @@
 				A8EC06B926661F020047F5A7 /* UseCase.swift */,
 				A8EC06BE26661F150047F5A7 /* Login.swift */,
 				A82628DE2667C04A00B49A9E /* GetProducts.swift */,
+				A8FA2A7326B3ECCF00836000 /* GetOrders.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -572,6 +592,42 @@
 				A8EC06CF266623BD0047F5A7 /* SecureErrorTextField.swift */,
 			);
 			path = TextFields;
+			sourceTree = "<group>";
+		};
+		A8FA2A6726B3C8D400836000 /* Order */ = {
+			isa = PBXGroup;
+			children = (
+				A8FA2A6E26B3E6B000836000 /* ShunkaShop+Order.swift */,
+				A8FA2A6826B3C8EC00836000 /* OrderService.swift */,
+				A8FA2A6C26B3E69B00836000 /* OrderWebservice.swift */,
+			);
+			path = Order;
+			sourceTree = "<group>";
+		};
+		A8FA2A6A26B3C9D400836000 /* Order */ = {
+			isa = PBXGroup;
+			children = (
+				A8FA2A6B26B3C9E900836000 /* List */,
+			);
+			path = Order;
+			sourceTree = "<group>";
+		};
+		A8FA2A6B26B3C9E900836000 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				A8FA2A7126B3E9A900836000 /* OrderListViewModel.swift */,
+				A82628BF26679D7C00B49A9E /* OrdersListView.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		A8FA2A7526B3EE0900836000 /* OrderStorage */ = {
+			isa = PBXGroup;
+			children = (
+				A8FA2A7626B3EE2200836000 /* OrderStorage.swift */,
+				A8FA2A7826B3EF4300836000 /* OrderCache.swift */,
+			);
+			path = OrderStorage;
 			sourceTree = "<group>";
 		};
 		CA4BC4751C873130EC4748C3 /* Frameworks */ = {
@@ -771,6 +827,7 @@
 				A88DEDC426726BC100D87F90 /* ResponseDecoding.swift in Sources */,
 				A82628C026679D7C00B49A9E /* OrdersListView.swift in Sources */,
 				A820A0DF265CF8CF00767D6C /* PasswordError.swift in Sources */,
+				A8FA2A6526B2D60700836000 /* Order.swift in Sources */,
 				A82628BB26679D5800B49A9E /* ProductListView.swift in Sources */,
 				A80C42E0266410CD00935E44 /* JSONEncoding.swift in Sources */,
 				A88DEDD826726E6D00D87F90 /* LoginResponse.swift in Sources */,
@@ -789,6 +846,7 @@
 				A80C42C326640FA400935E44 /* Network.swift in Sources */,
 				A80C430B266414F700935E44 /* ShunkaShopWebserviceError.swift in Sources */,
 				A820A0D0265CF88400767D6C /* InputValidator.swift in Sources */,
+				A8FA2A7926B3EF4300836000 /* OrderCache.swift in Sources */,
 				A80C42EA2664114A00935E44 /* CharacterSet+Extension.swift in Sources */,
 				A80C42B926640F9200935E44 /* Webservice.swift in Sources */,
 				A87A1A77265BCDD700BCCCE4 /* DefaultTheme.swift in Sources */,
@@ -799,17 +857,20 @@
 				A82628C626679E3000B49A9E /* Product.swift in Sources */,
 				A8BAB2BF2678BB2A00F4AD00 /* CreateProductView.swift in Sources */,
 				A820A0DA265CF8BB00767D6C /* UsernameError.swift in Sources */,
+				A8FA2A7226B3E9A900836000 /* OrderListViewModel.swift in Sources */,
 				A8EC06B426661EDE0047F5A7 /* AuthenticationWebservice.swift in Sources */,
 				A8EC06942664F9190047F5A7 /* AppConfigError.swift in Sources */,
 				A812D8862678E9C5005BA99D /* CreateProductViewModel.swift in Sources */,
 				A87A1A86265BCE5400BCCCE4 /* PrimaryButtonStyle.swift in Sources */,
 				A860FECA26A19E4900C5EC0B /* InputValidationPublisher.swift in Sources */,
+				A8FA2A6926B3C8EC00836000 /* OrderService.swift in Sources */,
 				A8EC06BF26661F150047F5A7 /* Login.swift in Sources */,
 				A88DEDC926726BD500D87F90 /* JSONDecoding.swift in Sources */,
 				A87A1A54265B969F00BCCCE4 /* Strings+Generated.swift in Sources */,
 				A820A0CB265CF87000767D6C /* UsernameValidator.swift in Sources */,
 				A82628F62667C26500B49A9E /* ProductWebservice.swift in Sources */,
 				A87BBF87266A55CA00712DF4 /* ProductCache.swift in Sources */,
+				A8FA2A7726B3EE2200836000 /* OrderStorage.swift in Sources */,
 				A80C42DB2664108B00935E44 /* URLEncoding.swift in Sources */,
 				A87BBF76266A559300712DF4 /* DataStorageInjector.swift in Sources */,
 				A82628F12667C25500B49A9E /* ProductService.swift in Sources */,
@@ -821,13 +882,16 @@
 				A87A1A7D265BCE0300BCCCE4 /* AppConfiguration.swift in Sources */,
 				A80C42D62664103A00935E44 /* ParameterEncoding.swift in Sources */,
 				A890903E26664FE200B9A080 /* UserSession.swift in Sources */,
+				A8FA2A7426B3ECCF00836000 /* GetOrders.swift in Sources */,
 				A80C42BE26640F9A00935E44 /* Request.swift in Sources */,
 				A82628CE2667A7A400B49A9E /* Month.swift in Sources */,
+				A8FA2A6D26B3E69B00836000 /* OrderWebservice.swift in Sources */,
 				A8EC06BA26661F020047F5A7 /* UseCase.swift in Sources */,
 				A8EC06AF26661EC60047F5A7 /* AuthenticationService.swift in Sources */,
 				A8B248EF2657F07C0041B58C /* shunka_shopApp.swift in Sources */,
 				A8B1732126A60CC900572A37 /* CreateProductValidatorFactory.swift in Sources */,
 				A8EC06CB2666239D0047F5A7 /* SecureUnderlinedTextField.swift in Sources */,
+				A8FA2A6F26B3E6B000836000 /* ShunkaShop+Order.swift in Sources */,
 				A80C42CD2664101700935E44 /* HTTPMethod.swift in Sources */,
 				A82628D42667A7DE00B49A9E /* ProductCell.swift in Sources */,
 				A87A1AAA265BD86300BCCCE4 /* UnderlinedTextField.swift in Sources */,

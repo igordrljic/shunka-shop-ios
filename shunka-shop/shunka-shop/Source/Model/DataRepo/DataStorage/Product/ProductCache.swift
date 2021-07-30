@@ -11,16 +11,13 @@ import Combine
 class ProductCache: ProductStorage {
     static let shared = ProductCache()
     
-    private var products: [Product] = []
-    
     private (set) lazy var storageUpdatePublisher = {
-        CurrentValueSubject<[Product], Never>(self.products)
+        CurrentValueSubject<[Product], Never>([Product]())
     }()
     
     func set(products: [Product], completion: (Result<Void, Error>) -> Void) {
-        self.products = products
         storageUpdatePublisher.send(products)
-        completion(.success(()))
+        completion(.success(Void()))
     }
     
     private init() {}
