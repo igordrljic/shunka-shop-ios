@@ -89,6 +89,7 @@
 		A8FA2A7926B3EF4300836000 /* OrderCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FA2A7826B3EF4300836000 /* OrderCache.swift */; };
 		A8FA2A7B26B412C400836000 /* OrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FA2A7A26B412C400836000 /* OrderCell.swift */; };
 		A8FA2A7D26B412DF00836000 /* OrderItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FA2A7C26B412DF00836000 /* OrderItemCell.swift */; };
+		A8FA2A8426B413B000836000 /* CreateProductData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FA2A8326B413B000836000 /* CreateProductData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -198,6 +199,7 @@
 		A8FA2A7826B3EF4300836000 /* OrderCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCache.swift; sourceTree = "<group>"; };
 		A8FA2A7A26B412C400836000 /* OrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCell.swift; sourceTree = "<group>"; };
 		A8FA2A7C26B412DF00836000 /* OrderItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderItemCell.swift; sourceTree = "<group>"; };
+		A8FA2A8326B413B000836000 /* CreateProductData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProductData.swift; sourceTree = "<group>"; };
 		AD14A850A89E3FA7449071C3 /* Pods-shunka-shop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shunka-shop.debug.xcconfig"; path = "Target Support Files/Pods-shunka-shop/Pods-shunka-shop.debug.xcconfig"; sourceTree = "<group>"; };
 		EB6826D6787D08A4B9ED17CA /* Pods-shunka-shop.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shunka-shop.staging.xcconfig"; path = "Target Support Files/Pods-shunka-shop/Pods-shunka-shop.staging.xcconfig"; sourceTree = "<group>"; };
 		F959CA8A0BC071227477926F /* Pods_shunka_shop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_shunka_shop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -229,15 +231,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A80C42A926640F3700935E44 /* DataRepo */ = {
-			isa = PBXGroup;
-			children = (
-				A8EC06A426661BEE0047F5A7 /* DataStorage */,
-				A80C42AB26640F5500935E44 /* Webservice */,
-			);
-			path = DataRepo;
-			sourceTree = "<group>";
-		};
 		A80C42AB26640F5500935E44 /* Webservice */ = {
 			isa = PBXGroup;
 			children = (
@@ -317,6 +310,7 @@
 		A82628C426679E2100B49A9E /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
+				A820A0C9265CF85800767D6C /* Errors */,
 				A890903D26664FE200B9A080 /* UserSession.swift */,
 				A82628C526679E3000B49A9E /* Product.swift */,
 				A82628CD2667A7A400B49A9E /* Month.swift */,
@@ -337,9 +331,8 @@
 		A82628EF2667C24C00B49A9E /* Product */ = {
 			isa = PBXGroup;
 			children = (
+				A8FA2A8226B4139800836000 /* RequestModel */,
 				A88DEDDD26726EAA00D87F90 /* ShunkaShop+Product.swift */,
-				A82628F02667C25500B49A9E /* ProductService.swift */,
-				A82628F52667C26500B49A9E /* ProductWebservice.swift */,
 			);
 			path = Product;
 			sourceTree = "<group>";
@@ -409,7 +402,6 @@
 		A88DEDCD26726D3B00D87F90 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				A8EC06A826661EA40047F5A7 /* ServiceInjector.swift */,
 				A80C42B826640F9200935E44 /* Webservice.swift */,
 				A80C42C726640FBC00935E44 /* WebserviceError.swift */,
 				A80C42D42664102D00935E44 /* ParameterEncoding */,
@@ -418,12 +410,12 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
-		A88DEDDC26726E7F00D87F90 /* Response */ = {
+		A88DEDDC26726E7F00D87F90 /* ResponseModel */ = {
 			isa = PBXGroup;
 			children = (
 				A88DEDD726726E6D00D87F90 /* LoginResponse.swift */,
 			);
-			path = Response;
+			path = ResponseModel;
 			sourceTree = "<group>";
 		};
 		A8B248E22657F07C0041B58C = {
@@ -511,11 +503,12 @@
 		A8B2491E2657F4B70041B58C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A8EC06B826661EF70047F5A7 /* UseCase */,
+				A8FA2A7E26B4133B00836000 /* Services */,
 				A82628C426679E2100B49A9E /* DataModel */,
-				A80C42A926640F3700935E44 /* DataRepo */,
+				A8EC06B826661EF70047F5A7 /* UseCase */,
+				A8EC06A426661BEE0047F5A7 /* DataStorage */,
+				A80C42AB26640F5500935E44 /* Webservice */,
 				A80C43002664146B00935E44 /* Networking */,
-				A820A0C9265CF85800767D6C /* Errors */,
 				A820A0C8265CF84C00767D6C /* UserInputValidators */,
 			);
 			path = Model;
@@ -568,10 +561,8 @@
 		A8EC06AD26661EBC0047F5A7 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
-				A88DEDDC26726E7F00D87F90 /* Response */,
+				A88DEDDC26726E7F00D87F90 /* ResponseModel */,
 				A88DEDCF26726E4600D87F90 /* ShunkaShop+Authentication.swift */,
-				A8EC06AE26661EC60047F5A7 /* AuthenticationService.swift */,
-				A8EC06B326661EDE0047F5A7 /* AuthenticationWebservice.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -602,8 +593,6 @@
 			isa = PBXGroup;
 			children = (
 				A8FA2A6E26B3E6B000836000 /* ShunkaShop+Order.swift */,
-				A8FA2A6826B3C8EC00836000 /* OrderService.swift */,
-				A8FA2A6C26B3E69B00836000 /* OrderWebservice.swift */,
 			);
 			path = Order;
 			sourceTree = "<group>";
@@ -634,6 +623,52 @@
 				A8FA2A7826B3EF4300836000 /* OrderCache.swift */,
 			);
 			path = OrderStorage;
+			sourceTree = "<group>";
+		};
+		A8FA2A7E26B4133B00836000 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A8EC06A826661EA40047F5A7 /* ServiceInjector.swift */,
+				A8FA2A8126B4136F00836000 /* Authentication */,
+				A8FA2A8026B4135B00836000 /* Product */,
+				A8FA2A7F26B4135400836000 /* Order */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		A8FA2A7F26B4135400836000 /* Order */ = {
+			isa = PBXGroup;
+			children = (
+				A8FA2A6826B3C8EC00836000 /* OrderService.swift */,
+				A8FA2A6C26B3E69B00836000 /* OrderWebservice.swift */,
+			);
+			path = Order;
+			sourceTree = "<group>";
+		};
+		A8FA2A8026B4135B00836000 /* Product */ = {
+			isa = PBXGroup;
+			children = (
+				A82628F02667C25500B49A9E /* ProductService.swift */,
+				A82628F52667C26500B49A9E /* ProductWebservice.swift */,
+			);
+			path = Product;
+			sourceTree = "<group>";
+		};
+		A8FA2A8126B4136F00836000 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				A8EC06AE26661EC60047F5A7 /* AuthenticationService.swift */,
+				A8EC06B326661EDE0047F5A7 /* AuthenticationWebservice.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		A8FA2A8226B4139800836000 /* RequestModel */ = {
+			isa = PBXGroup;
+			children = (
+				A8FA2A8326B413B000836000 /* CreateProductData.swift */,
+			);
+			path = RequestModel;
 			sourceTree = "<group>";
 		};
 		CA4BC4751C873130EC4748C3 /* Frameworks */ = {
@@ -867,6 +902,7 @@
 				A8EC06B426661EDE0047F5A7 /* AuthenticationWebservice.swift in Sources */,
 				A8EC06942664F9190047F5A7 /* AppConfigError.swift in Sources */,
 				A8FA2A7B26B412C400836000 /* OrderCell.swift in Sources */,
+				A8FA2A8426B413B000836000 /* CreateProductData.swift in Sources */,
 				A812D8862678E9C5005BA99D /* CreateProductViewModel.swift in Sources */,
 				A87A1A86265BCE5400BCCCE4 /* PrimaryButtonStyle.swift in Sources */,
 				A860FECA26A19E4900C5EC0B /* InputValidationPublisher.swift in Sources */,
