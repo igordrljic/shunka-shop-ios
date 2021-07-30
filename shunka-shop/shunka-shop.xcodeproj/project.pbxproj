@@ -87,6 +87,8 @@
 		A8FA2A7426B3ECCF00836000 /* GetOrders.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FA2A7326B3ECCF00836000 /* GetOrders.swift */; };
 		A8FA2A7726B3EE2200836000 /* OrderStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FA2A7626B3EE2200836000 /* OrderStorage.swift */; };
 		A8FA2A7926B3EF4300836000 /* OrderCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FA2A7826B3EF4300836000 /* OrderCache.swift */; };
+		A8FA2A7B26B412C400836000 /* OrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FA2A7A26B412C400836000 /* OrderCell.swift */; };
+		A8FA2A7D26B412DF00836000 /* OrderItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FA2A7C26B412DF00836000 /* OrderItemCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -194,6 +196,8 @@
 		A8FA2A7326B3ECCF00836000 /* GetOrders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetOrders.swift; sourceTree = "<group>"; };
 		A8FA2A7626B3EE2200836000 /* OrderStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStorage.swift; sourceTree = "<group>"; };
 		A8FA2A7826B3EF4300836000 /* OrderCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCache.swift; sourceTree = "<group>"; };
+		A8FA2A7A26B412C400836000 /* OrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCell.swift; sourceTree = "<group>"; };
+		A8FA2A7C26B412DF00836000 /* OrderItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderItemCell.swift; sourceTree = "<group>"; };
 		AD14A850A89E3FA7449071C3 /* Pods-shunka-shop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shunka-shop.debug.xcconfig"; path = "Target Support Files/Pods-shunka-shop/Pods-shunka-shop.debug.xcconfig"; sourceTree = "<group>"; };
 		EB6826D6787D08A4B9ED17CA /* Pods-shunka-shop.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shunka-shop.staging.xcconfig"; path = "Target Support Files/Pods-shunka-shop/Pods-shunka-shop.staging.xcconfig"; sourceTree = "<group>"; };
 		F959CA8A0BC071227477926F /* Pods_shunka_shop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_shunka_shop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -617,6 +621,8 @@
 			children = (
 				A8FA2A7126B3E9A900836000 /* OrderListViewModel.swift */,
 				A82628BF26679D7C00B49A9E /* OrdersListView.swift */,
+				A8FA2A7A26B412C400836000 /* OrderCell.swift */,
+				A8FA2A7C26B412DF00836000 /* OrderItemCell.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -860,6 +866,7 @@
 				A8FA2A7226B3E9A900836000 /* OrderListViewModel.swift in Sources */,
 				A8EC06B426661EDE0047F5A7 /* AuthenticationWebservice.swift in Sources */,
 				A8EC06942664F9190047F5A7 /* AppConfigError.swift in Sources */,
+				A8FA2A7B26B412C400836000 /* OrderCell.swift in Sources */,
 				A812D8862678E9C5005BA99D /* CreateProductViewModel.swift in Sources */,
 				A87A1A86265BCE5400BCCCE4 /* PrimaryButtonStyle.swift in Sources */,
 				A860FECA26A19E4900C5EC0B /* InputValidationPublisher.swift in Sources */,
@@ -887,6 +894,7 @@
 				A82628CE2667A7A400B49A9E /* Month.swift in Sources */,
 				A8FA2A6D26B3E69B00836000 /* OrderWebservice.swift in Sources */,
 				A8EC06BA26661F020047F5A7 /* UseCase.swift in Sources */,
+				A8FA2A7D26B412DF00836000 /* OrderItemCell.swift in Sources */,
 				A8EC06AF26661EC60047F5A7 /* AuthenticationService.swift in Sources */,
 				A8B248EF2657F07C0041B58C /* shunka_shopApp.swift in Sources */,
 				A8B1732126A60CC900572A37 /* CreateProductValidatorFactory.swift in Sources */,
