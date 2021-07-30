@@ -11,19 +11,30 @@ struct ProductCell: View {
     let product: Product
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 4) {
+        VStack(alignment: .leading, spacing: 8) {
             Text(product.name)
                 .font(.body)
                 .foregroundColor(.primaryText)
                 .padding(.bottom, 4)
-            Group {
-                Text(product.productionDateCaption)
-                Text(product.priceCaption)
-                Text(product.producedQuantityCaption)
-                Text(product.availableQuantityCaption)
+            VStack(alignment: .leading, spacing: 4) {
+                HStack(alignment: .center, spacing: 4) {
+                    Text(Strings.productDateOfProduction + ":").foregroundColor(.secondaryText)
+                    Text(product.productionDateCaption).foregroundColor(.primaryText)
+                }
+                HStack(alignment: .center, spacing: 4) {
+                    Text(Strings.productPricePerKilo + ":").foregroundColor(.secondaryText)
+                    Text(product.priceCaption).foregroundColor(.primaryText)
+                }
+                HStack(alignment: .center, spacing: 4) {
+                    Text(Strings.productProducedQuantity + ":").foregroundColor(.secondaryText)
+                    Text(product.producedQuantityCaption).foregroundColor(.primaryText)
+                }
+                HStack(alignment: .center, spacing: 4) {
+                    Text(Strings.productAvailableQuantity + ":").foregroundColor(.secondaryText)
+                    Text(product.availableQuantityCaption).foregroundColor(.primaryText)
+                }
             }
             .font(.footnote)
-            .foregroundColor(.secondaryText)
         }
         .padding(.vertical)
     }
@@ -37,20 +48,20 @@ struct ProductCell_Previews: PreviewProvider {
 
 private extension Product {
     var priceCaption: String {
-        "\(Strings.productPricePerKilo): \(pricePerKilo) \(Strings.currency)/\(Strings.kilogram)"
+        "\(pricePerKilo) \(Strings.currency)/\(Strings.kilogram)"
     }
     var productionDateCaption: String {
         if let month = Month(rawValue: productionMonth)?.name {
-            return "\(Strings.productDateOfProduction): \(month) \(productionYear)"
+            return "\(month) \(productionYear)"
         } else {
-            return "\(Strings.productDateOfProduction): \(productionYear)"
+            return "\(productionYear)"
         }
     }
     var producedQuantityCaption: String {
-        "\(Strings.productProducedQuantity): \(producedQuantity) \(Strings.kilogram)"
+        "\(producedQuantity) \(Strings.kilogram)"
     }
     var availableQuantityCaption: String {
-        "\(Strings.productAvailableQuantity): \(availableQuantity) \(Strings.kilogram)"
+        "\(availableQuantity) \(Strings.kilogram)"
     }
 }
 

@@ -17,8 +17,6 @@ class AmountFormatter {
         numberFormatter.numberStyle = .currency
         numberFormatter.locale = locale
         numberFormatter.currencySymbol = locale.currencySymbol
-        
-        debugPrint(Locale.availableIdentifiers)
     }
         
     func format(_ amount: Int) -> String {

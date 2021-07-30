@@ -11,8 +11,22 @@ struct OrdersListView: View {
     @ObservedObject var viewModel: OrderListViewModel
     
     var body: some View {
-        List(viewModel.orders) { order in
-            OrderCell(order: order)
+        ZStack {
+            if viewModel.orders.isEmpty {
+                Text(Strings.noActiveOrders)
+            } else {
+                List(viewModel.orders) { order in
+                    OrderCell(order: order)
+                }
+                .alert(item: $viewModel.error) { error in
+                    Alert(title: Text(error.title),
+                          message: Text(error.message),
+                          dismissButton: Alert.Button.cancel(Text(Strings.ok)))
+                }
+            }
+            if viewModel.isWorking {
+                ActivityIndicatorView(caption: Strings.loading)
+            }
         }
         .onAppear { viewModel.load() }
     }

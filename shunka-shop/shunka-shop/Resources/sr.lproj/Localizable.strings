@@ -20,6 +20,11 @@
 "mainTabItemProducts" = "Производи";
 "mainTabItemOrders" = "Поруџбине";
 
+// order list
+"noActiveOrders" = "Нема активних поруџбина";
+"orderedOn" = "Поручено";
+"total" = "Цена";
+
 // product
 "noProducts" = "Нема производа";
 "productDateOfProduction" = "Датум производње";

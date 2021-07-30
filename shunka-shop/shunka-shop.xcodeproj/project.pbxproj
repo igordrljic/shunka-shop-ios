@@ -305,12 +305,12 @@
 			path = Errors;
 			sourceTree = "<group>";
 		};
-		A82628AB26679A8E00B49A9E /* MainTab */ = {
+		A82628AB26679A8E00B49A9E /* Home */ = {
 			isa = PBXGroup;
 			children = (
 				A82628AC26679AA200B49A9E /* HomeView.swift */,
 			);
-			path = MainTab;
+			path = Home;
 			sourceTree = "<group>";
 		};
 		A82628C426679E2100B49A9E /* DataModel */ = {
@@ -688,6 +688,7 @@
 		A8FA2A8B26B42B3300836000 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				A82628AB26679A8E00B49A9E /* Home */,
 				A87A1AB6265BF6CF00BCCCE4 /* Login */,
 				A8FA2A6A26B3C9D400836000 /* Order */,
 				A82628D22667A7D000B49A9E /* Product */,
@@ -699,7 +700,6 @@
 			isa = PBXGroup;
 			children = (
 				A8EC06C9266623870047F5A7 /* TextFields */,
-				A82628AB26679A8E00B49A9E /* MainTab */,
 			);
 			path = Components;
 			sourceTree = "<group>";

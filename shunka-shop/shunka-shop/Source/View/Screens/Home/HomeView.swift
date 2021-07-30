@@ -15,22 +15,33 @@ struct HomeView: View {
     var body: some View {
         TabView {
             NavigationView {
-                OrdersListView(viewModel: orderListViewModel)
-                    .navigationBarTitle(Strings.mainTabItemOrders)
-                    .navigationBarTitleDisplayMode(.inline)
+                orderListView
             }
             .tabItem {
-                Label(Strings.mainTabItemOrders,
-                      systemImage: "shippingbox")
+                Label(Strings.mainTabItemOrders, systemImage: "shippingbox")
             }
             NavigationView {
                 productListView
             }
             .tabItem {
-                Label(Strings.mainTabItemProducts,
-                      systemImage: "bag")
+                Label(Strings.mainTabItemProducts, systemImage: "bag")
             }
         }
+    }
+    
+    private var orderListView: some View {
+        OrdersListView(viewModel: orderListViewModel)
+            .navigationBarTitle(Strings.mainTabItemOrders)
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarItems(
+                trailing:
+                HStack(spacing: 16) {
+                    Button(
+                        action: { orderListViewModel.reload() },
+                        label: { Image(systemName: "arrow.counterclockwise") }
+                    )
+                }
+            )
     }
     
     private var productListView: some View {

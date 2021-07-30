@@ -20,6 +20,11 @@
 "mainTabItemProducts" = "Products";
 "mainTabItemOrders" = "Orders";
 
+// order list
+"noActiveOrders" = "No active orders";
+"orderedOn" = "Ordered on";
+"total" = "Total";
+
 // product
 "noProducts" = "No products";
 "productDateOfProduction" = "Production date";
