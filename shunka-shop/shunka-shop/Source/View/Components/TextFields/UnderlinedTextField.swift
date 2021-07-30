@@ -14,7 +14,7 @@ struct UnderlinedTextField: View {
     var body: some View {
         VStack(spacing: 4) {
             TextField(placeholder, text: $text)
-                .font(Font.system(.title3))
+                .font(Font.system(.body))
                 .frame(minHeight: 30, idealHeight: 30, maxHeight: 30)
             Rectangle()
                 .frame(height: 1)

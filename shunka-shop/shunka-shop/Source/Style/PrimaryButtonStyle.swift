@@ -24,7 +24,7 @@ private extension PrimaryButtonStyle {
             configuration.label
                 .padding()
                 .frame(maxWidth: .infinity)
-                .font(Font.system(.title3))
+                .font(Font.system(.body))
                 .background(isEnabled ? Color.primary : Color.disabled)
                 .foregroundColor(Color.action)
                 .opacity(configuration.isPressed ? 0.6 : 1)
