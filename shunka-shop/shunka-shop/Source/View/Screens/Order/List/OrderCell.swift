@@ -17,13 +17,8 @@ struct OrderCell: View {
                 .foregroundColor(.primaryText)
                 .padding(.bottom, 4)
             Group {
-                Text("\(order.createdAt)")
-                Text("\(order.total)")
-                VStack(alignment: .leading, spacing: 1) {
-                    ForEach(order.products) { orderItem in
-                        OrderItemCell(orderItem: orderItem)
-                    }
-                }
+                Text(order.createdAt.presentable)
+                Text(AmountFormatter.shared.format(order.total))
             }
             .font(.footnote)
             .foregroundColor(.secondaryText)

@@ -7,18 +7,21 @@
 
 import Foundation
 
-class JSONDecoding: ResponseDecoding {
-    private let jsonDecoder: JSONDecoder
-    private static let defaultDateFormatter: DateFormatter = {
+private extension Date {
+    static let defaultDateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.timeZone = TimeZone(identifier: "UTC")
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SZ"
         return dateFormatter
     }()
+}
+
+class JSONDecoding: ResponseDecoding {
+    private let jsonDecoder: JSONDecoder
     
     init(jsonDecoder: JSONDecoder = JSONDecoder()) {
         self.jsonDecoder = jsonDecoder
-        jsonDecoder.dateDecodingStrategy = .formatted(JSONDecoding.defaultDateFormatter)
+        jsonDecoder.dateDecodingStrategy = .formatted(Date.defaultDateFormatter)
     }
     
     func decode<ResultType: Decodable>(_ data: Data) throws -> ResultType {

@@ -18,7 +18,9 @@ class OrderListViewModel: ObservableObject {
     private var isLoaded = false
     private lazy var orderStream: AnyCancellable = {
         orderStorage.storageUpdatePublisher.sink { orders in
-            self.orders = orders
+            self.orders = orders.sorted(by: { o1, o2 in
+                o1.createdAt < o2.createdAt
+            })
         }
     }()
     
