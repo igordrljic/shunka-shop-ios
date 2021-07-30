@@ -41,6 +41,7 @@ struct LoginView: View {
                 ActivityIndicatorView(caption: Strings.loggingIn)
             }
         }
+        .padding(.horizontal)
     }
 }
 
