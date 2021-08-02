@@ -16,9 +16,9 @@ struct ActivityIndicatorView: View {
                 .opacity(0.5)
                 .edgesIgnoringSafeArea(.all)
             ProgressView(caption)
-                .foregroundColor(Color.primary)
+                .foregroundColor(Color.themePrimary)
                 .progressViewStyle(
-                    CircularProgressViewStyle(tint: Color.primary)
+                    CircularProgressViewStyle(tint: Color.themePrimary)
                 )
                 .padding()
                 .background(

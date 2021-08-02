@@ -17,7 +17,7 @@ struct SecureErrorTextField: View {
             SecureUnderlinedTextField(placeholder: placeholder, text: $text)
             if let error = error, !error.isEmpty {
                 Text(error)
-                    .foregroundColor(.error)
+                    .foregroundColor(.themeError)
                     .font(Font.system(.footnote))
             }
         }

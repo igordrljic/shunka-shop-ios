@@ -18,7 +18,7 @@ struct UnderlinedTextField: View {
                 .frame(minHeight: 30, idealHeight: 30, maxHeight: 30)
             Rectangle()
                 .frame(height: 1)
-                .foregroundColor(.primary)
+                .foregroundColor(.themePrimary)
                 .padding(.top, 4)
         }
     }

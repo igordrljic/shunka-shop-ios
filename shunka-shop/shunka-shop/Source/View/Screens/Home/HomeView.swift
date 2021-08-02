@@ -11,6 +11,7 @@ struct HomeView: View {
     @StateObject var productListViewModel = ProductListViewModel()
     @StateObject var orderListViewModel = OrderListViewModel()
     @State private var isCreateProductPresented = false
+    @State private var isCreateOrderPresented = false
     
     var body: some View {
         TabView {
@@ -42,6 +43,20 @@ struct HomeView: View {
                     )
                 }
             )
+    }
+    
+    private var createOrderView: some View {
+        NavigationView {
+            CreateOrderView(isPresented: $isCreateOrderPresented)
+                .navigationBarTitle(Strings.registerProduct)
+                .navigationBarTitleDisplayMode(.inline)
+                .navigationBarItems(trailing:
+                        Button(
+                            action: { isCreateOrderPresented = false },
+                            label: { Text(Strings.cancel) }
+                        )
+                )
+        }
     }
     
     private var productListView: some View {

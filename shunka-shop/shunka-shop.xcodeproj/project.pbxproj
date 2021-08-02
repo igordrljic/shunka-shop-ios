@@ -93,6 +93,11 @@
 		A8FA2A8E26B42B8A00836000 /* AmountFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FA2A8D26B42B8A00836000 /* AmountFormatter.swift */; };
 		A8FA2A9026B42BB100836000 /* Date+Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FA2A8F26B42BB100836000 /* Date+Presentable.swift */; };
 		A8FA2A9226B42EEB00836000 /* Locale+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FA2A9126B42EEB00836000 /* Locale+Default.swift */; };
+		A8FA2A9726B7D37B00836000 /* CreateOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FA2A9626B7D37B00836000 /* CreateOrderView.swift */; };
+		A8FA2A9A26B7FC2500836000 /* SingleSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FA2A9926B7FC2500836000 /* SingleSelectView.swift */; };
+		A8FA2A9C26B7FC5000836000 /* SingleSelectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FA2A9B26B7FC5000836000 /* SingleSelectViewModel.swift */; };
+		A8FA2A9E26B7FC7600836000 /* SingleSelectItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FA2A9D26B7FC7600836000 /* SingleSelectItemView.swift */; };
+		A8FA2AA126B7FCA600836000 /* SelectViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FA2AA026B7FCA600836000 /* SelectViewItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -206,6 +211,11 @@
 		A8FA2A8D26B42B8A00836000 /* AmountFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountFormatter.swift; sourceTree = "<group>"; };
 		A8FA2A8F26B42BB100836000 /* Date+Presentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Presentable.swift"; sourceTree = "<group>"; };
 		A8FA2A9126B42EEB00836000 /* Locale+Default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Locale+Default.swift"; sourceTree = "<group>"; };
+		A8FA2A9626B7D37B00836000 /* CreateOrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateOrderView.swift; sourceTree = "<group>"; };
+		A8FA2A9926B7FC2500836000 /* SingleSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleSelectView.swift; sourceTree = "<group>"; };
+		A8FA2A9B26B7FC5000836000 /* SingleSelectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleSelectViewModel.swift; sourceTree = "<group>"; };
+		A8FA2A9D26B7FC7600836000 /* SingleSelectItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleSelectItemView.swift; sourceTree = "<group>"; };
+		A8FA2AA026B7FCA600836000 /* SelectViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectViewItem.swift; sourceTree = "<group>"; };
 		AD14A850A89E3FA7449071C3 /* Pods-shunka-shop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shunka-shop.debug.xcconfig"; path = "Target Support Files/Pods-shunka-shop/Pods-shunka-shop.debug.xcconfig"; sourceTree = "<group>"; };
 		EB6826D6787D08A4B9ED17CA /* Pods-shunka-shop.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shunka-shop.staging.xcconfig"; path = "Target Support Files/Pods-shunka-shop/Pods-shunka-shop.staging.xcconfig"; sourceTree = "<group>"; };
 		F959CA8A0BC071227477926F /* Pods_shunka_shop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_shunka_shop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -329,7 +339,7 @@
 			isa = PBXGroup;
 			children = (
 				A8BAB2BC2678BAF300F4AD00 /* List */,
-				A8BAB2BD2678BB0B00F4AD00 /* CreateProduct */,
+				A8BAB2BD2678BB0B00F4AD00 /* Create */,
 			);
 			path = Product;
 			sourceTree = "<group>";
@@ -542,14 +552,14 @@
 			path = List;
 			sourceTree = "<group>";
 		};
-		A8BAB2BD2678BB0B00F4AD00 /* CreateProduct */ = {
+		A8BAB2BD2678BB0B00F4AD00 /* Create */ = {
 			isa = PBXGroup;
 			children = (
 				A812D8852678E9C5005BA99D /* CreateProductViewModel.swift */,
 				A8BAB2BE2678BB2900F4AD00 /* CreateProductView.swift */,
 				A8B1732026A60CC900572A37 /* CreateProductValidatorFactory.swift */,
 			);
-			path = CreateProduct;
+			path = Create;
 			sourceTree = "<group>";
 		};
 		A8EC06A426661BEE0047F5A7 /* DataStorage */ = {
@@ -605,6 +615,7 @@
 			isa = PBXGroup;
 			children = (
 				A8FA2A6B26B3C9E900836000 /* List */,
+				A8FA2A9326B7D34B00836000 /* Create */,
 			);
 			path = Order;
 			sourceTree = "<group>";
@@ -699,9 +710,37 @@
 		A8FA2A8C26B42B3900836000 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				A8FA2A9826B7FC1200836000 /* SingleSelectView */,
 				A8EC06C9266623870047F5A7 /* TextFields */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		A8FA2A9326B7D34B00836000 /* Create */ = {
+			isa = PBXGroup;
+			children = (
+				A8FA2A9626B7D37B00836000 /* CreateOrderView.swift */,
+			);
+			path = Create;
+			sourceTree = "<group>";
+		};
+		A8FA2A9826B7FC1200836000 /* SingleSelectView */ = {
+			isa = PBXGroup;
+			children = (
+				A8FA2A9B26B7FC5000836000 /* SingleSelectViewModel.swift */,
+				A8FA2A9926B7FC2500836000 /* SingleSelectView.swift */,
+				A8FA2A9F26B7FC9200836000 /* Item */,
+			);
+			path = SingleSelectView;
+			sourceTree = "<group>";
+		};
+		A8FA2A9F26B7FC9200836000 /* Item */ = {
+			isa = PBXGroup;
+			children = (
+				A8FA2A9D26B7FC7600836000 /* SingleSelectItemView.swift */,
+				A8FA2AA026B7FCA600836000 /* SelectViewItem.swift */,
+			);
+			path = Item;
 			sourceTree = "<group>";
 		};
 		CA4BC4751C873130EC4748C3 /* Frameworks */ = {
@@ -898,6 +937,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A87A1AB2265BF60700BCCCE4 /* ErrorTextField.swift in Sources */,
+				A8FA2AA126B7FCA600836000 /* SelectViewItem.swift in Sources */,
 				A88DEDC426726BC100D87F90 /* ResponseDecoding.swift in Sources */,
 				A82628C026679D7C00B49A9E /* OrdersListView.swift in Sources */,
 				A820A0DF265CF8CF00767D6C /* PasswordError.swift in Sources */,
@@ -905,6 +945,7 @@
 				A82628BB26679D5800B49A9E /* ProductListView.swift in Sources */,
 				A80C42E0266410CD00935E44 /* JSONEncoding.swift in Sources */,
 				A88DEDD826726E6D00D87F90 /* LoginResponse.swift in Sources */,
+				A8FA2A9A26B7FC2500836000 /* SingleSelectView.swift in Sources */,
 				A8B249212657F5000041B58C /* LoginView.swift in Sources */,
 				A82628AD26679AA200B49A9E /* HomeView.swift in Sources */,
 				A860FECC26A19E7800C5EC0B /* Publisher+InputValidation.swift in Sources */,
@@ -929,6 +970,7 @@
 				A820A0D5265CF89900767D6C /* PasswordValidator.swift in Sources */,
 				A88DEDDE26726EAA00D87F90 /* ShunkaShop+Product.swift in Sources */,
 				A860FEC826A19E2E00C5EC0B /* ValidationResult.swift in Sources */,
+				A8FA2A9E26B7FC7600836000 /* SingleSelectItemView.swift in Sources */,
 				A82628C626679E3000B49A9E /* Product.swift in Sources */,
 				A8BAB2BF2678BB2A00F4AD00 /* CreateProductView.swift in Sources */,
 				A820A0DA265CF8BB00767D6C /* UsernameError.swift in Sources */,
@@ -945,10 +987,12 @@
 				A88DEDC926726BD500D87F90 /* JSONDecoding.swift in Sources */,
 				A87A1A54265B969F00BCCCE4 /* Strings+Generated.swift in Sources */,
 				A8FA2A9026B42BB100836000 /* Date+Presentable.swift in Sources */,
+				A8FA2A9C26B7FC5000836000 /* SingleSelectViewModel.swift in Sources */,
 				A820A0CB265CF87000767D6C /* UsernameValidator.swift in Sources */,
 				A82628F62667C26500B49A9E /* ProductWebservice.swift in Sources */,
 				A87BBF87266A55CA00712DF4 /* ProductCache.swift in Sources */,
 				A8FA2A7726B3EE2200836000 /* OrderStorage.swift in Sources */,
+				A8FA2A9726B7D37B00836000 /* CreateOrderView.swift in Sources */,
 				A80C42DB2664108B00935E44 /* URLEncoding.swift in Sources */,
 				A87BBF76266A559300712DF4 /* DataStorageInjector.swift in Sources */,
 				A82628F12667C25500B49A9E /* ProductService.swift in Sources */,

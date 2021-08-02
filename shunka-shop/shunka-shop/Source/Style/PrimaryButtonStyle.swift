@@ -25,8 +25,8 @@ private extension PrimaryButtonStyle {
                 .padding()
                 .frame(maxWidth: .infinity)
                 .font(Font.system(.body))
-                .background(isEnabled ? Color.primary : Color.disabled)
-                .foregroundColor(Color.action)
+                .background(isEnabled ? Color.themePrimary : Color.themeDisabled)
+                .foregroundColor(Color.themeAction)
                 .opacity(configuration.isPressed ? 0.6 : 1)
                 .clipShape(Capsule())
         }

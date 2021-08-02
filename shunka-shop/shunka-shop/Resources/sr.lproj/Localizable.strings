@@ -25,6 +25,9 @@
 "orderedOn" = "Поручено";
 "total" = "Цена";
 
+// create order
+"createOrder" = "Create order";
+
 // product
 "noProducts" = "Нема производа";
 "productDateOfProduction" = "Датум производње";

@@ -14,24 +14,24 @@ struct ProductCell: View {
         VStack(alignment: .leading, spacing: 8) {
             Text(product.name)
                 .font(.body)
-                .foregroundColor(.primaryText)
+                .foregroundColor(.themePrimaryText)
                 .padding(.bottom, 4)
             VStack(alignment: .leading, spacing: 4) {
                 HStack(alignment: .center, spacing: 4) {
-                    Text(Strings.productDateOfProduction + ":").foregroundColor(.secondaryText)
-                    Text(product.productionDateCaption).foregroundColor(.primaryText)
+                    Text(Strings.productDateOfProduction + ":").foregroundColor(.themeSecondaryText)
+                    Text(product.productionDateCaption).foregroundColor(.themePrimaryText)
                 }
                 HStack(alignment: .center, spacing: 4) {
-                    Text(Strings.productPricePerKilo + ":").foregroundColor(.secondaryText)
-                    Text(product.priceCaption).foregroundColor(.primaryText)
+                    Text(Strings.productPricePerKilo + ":").foregroundColor(.themeSecondaryText)
+                    Text(product.priceCaption).foregroundColor(.themePrimaryText)
                 }
                 HStack(alignment: .center, spacing: 4) {
-                    Text(Strings.productProducedQuantity + ":").foregroundColor(.secondaryText)
-                    Text(product.producedQuantityCaption).foregroundColor(.primaryText)
+                    Text(Strings.productProducedQuantity + ":").foregroundColor(.themeSecondaryText)
+                    Text(product.producedQuantityCaption).foregroundColor(.themePrimaryText)
                 }
                 HStack(alignment: .center, spacing: 4) {
-                    Text(Strings.productAvailableQuantity + ":").foregroundColor(.secondaryText)
-                    Text(product.availableQuantityCaption).foregroundColor(.primaryText)
+                    Text(Strings.productAvailableQuantity + ":").foregroundColor(.themeSecondaryText)
+                    Text(product.availableQuantityCaption).foregroundColor(.themePrimaryText)
                 }
             }
             .font(.footnote)

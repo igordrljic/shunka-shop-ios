@@ -13,22 +13,22 @@ public extension Color {
         AppConfiguration.shared.theme
     }
     
-    static var primary: Color {
+    static var themePrimary: Color {
         theme.primary
     }
-    static var action: Color {
+    static var themeAction: Color {
         theme.action
     }
-    static var error: Color {
+    static var themeError: Color {
         theme.error
     }
-    static var disabled: Color {
+    static var themeDisabled: Color {
         theme.disabled
     }
-    static var primaryText: Color {
+    static var themePrimaryText: Color {
         Color(UIColor.label)
     }
-    static var secondaryText: Color {
+    static var themeSecondaryText: Color {
         Color(UIColor.secondaryLabel)
     }
 }

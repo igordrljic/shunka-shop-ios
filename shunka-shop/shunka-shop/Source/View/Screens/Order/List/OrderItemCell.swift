@@ -16,6 +16,6 @@ struct OrderItemCell: View {
             Text(AmountFormatter.shared.format(orderItem.totalPrice))
         }
         .font(.footnote)
-        .foregroundColor(.secondaryText)
+        .foregroundColor(.themeSecondaryText)
     }
 }

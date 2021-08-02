@@ -14,16 +14,16 @@ struct OrderCell: View {
         VStack(alignment: .leading, spacing: 8) {
             Text(order.customerName)
                 .font(.body)
-                .foregroundColor(.primaryText)
+                .foregroundColor(.themePrimaryText)
                 .padding(.bottom, 4)
             VStack(alignment: .leading, spacing: 4) {
                 HStack(alignment: .center) {
-                    Text(Strings.orderedOn + ":").foregroundColor(.secondaryText)
-                    Text(order.createdAt.presentable).foregroundColor(.primaryText)
+                    Text(Strings.orderedOn + ":").foregroundColor(.themeSecondaryText)
+                    Text(order.createdAt.presentable).foregroundColor(.themePrimaryText)
                 }
                 HStack(alignment: .center) {
-                    Text(Strings.total + ":").foregroundColor(.secondaryText)
-                    Text(AmountFormatter.shared.format(order.total)).foregroundColor(.primaryText)
+                    Text(Strings.total + ":").foregroundColor(.themeSecondaryText)
+                    Text(AmountFormatter.shared.format(order.total)).foregroundColor(.themePrimaryText)
                 }
             }
             .font(.footnote)

@@ -25,6 +25,9 @@
 "orderedOn" = "Ordered on";
 "total" = "Total";
 
+// create order
+"createOrder" = "Create order";
+
 // product
 "noProducts" = "No products";
 "productDateOfProduction" = "Production date";

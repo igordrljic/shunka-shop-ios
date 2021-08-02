@@ -17,7 +17,7 @@ struct ErrorTextField: View {
             UnderlinedTextField(placeholder: placeholder, text: $text)
             if !(error?.isEmpty ?? true) {
                 Text(error!)
-                    .foregroundColor(.error)
+                    .foregroundColor(.themeError)
                     .font(Font.system(.footnote))
             }
         }

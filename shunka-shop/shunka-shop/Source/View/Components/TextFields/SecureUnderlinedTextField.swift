@@ -35,7 +35,7 @@ struct SecureUnderlinedTextField: View {
             }
             Rectangle()
                 .frame(height: 1)
-                .foregroundColor(.primary)
+                .foregroundColor(.themePrimary)
                 .padding(.top, 4)
         }
     }
