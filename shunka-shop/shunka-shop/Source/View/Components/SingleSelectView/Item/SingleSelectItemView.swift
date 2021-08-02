@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SingleSelectItemView: View {
-    let item: SelectViewItem
+    @ObservedObject var item: SelectViewItem
     
     var body: some View {
         ZStack(alignment: .leading) {
