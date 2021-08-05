@@ -9,12 +9,11 @@ import Combine
 import Foundation
 
 class SelectViewItem: ObservableObject, Identifiable {
-    let id = UUID()
+    let id: Int
     let title: String
-    @Published var isSelected: Bool
     
-    init(title: String, isSelected: Bool) {
+    init(id: Int, title: String) {
+        self.id = id
         self.title = title
-        self.isSelected = isSelected
     }
 }

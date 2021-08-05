@@ -7,20 +7,23 @@
 
 import SwiftUI
 
-struct SingleSelectItemView: View {
-    @ObservedObject var item: SelectViewItem
+struct SelectionItemView: View {
+    let item: SelectViewItem
+    let isSelected: Bool
+    let selectionHandler: (SelectViewItem) -> Void
     
     var body: some View {
         ZStack(alignment: .leading) {
             HStack(alignment: .center) {
                 Text(item.title)
-                if (item.isSelected) {
+                if (isSelected) {
                     Spacer(minLength: 8)
-                    Image(systemName: "checkmark.circle.fill").foregroundColor(.themePrimary)
+                    Image(systemName: "checkmark.circle.fill")
+                        .foregroundColor(.themePrimary)
                 }
             }
             Button("") {
-                item.isSelected.toggle()
+                self.selectionHandler(item)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
             .edgesIgnoringSafeArea(.all)
