@@ -10,24 +10,16 @@ import Combine
 
 class HomeNavigationState: ObservableObject {
     @Published var selectedTab: HomeView.Tabs = .orders
-    @Published var isCreateProductPresented = false
 }
 
 extension HomeNavigationState {
+    func clear() {}
+    
     func showOrdersList() {
         selectedTab = .orders
     }
     
     func showProductsList() {
         selectedTab = .products
-    }
-    
-    func showCreateProduct() {
-        showProductsList()
-        isCreateProductPresented = true
-    }
-    
-    func dismissCreateProduct() {
-        isCreateProductPresented = false
     }
 }

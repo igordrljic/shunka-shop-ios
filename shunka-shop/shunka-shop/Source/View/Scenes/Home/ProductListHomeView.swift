@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ProductListHomeView: View {
-    @EnvironmentObject var navigationState: HomeNavigationState
+    @EnvironmentObject var navigationState: CreateProductNavigationState
     @StateObject var productListViewModel = ProductListViewModel()
     
     var body: some View {
@@ -24,7 +24,7 @@ struct ProductListHomeView: View {
                             label: { Image(systemName: "arrow.counterclockwise") }
                         )
                         Button(
-                            action: { navigationState.showCreateProduct() },
+                            action: { navigationState.presentCreateProduct() },
                             label: { Image(systemName: "plus") }
                         )
                         .fullScreenCover(isPresented: $navigationState.isCreateProductPresented) {

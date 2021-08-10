@@ -21,12 +21,23 @@ class AppNavigationState: ObservableObject {
     
     let homeState = HomeNavigationState()
     let createOrderState = CreateOrderNavigationState()
+    let createProductState = CreateProductNavigationState()
+}
+
+extension AppNavigationState {
+    func clear() {
+        createOrderState.clear()
+        createProductState.clear()
+        homeState.clear()
+    }
     
-    func showLogin() {
+    func presentLogin() {
+        clear()
         landingScene = .login
     }
     
-    func showHome() {
+    func presentHome() {
+        clear()
         landingScene = .home
     }
 }

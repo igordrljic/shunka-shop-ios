@@ -19,7 +19,7 @@ struct HomeView: View {
                     Label(Strings.mainTabItemOrders, systemImage: "shippingbox")
                 }
             ProductListHomeView()
-                .environmentObject(navigationState)
+                .environmentObject(AppNavigationState.shared.createProductState)
                 .tag(Tabs.products)
                 .tabItem {
                     Label(Strings.mainTabItemProducts, systemImage: "bag")

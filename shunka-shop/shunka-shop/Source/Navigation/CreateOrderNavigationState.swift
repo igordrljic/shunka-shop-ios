@@ -13,7 +13,6 @@ class CreateOrderNavigationState: ObservableObject {
 }
 
 extension CreateOrderNavigationState {
-    
     func clear() {
         dismissSelectCustomer()
         dismissCreateOrder()
