@@ -57,7 +57,6 @@
 		A88DEDD826726E6D00D87F90 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88DEDD726726E6D00D87F90 /* LoginResponse.swift */; };
 		A88DEDDE26726EAA00D87F90 /* ShunkaShop+Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88DEDDD26726EAA00D87F90 /* ShunkaShop+Product.swift */; };
 		A89090362666448900B9A080 /* PresentableError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89090352666448900B9A080 /* PresentableError.swift */; };
-		A890903E26664FE200B9A080 /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A890903D26664FE200B9A080 /* UserSession.swift */; };
 		A8B1732126A60CC900572A37 /* CreateProductValidatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B1732026A60CC900572A37 /* CreateProductValidatorFactory.swift */; };
 		A8B1732326A6AFBF00572A37 /* FormValidationResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B1732226A6AFBF00572A37 /* FormValidationResults.swift */; };
 		A8B248EF2657F07C0041B58C /* shunka_shopApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B248EE2657F07C0041B58C /* shunka_shopApp.swift */; };
@@ -101,6 +100,7 @@
 		A8FD5D5526BC1AC100B33703 /* ItemIdGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FD5D5426BC1AC100B33703 /* ItemIdGenerator.swift */; };
 		A8FD5D5826BC1FBF00B33703 /* Nameable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FD5D5726BC1FBF00B33703 /* Nameable.swift */; };
 		A8FD5D5B26BC20B100B33703 /* String+Nameable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FD5D5A26BC20B100B33703 /* String+Nameable.swift */; };
+		A8FD5D6126C2856A00B33703 /* NavigationStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FD5D6026C2856A00B33703 /* NavigationStateManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -171,7 +171,6 @@
 		A88DEDD726726E6D00D87F90 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		A88DEDDD26726EAA00D87F90 /* ShunkaShop+Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShunkaShop+Product.swift"; sourceTree = "<group>"; };
 		A89090352666448900B9A080 /* PresentableError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentableError.swift; sourceTree = "<group>"; };
-		A890903D26664FE200B9A080 /* UserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
 		A8B1732026A60CC900572A37 /* CreateProductValidatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProductValidatorFactory.swift; sourceTree = "<group>"; };
 		A8B1732226A6AFBF00572A37 /* FormValidationResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormValidationResults.swift; sourceTree = "<group>"; };
 		A8B248EB2657F07C0041B58C /* shunka-shop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "shunka-shop.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -222,6 +221,7 @@
 		A8FD5D5426BC1AC100B33703 /* ItemIdGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemIdGenerator.swift; sourceTree = "<group>"; };
 		A8FD5D5726BC1FBF00B33703 /* Nameable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nameable.swift; sourceTree = "<group>"; };
 		A8FD5D5A26BC20B100B33703 /* String+Nameable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Nameable.swift"; sourceTree = "<group>"; };
+		A8FD5D6026C2856A00B33703 /* NavigationStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationStateManager.swift; sourceTree = "<group>"; };
 		AD14A850A89E3FA7449071C3 /* Pods-shunka-shop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shunka-shop.debug.xcconfig"; path = "Target Support Files/Pods-shunka-shop/Pods-shunka-shop.debug.xcconfig"; sourceTree = "<group>"; };
 		EB6826D6787D08A4B9ED17CA /* Pods-shunka-shop.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shunka-shop.staging.xcconfig"; path = "Target Support Files/Pods-shunka-shop/Pods-shunka-shop.staging.xcconfig"; sourceTree = "<group>"; };
 		F959CA8A0BC071227477926F /* Pods_shunka_shop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_shunka_shop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -333,7 +333,6 @@
 			isa = PBXGroup;
 			children = (
 				A820A0C9265CF85800767D6C /* Errors */,
-				A890903D26664FE200B9A080 /* UserSession.swift */,
 				A82628C526679E3000B49A9E /* Product.swift */,
 				A82628CD2667A7A400B49A9E /* Month.swift */,
 				A8FA2A6426B2D60700836000 /* Order.swift */,
@@ -513,6 +512,7 @@
 		A8B2491D2657F1FD0041B58C /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				A8FD5D5F26C2855D00B33703 /* Navigation */,
 				A8B2491E2657F4B70041B58C /* Model */,
 				A8B2491F2657F4C90041B58C /* View */,
 				A87A1A6A265BC56600BCCCE4 /* Theme */,
@@ -768,6 +768,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		A8FD5D5F26C2855D00B33703 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				A8FD5D6026C2856A00B33703 /* NavigationStateManager.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
 		CA4BC4751C873130EC4748C3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1012,6 +1020,7 @@
 				A88DEDC926726BD500D87F90 /* JSONDecoding.swift in Sources */,
 				A87A1A54265B969F00BCCCE4 /* Strings+Generated.swift in Sources */,
 				A8FA2A9026B42BB100836000 /* Date+Presentable.swift in Sources */,
+				A8FD5D6126C2856A00B33703 /* NavigationStateManager.swift in Sources */,
 				A8FA2A9C26B7FC5000836000 /* ViewModel.swift in Sources */,
 				A820A0CB265CF87000767D6C /* UsernameValidator.swift in Sources */,
 				A82628F62667C26500B49A9E /* ProductWebservice.swift in Sources */,
@@ -1029,7 +1038,6 @@
 				A8FA2A6326B16D8C00836000 /* Encodable+ToParameters.swift in Sources */,
 				A87A1A7D265BCE0300BCCCE4 /* AppConfiguration.swift in Sources */,
 				A80C42D62664103A00935E44 /* ParameterEncoding.swift in Sources */,
-				A890903E26664FE200B9A080 /* UserSession.swift in Sources */,
 				A8FA2A7426B3ECCF00836000 /* GetOrders.swift in Sources */,
 				A80C42BE26640F9A00935E44 /* Request.swift in Sources */,
 				A82628CE2667A7A400B49A9E /* Month.swift in Sources */,

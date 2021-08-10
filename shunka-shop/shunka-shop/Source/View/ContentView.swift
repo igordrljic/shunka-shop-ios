@@ -8,19 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
-    @EnvironmentObject var userSession: UserSession
+    @EnvironmentObject var navigator: NavigationStateManager
     
     var body: some View {
-        if userSession.isLoggedIn {
+        switch navigator.landingScene {
+        case .login:
+            LoginView()
+        case .home:
             HomeView()
-        } else {
-            LoginView(viewModel: LoginViewModel())
         }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView().environmentObject(NavigationStateManager.shared)
     }
 }

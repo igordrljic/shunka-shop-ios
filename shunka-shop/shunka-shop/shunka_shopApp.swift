@@ -9,10 +9,9 @@ import SwiftUI
 
 @main
 struct shunka_shopApp: App {
-    
     var body: some Scene {
         WindowGroup {
-            ContentView().environmentObject(UserSession.shared)
+            ContentView().environmentObject(NavigationStateManager.shared)
         }
     }
 }

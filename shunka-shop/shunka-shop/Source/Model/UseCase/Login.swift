@@ -27,7 +27,7 @@ class Login: UseCase {
             switch result {
             case let .success(response):
                 ShunkaShop.shared.set(authenticationToken: response.authenticationToken)
-                UserSession.shared.isLoggedIn = true
+                NavigationStateManager.shared.showHome()
                 completion(.success(Void()))
             case let .failure(error):
                 completion(.failure(error))
