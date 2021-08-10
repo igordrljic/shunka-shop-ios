@@ -10,6 +10,7 @@ import SwiftUI
 struct OrderListHomeView: View {
     @EnvironmentObject var navigationState: CreateOrderNavigationState
     @StateObject var orderListViewModel = OrderListViewModel()
+    @StateObject var createOrderViewModel = CreateOrderView.ViewModel()
     
     var body: some View {
         NavigationView {
@@ -37,7 +38,7 @@ struct OrderListHomeView: View {
     
     private var createOrderView: some View {
         NavigationView {
-            CreateOrderView()
+            CreateOrderView(viewModel: createOrderViewModel)
                 .environmentObject(navigationState)
                 .navigationBarTitle(Strings.createOrder)
                 .navigationBarTitleDisplayMode(.inline)

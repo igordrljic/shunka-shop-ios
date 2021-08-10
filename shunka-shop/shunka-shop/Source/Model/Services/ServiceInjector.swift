@@ -21,4 +21,8 @@ class ServiceInjector {
     var order: OrderService {
         OrderWebservice()
     }
+    
+    var user: UserService {
+        UserWebservice()
+    }
 }
