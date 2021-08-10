@@ -105,6 +105,9 @@
 		A8FD5D6526C293FE00B33703 /* OrderListHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FD5D6426C293FE00B33703 /* OrderListHomeView.swift */; };
 		A8FD5D6826C2958D00B33703 /* HomeView+Tabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FD5D6726C2958D00B33703 /* HomeView+Tabs.swift */; };
 		A8FD5D6A26C29D5B00B33703 /* HomeNavigationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FD5D6926C29D5B00B33703 /* HomeNavigationState.swift */; };
+		A8FD5D6C26C2AC9D00B33703 /* FormButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FD5D6B26C2AC9D00B33703 /* FormButtonStyle.swift */; };
+		A8FD5D6E26C2B8A500B33703 /* SingleSelectionScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FD5D6D26C2B8A500B33703 /* SingleSelectionScene.swift */; };
+		A8FD5D7026C2BD5800B33703 /* CreateOrderNavigationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FD5D6F26C2BD5800B33703 /* CreateOrderNavigationState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -230,6 +233,9 @@
 		A8FD5D6426C293FE00B33703 /* OrderListHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListHomeView.swift; sourceTree = "<group>"; };
 		A8FD5D6726C2958D00B33703 /* HomeView+Tabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeView+Tabs.swift"; sourceTree = "<group>"; };
 		A8FD5D6926C29D5B00B33703 /* HomeNavigationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationState.swift; sourceTree = "<group>"; };
+		A8FD5D6B26C2AC9D00B33703 /* FormButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormButtonStyle.swift; sourceTree = "<group>"; };
+		A8FD5D6D26C2B8A500B33703 /* SingleSelectionScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleSelectionScene.swift; sourceTree = "<group>"; };
+		A8FD5D6F26C2BD5800B33703 /* CreateOrderNavigationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateOrderNavigationState.swift; sourceTree = "<group>"; };
 		AD14A850A89E3FA7449071C3 /* Pods-shunka-shop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shunka-shop.debug.xcconfig"; path = "Target Support Files/Pods-shunka-shop/Pods-shunka-shop.debug.xcconfig"; sourceTree = "<group>"; };
 		EB6826D6787D08A4B9ED17CA /* Pods-shunka-shop.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shunka-shop.staging.xcconfig"; path = "Target Support Files/Pods-shunka-shop/Pods-shunka-shop.staging.xcconfig"; sourceTree = "<group>"; };
 		F959CA8A0BC071227477926F /* Pods_shunka_shop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_shunka_shop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -400,6 +406,7 @@
 			isa = PBXGroup;
 			children = (
 				A87A1A85265BCE5400BCCCE4 /* PrimaryButtonStyle.swift */,
+				A8FD5D6B26C2AC9D00B33703 /* FormButtonStyle.swift */,
 			);
 			path = Style;
 			sourceTree = "<group>";
@@ -747,6 +754,7 @@
 			children = (
 				A8FA2A9B26B7FC5000836000 /* ViewModel.swift */,
 				A8FA2A9926B7FC2500836000 /* SingleSelectionList.swift */,
+				A8FD5D6D26C2B8A500B33703 /* SingleSelectionScene.swift */,
 				A8FA2A9F26B7FC9200836000 /* Item */,
 			);
 			path = SingleSelectionList;
@@ -784,6 +792,7 @@
 			children = (
 				A8FD5D6026C2856A00B33703 /* AppNavigationState.swift */,
 				A8FD5D6926C29D5B00B33703 /* HomeNavigationState.swift */,
+				A8FD5D6F26C2BD5800B33703 /* CreateOrderNavigationState.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -1025,10 +1034,12 @@
 				A8EC06B426661EDE0047F5A7 /* AuthenticationWebservice.swift in Sources */,
 				A8EC06942664F9190047F5A7 /* AppConfigError.swift in Sources */,
 				A8FA2A7B26B412C400836000 /* OrderCell.swift in Sources */,
+				A8FD5D6E26C2B8A500B33703 /* SingleSelectionScene.swift in Sources */,
 				A8FA2A8426B413B000836000 /* CreateProductData.swift in Sources */,
 				A812D8862678E9C5005BA99D /* CreateProductViewModel.swift in Sources */,
 				A87A1A86265BCE5400BCCCE4 /* PrimaryButtonStyle.swift in Sources */,
 				A860FECA26A19E4900C5EC0B /* InputValidationPublisher.swift in Sources */,
+				A8FD5D7026C2BD5800B33703 /* CreateOrderNavigationState.swift in Sources */,
 				A8FA2A6926B3C8EC00836000 /* OrderService.swift in Sources */,
 				A8EC06BF26661F150047F5A7 /* Login.swift in Sources */,
 				A88DEDC926726BD500D87F90 /* JSONDecoding.swift in Sources */,
@@ -1045,6 +1056,7 @@
 				A80C42DB2664108B00935E44 /* URLEncoding.swift in Sources */,
 				A8FD5D5826BC1FBF00B33703 /* Nameable.swift in Sources */,
 				A87BBF76266A559300712DF4 /* DataStorageInjector.swift in Sources */,
+				A8FD5D6C26C2AC9D00B33703 /* FormButtonStyle.swift in Sources */,
 				A82628F12667C25500B49A9E /* ProductService.swift in Sources */,
 				A8DAE99A26675E4700508CE0 /* ActivityIndicatorView.swift in Sources */,
 				A89090362666448900B9A080 /* PresentableError.swift in Sources */,

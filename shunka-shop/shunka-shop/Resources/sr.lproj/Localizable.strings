@@ -26,7 +26,8 @@
 "total" = "Цена";
 
 // create order
-"createOrder" = "Create order";
+"createOrder" = "Направи поруџбину";
+"selectCustomer" = "Додај муштерију";
 
 // product
 "noProducts" = "Нема производа";

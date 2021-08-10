@@ -8,14 +8,12 @@
 import SwiftUI
 
 struct PrimaryButtonStyle: ButtonStyle {
-    
     func makeBody(configuration: Configuration) -> some View {
         PrimaryButton(configuration: configuration)
     }
 }
 
 private extension PrimaryButtonStyle {
-    
     struct PrimaryButton: View {
         @Environment(\.isEnabled) var isEnabled
         let configuration: PrimaryButtonStyle.Configuration

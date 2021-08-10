@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct OrderListHomeView: View {
-    @EnvironmentObject var navigationState: HomeNavigationState
+    @EnvironmentObject var navigationState: CreateOrderNavigationState
     @StateObject var orderListViewModel = OrderListViewModel()
     
     var body: some View {
@@ -24,7 +24,7 @@ struct OrderListHomeView: View {
                             label: { Image(systemName: "arrow.counterclockwise") }
                         )
                         Button(
-                            action: { navigationState.showCreateOrder() },
+                            action: { navigationState.presentCreateOrder() },
                             label: { Image(systemName: "plus") }
                         )
                         .fullScreenCover(isPresented: $navigationState.isCreateOrderPresented) {
@@ -37,7 +37,8 @@ struct OrderListHomeView: View {
     
     private var createOrderView: some View {
         NavigationView {
-            CreateOrderView(isPresented: $navigationState.isCreateOrderPresented)
+            CreateOrderView()
+                .environmentObject(navigationState)
                 .navigationBarTitle(Strings.createOrder)
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationBarItems(trailing:

@@ -13,7 +13,7 @@ struct HomeView: View {
     var body: some View {
         TabView(selection: $navigationState.selectedTab) {
             OrderListHomeView()
-                .environmentObject(navigationState)
+                .environmentObject(AppNavigationState.shared.createOrderState)
                 .tag(Tabs.orders)
                 .tabItem {
                     Label(Strings.mainTabItemOrders, systemImage: "shippingbox")

@@ -31,4 +31,8 @@ public extension Color {
     static var themeSecondaryText: Color {
         Color(UIColor.secondaryLabel)
     }
+    
+    static var themeDefaultBackground: Color {
+        Color(UIColor.systemBackground)
+    }
 }

@@ -14,7 +14,9 @@ extension SingleSelectionList {
         private let objects: [Object]
         private let selectionHandler: (Object?) -> Void
         
-        init(objects: [Object], selectedItemIndex: Int?, selectionHandler: @escaping (Object?) -> Void) {
+        init(objects: [Object],
+             selectedItemIndex: Int? = nil,
+             selectionHandler: @escaping (Object?) -> Void) {
             self.objects = objects
             self.selectedItemId = selectedItemIndex
             self.selectionHandler = selectionHandler

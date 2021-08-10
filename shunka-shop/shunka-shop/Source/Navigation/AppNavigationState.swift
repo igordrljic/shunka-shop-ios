@@ -19,7 +19,8 @@ class AppNavigationState: ObservableObject {
     
     @Published private(set) var landingScene: Scene = .login
     
-    let homeState: HomeNavigationState = HomeNavigationState()
+    let homeState = HomeNavigationState()
+    let createOrderState = CreateOrderNavigationState()
     
     func showLogin() {
         landingScene = .login

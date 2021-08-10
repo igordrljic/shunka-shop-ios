@@ -27,6 +27,7 @@
 
 // create order
 "createOrder" = "Create order";
+"selectCustomer" = "Select customer";
 
 // product
 "noProducts" = "No products";
