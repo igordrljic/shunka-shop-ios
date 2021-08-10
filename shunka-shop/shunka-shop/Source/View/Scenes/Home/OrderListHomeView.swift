@@ -8,9 +8,8 @@
 import SwiftUI
 
 struct OrderListHomeView: View {
+    @EnvironmentObject var navigationState: HomeNavigationState
     @StateObject var orderListViewModel = OrderListViewModel()
-    
-    @State private var isCreateOrderPresented = false
     
     var body: some View {
         NavigationView {
@@ -31,12 +30,12 @@ struct OrderListHomeView: View {
     
     private var createOrderView: some View {
         NavigationView {
-            CreateOrderView(isPresented: $isCreateOrderPresented)
+            CreateOrderView(isPresented: $navigationState.isCreateOrderPresented)
                 .navigationBarTitle(Strings.registerProduct)
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationBarItems(trailing:
                         Button(
-                            action: { isCreateOrderPresented = false },
+                            action: { navigationState.dismissCreateOrder() },
                             label: { Text(Strings.cancel) }
                         )
                 )

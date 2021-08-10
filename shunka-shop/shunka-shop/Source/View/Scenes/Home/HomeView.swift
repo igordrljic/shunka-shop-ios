@@ -8,25 +8,22 @@
 import SwiftUI
 
 struct HomeView: View {
-    enum Tabs: Int {
-        case orders = 1
-        case products = 2
-    }
-    
-    @State private var selectedTab: Tabs = .orders
+    @EnvironmentObject var navigationState: HomeNavigationState
     
     var body: some View {
-        TabView(selection: $selectedTab) {
+        TabView(selection: $navigationState.selectedTab) {
             OrderListHomeView()
-            .tag(Tabs.orders)
-            .tabItem {
-                Label(Strings.mainTabItemOrders, systemImage: "shippingbox")
-            }
+                .environmentObject(navigationState)
+                .tag(Tabs.orders)
+                .tabItem {
+                    Label(Strings.mainTabItemOrders, systemImage: "shippingbox")
+                }
             ProductListHomeView()
-            .tag(Tabs.products)
-            .tabItem {
-                Label(Strings.mainTabItemProducts, systemImage: "bag")
-            }
+                .environmentObject(navigationState)
+                .tag(Tabs.products)
+                .tabItem {
+                    Label(Strings.mainTabItemProducts, systemImage: "bag")
+                }
         }
     }
 }

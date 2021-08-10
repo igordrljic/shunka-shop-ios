@@ -8,9 +8,8 @@
 import SwiftUI
 
 struct ProductListHomeView: View {
+    @EnvironmentObject var navigationState: HomeNavigationState
     @StateObject var productListViewModel = ProductListViewModel()
-    
-    @State private var isCreateProductPresented = false
     
     var body: some View {
         NavigationView {
@@ -25,10 +24,10 @@ struct ProductListHomeView: View {
                             label: { Image(systemName: "arrow.counterclockwise") }
                         )
                         Button(
-                            action: { isCreateProductPresented = true },
+                            action: { navigationState.showCreateProduct() },
                             label: { Image(systemName: "plus") }
                         )
-                        .fullScreenCover(isPresented: $isCreateProductPresented) {
+                        .fullScreenCover(isPresented: $navigationState.isCreateProductPresented) {
                             createProductView
                         }
                     }
@@ -38,12 +37,15 @@ struct ProductListHomeView: View {
     
     private var createProductView: some View {
         NavigationView {
-            CreateProductView(viewModel: CreateProductViewModel(), isPresented: $isCreateProductPresented)
+            CreateProductView(
+                viewModel: CreateProductViewModel(),
+                isPresented: $navigationState.isCreateProductPresented
+            )
                 .navigationBarTitle(Strings.registerProduct)
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationBarItems(trailing:
                         Button(
-                            action: { isCreateProductPresented = false },
+                            action: { navigationState.dismissCreateProduct() },
                             label: { Text(Strings.cancel) }
                         )
                 )

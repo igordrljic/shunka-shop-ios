@@ -7,15 +7,17 @@
 
 import Combine
 
-class NavigationStateManager: ObservableObject {    
+class AppNavigationState: ObservableObject {
     enum Scene {
         case login
         case home
     }
 
-    static let shared = NavigationStateManager()
+    static let shared = AppNavigationState()
     
     @Published private(set) var landingScene: Scene = .login
+    
+    private(set) var homeState: HomeNavigationState = HomeNavigationState()
     
     func showLogin() {
         landingScene = .login

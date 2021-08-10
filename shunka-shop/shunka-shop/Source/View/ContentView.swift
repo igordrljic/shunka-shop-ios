@@ -8,20 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
-    @EnvironmentObject var navigator: NavigationStateManager
+    @EnvironmentObject var navigationState: AppNavigationState
     
     var body: some View {
-        switch navigator.landingScene {
+        switch navigationState.landingScene {
         case .login:
             LoginView()
         case .home:
-            HomeView()
+            HomeView().environmentObject(navigationState.homeState)
         }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environmentObject(NavigationStateManager.shared)
+        ContentView().environmentObject(AppNavigationState.shared)
     }
 }

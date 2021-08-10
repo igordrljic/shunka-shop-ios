@@ -11,7 +11,7 @@ import SwiftUI
 struct shunka_shopApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView().environmentObject(NavigationStateManager.shared)
+            ContentView().environmentObject(AppNavigationState.shared)
         }
     }
 }
