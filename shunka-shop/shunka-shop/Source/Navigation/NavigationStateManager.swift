@@ -7,7 +7,7 @@
 
 import Combine
 
-class NavigationStateManager: ObservableObject {
+class NavigationStateManager: ObservableObject {    
     enum Scene {
         case login
         case home

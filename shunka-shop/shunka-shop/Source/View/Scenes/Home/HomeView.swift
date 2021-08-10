@@ -8,22 +8,30 @@
 import SwiftUI
 
 struct HomeView: View {
+    enum Tabs: Int {
+        case orders = 1
+        case products = 2
+    }
+    
     @StateObject var productListViewModel = ProductListViewModel()
     @StateObject var orderListViewModel = OrderListViewModel()
     @State private var isCreateProductPresented = false
     @State private var isCreateOrderPresented = false
+    @State private var selectedTab: Tabs = .orders
     
     var body: some View {
-        TabView {
+        TabView(selection: $selectedTab) {
             NavigationView {
                 orderListView
             }
+            .tag(Tabs.orders)
             .tabItem {
                 Label(Strings.mainTabItemOrders, systemImage: "shippingbox")
             }
             NavigationView {
                 productListView
             }
+            .tag(Tabs.products)
             .tabItem {
                 Label(Strings.mainTabItemProducts, systemImage: "bag")
             }
@@ -74,12 +82,9 @@ struct HomeView: View {
                         action: { isCreateProductPresented = true },
                         label: { Image(systemName: "plus") }
                     )
-                    .fullScreenCover(
-                        isPresented: $isCreateProductPresented,
-                        content: {
-                            createProductView
-                        }
-                    )
+                    .fullScreenCover(isPresented: $isCreateProductPresented) {
+                        createProductView
+                    }
                 }
             )
     }
