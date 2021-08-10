@@ -23,6 +23,13 @@ struct OrderListHomeView: View {
                             action: { orderListViewModel.reload() },
                             label: { Image(systemName: "arrow.counterclockwise") }
                         )
+                        Button(
+                            action: { navigationState.showCreateOrder() },
+                            label: { Image(systemName: "plus") }
+                        )
+                        .fullScreenCover(isPresented: $navigationState.isCreateOrderPresented) {
+                            createOrderView
+                        }
                     }
                 )
         }
@@ -31,7 +38,7 @@ struct OrderListHomeView: View {
     private var createOrderView: some View {
         NavigationView {
             CreateOrderView(isPresented: $navigationState.isCreateOrderPresented)
-                .navigationBarTitle(Strings.registerProduct)
+                .navigationBarTitle(Strings.createOrder)
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationBarItems(trailing:
                         Button(
