@@ -8,8 +8,8 @@
 import Foundation
 
 extension ShunkaShop {
-    func users() -> Request {
-        Request(url: baseUrl.appendingPathComponent("users"),
+    func customers() -> Request {
+        Request(url: baseUrl.appendingPathComponent("users").appendingPathComponent("customers"),
                 httpMethod: .get,
                 httpHeader: headers,
                 decoding: decoding)

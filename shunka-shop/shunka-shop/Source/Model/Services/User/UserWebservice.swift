@@ -14,7 +14,7 @@ class UserWebservice: UserService {
         self.webservice = webservice
     }
     
-    func getUsers(completion: @escaping (Result<[User], Error>) -> Void) {
-        webservice.run(webservice.users(), completion: completion)
+    func getCustomers(completion: @escaping (Result<[User], Error>) -> Void) {
+        webservice.run(webservice.customers(), completion: completion)
     }
 }

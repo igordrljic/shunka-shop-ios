@@ -6,5 +6,5 @@
 //
 
 protocol UserService {
-    func getUsers(completion: @escaping (Result<[User], Error>) -> Void)
+    func getCustomers(completion: @escaping (Result<[User], Error>) -> Void)
 }

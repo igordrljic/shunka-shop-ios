@@ -34,7 +34,7 @@ extension CreateOrderView {
                 return
             }
             isWorking = true
-            userService.getUsers { result in
+            userService.getCustomers { result in
                 switch result {
                 case let .success(users):
                     self.customers = users
