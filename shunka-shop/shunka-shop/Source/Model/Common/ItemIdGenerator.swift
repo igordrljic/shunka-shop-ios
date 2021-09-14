@@ -8,9 +8,9 @@
 class ItemIdGenerator {
     private var id: Int = 0
     
-    func nextId() -> Int {
-        let nextId = id
+    func generateId() -> Int {
+        let newId = id
         id += 1
-        return nextId
+        return newId
     }
 }

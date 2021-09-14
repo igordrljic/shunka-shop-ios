@@ -94,6 +94,8 @@ internal enum Strings {
   internal static let register = Strings.tr("Localizable", "register")
   /// Register product
   internal static let registerProduct = Strings.tr("Localizable", "registerProduct")
+  /// Save
+  internal static let save = Strings.tr("Localizable", "save")
   /// Select customer
   internal static let selectCustomer = Strings.tr("Localizable", "selectCustomer")
   /// September

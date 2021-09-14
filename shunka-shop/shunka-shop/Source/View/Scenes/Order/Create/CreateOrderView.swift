@@ -25,18 +25,21 @@ struct CreateOrderView: View {
             .buttonStyle(FormButtonStyle())
             .padding()
             .fullScreenCover(isPresented: $navigationState.isSelectCustomerPresented) {
-                let customers = viewModel.customers.map({ "\($0.firstName) \($0.lastName)" })
-                let viewModel = SingleSelectionList<String>.ViewModel(objects: customers) { selectedCustomer in
-                    debugPrint("selectedCustomer: \(selectedCustomer)")
-                }
                 NavigationView {
-                    SingleSelectionList<String>(viewModel: viewModel)
+                    SingleSelectionList<User>(viewModel: viewModel.customerSelectionViewModel)
                         .navigationBarTitleDisplayMode(.inline)
                         .navigationBarTitle(Strings.selectCustomer)
-                        .navigationBarItems(trailing:
-                            Button(
+                        .navigationBarItems(
+                            leading: Button(
                                 action: { navigationState.dismissSelectCustomer() },
                                 label: { Text(Strings.cancel) }
+                            ),
+                            trailing: Button(
+                                action: {
+                                    viewModel.customerSelectionViewModel.confirmSelection()
+                                    navigationState.dismissSelectCustomer()
+                                },
+                                label: { Text(Strings.save) }
                             )
                         )
                 }
@@ -48,6 +51,12 @@ struct CreateOrderView: View {
                 ActivityIndicatorView(caption: Strings.loading)
             }
         }
+    }
+}
+
+extension User: CustomStringConvertible {
+    var description: String {
+        "\(firstName) \(lastName)"
     }
 }
 

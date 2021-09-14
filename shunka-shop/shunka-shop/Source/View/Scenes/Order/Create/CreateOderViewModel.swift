@@ -9,10 +9,14 @@ import Foundation
 
 extension CreateOrderView {
     class ViewModel: ObservableObject {
+        @Published var customer: User?
+        
         @Published var isWorking = false
         @Published var error: PresentableError? = nil
         
         @Published private(set) var customers: [User] = []
+        
+        private(set) var customerSelectionViewModel = SingleSelectionList<User>.ViewModel(objects: [])
         
         private let userService: UserService
         private var isLoaded = false
@@ -38,9 +42,11 @@ extension CreateOrderView {
                 switch result {
                 case let .success(users):
                     self.customers = users
+                    self.customerSelectionViewModel = SingleSelectionList<User>.ViewModel(objects: users)
                     self.error = nil
                 case let .failure(error):
                     self.customers = []
+                    self.customerSelectionViewModel = SingleSelectionList<User>.ViewModel(objects: [])
                     self.error = PresentableError(message: error.localizedDescription)
                 }
                 self.isWorking = false

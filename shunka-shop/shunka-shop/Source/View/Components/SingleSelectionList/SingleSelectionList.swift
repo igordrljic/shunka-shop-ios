@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SingleSelectionList<Object: Nameable>: View {
+struct SingleSelectionList<Object: CustomStringConvertible>: View {
     @ObservedObject var viewModel: ViewModel
     @State private var searchText = ""
     
@@ -22,9 +22,7 @@ struct SingleSelectionList<Object: Nameable>: View {
 
 struct SingleSelectView_Previews: PreviewProvider {
     static var previews: some View {
-        let viewModel = SingleSelectionList.ViewModel(objects: ["select 1", "select 2"], selectedItemIndex: 1) { object in
-            debugPrint("selected object: \(String(describing: object))")
-        }
+        let viewModel = SingleSelectionList.ViewModel(objects: ["select 1", "select 2"], selectedItemIndex: 1)
         SingleSelectionList<String>(viewModel: viewModel)
     }
 }
