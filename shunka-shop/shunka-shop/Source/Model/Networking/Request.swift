@@ -47,10 +47,15 @@ extension Request: Equatable {
 }
 
 extension Request {
-    func urlRequest(encoding: ParameterEncoding) throws -> URLRequest {
-        var request = URLRequest(url: url)
-        request.httpMethod = httpMethod.rawValue
-        request.allHTTPHeaderFields = httpHeader
-        return try encoding.encode(request, with: parameters)
+    func urlRequest() throws -> URLRequest {
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = httpMethod.rawValue
+        urlRequest.allHTTPHeaderFields = httpHeader
+        urlRequest.cachePolicy = .reloadIgnoringLocalAndRemoteCacheData
+        if let parameters = parameters, let encoding = encoding {
+            return try encoding.encode(urlRequest, with: parameters)
+        } else {
+            return urlRequest
+        }
     }
 }

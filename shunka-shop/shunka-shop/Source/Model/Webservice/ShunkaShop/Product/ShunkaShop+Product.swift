@@ -12,6 +12,7 @@ extension ShunkaShop {
         Request(url: baseUrl.appendingPathComponent("product"),
                 httpMethod: .get,
                 httpHeader: headers,
+                encoding: encoding,
                 decoding: decoding)
     }
     

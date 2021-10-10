@@ -25,7 +25,7 @@ class Network {
     
     func run<ResultType: Decodable>(_ request: Request, completion: @escaping (Result<ResultType, Error>) -> Void) {
         do {
-            let urlRequest = try map(request)
+            let urlRequest = try request.urlRequest()
             subscribers[request] = urlSession.dataTaskPublisher(for: urlRequest)
                 .retry(requestRetryCount)
                 .tryMap({ data, response -> ResultType in
@@ -49,7 +49,7 @@ class Network {
     
     func run(_ request: Request, completion: @escaping (Result<Void, Error>) -> Void) {
         do {
-            let urlRequest = try map(request)
+            let urlRequest = try request.urlRequest()
             subscribers[request] = urlSession.dataTaskPublisher(for: urlRequest)
                 .retry(requestRetryCount)
                 .tryMap({ data, response -> Void in
@@ -78,19 +78,7 @@ class Network {
         subscribers.removeValue(forKey: request)
         cancelable.cancel()
     }
-    
-    private func map(_ request: Request) throws -> URLRequest {
-        var urlRequest: URLRequest
-        if let encoding = request.encoding {
-            urlRequest = try request.urlRequest(encoding: encoding)
-        } else {
-            urlRequest = URLRequest(url: request.url)
-        }
-        urlRequest.allHTTPHeaderFields = request.httpHeader
-        urlRequest.cachePolicy = .reloadIgnoringLocalAndRemoteCacheData
-        return urlRequest
-    }
-    
+        
     private func validate(_ response: URLResponse, _ data: Data) throws {
         guard let httpResponse = response as? HTTPURLResponse,
               (200...299).contains(httpResponse.statusCode) else {
