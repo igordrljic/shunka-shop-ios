@@ -9,7 +9,6 @@ import Foundation
 
 protocol Webservice {
     var baseUrl: URL { get }
-    var encoding: ParameterEncoding { get }
     var decoding: ResponseDecoding { get }
     
     func run<ResultType: Decodable>(_ request: Request, completion: @escaping (Result<ResultType, Error>) -> Void)

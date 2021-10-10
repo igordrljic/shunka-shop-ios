@@ -10,7 +10,6 @@ import Foundation
 class ShunkaShop: Webservice {
     static let shared = ShunkaShop()
     let baseUrl: URL = AppConfiguration.shared.shunkaShopBaseUrl
-    let encoding: ParameterEncoding = JSONEncoding()
     let decoding: ResponseDecoding = JSONDecoding()
     private (set) var headers: HTTPHeader = [:]
     private let network: Network

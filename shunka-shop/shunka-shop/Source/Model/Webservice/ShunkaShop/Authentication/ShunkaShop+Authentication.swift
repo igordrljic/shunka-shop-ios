@@ -14,7 +14,7 @@ extension ShunkaShop {
         return Request(url: baseUrl.appendingPathComponent("login"),
                        httpMethod: .post,
                        parameters: params,
-                       encoding: encoding,
+                       encoding: JSONEncoding(),
                        decoding: decoding)
     }
 }
