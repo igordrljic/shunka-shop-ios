@@ -53,7 +53,7 @@ struct OrderDetailsView: View {
     }
 }
 
-struct OrderItemView: View {
+private struct OrderItemView: View {
     let orderItem: OrderItem
     
     var body: some View {
@@ -91,9 +91,14 @@ struct OrderItemView: View {
 }
 
 struct OrderDetailsView_Previews: PreviewProvider {
+    private static let viewModel = OrderDetailsViewModel(order: order)
     static var previews: some View {
-        OrderDetailsView(viewModel: OrderDetailsViewModel(order: order))
-            .environmentObject(AppNavigationState.shared.createOrderState)
+        NavigationView {
+            OrderDetailsView(viewModel: viewModel)
+                .environmentObject(AppNavigationState.shared.createOrderState)
+        }
+        .foregroundColor(.black)
+        .navigationTitle(viewModel.order.customerName)
     }
     
     static let order = Order(id: "1",
@@ -149,7 +154,7 @@ struct OrderDetailsView_Previews: PreviewProvider {
                                           name: "Kulen",
                                           comment: nil)
                              ],
-                             total: 1_000_000.00,
+                             total: 1_000_000.99,
                              creatorName: "Creator name",
                              customerName: "Customer name",
                              comment: nil)

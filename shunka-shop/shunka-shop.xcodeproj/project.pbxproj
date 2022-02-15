@@ -54,6 +54,7 @@
 		A88950D827BBB6E800E56F9E /* OrderDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88950D727BBB6E800E56F9E /* OrderDetailsView.swift */; };
 		A88950DA27BBD96D00E56F9E /* QuantityFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88950D927BBD96D00E56F9E /* QuantityFormatter.swift */; };
 		A88950DC27BBDB2E00E56F9E /* PercentFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88950DB27BBDB2E00E56F9E /* PercentFormatter.swift */; };
+		A88950DE27BC099400E56F9E /* AmountFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88950DD27BC099400E56F9E /* AmountFormatterTests.swift */; };
 		A88DEDC426726BC100D87F90 /* ResponseDecoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88DEDC326726BC100D87F90 /* ResponseDecoding.swift */; };
 		A88DEDC926726BD500D87F90 /* JSONDecoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88DEDC826726BD500D87F90 /* JSONDecoding.swift */; };
 		A88DEDD026726E4600D87F90 /* ShunkaShop+Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88DEDCF26726E4600D87F90 /* ShunkaShop+Authentication.swift */; };
@@ -184,6 +185,7 @@
 		A88950D727BBB6E800E56F9E /* OrderDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsView.swift; sourceTree = "<group>"; };
 		A88950D927BBD96D00E56F9E /* QuantityFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuantityFormatter.swift; sourceTree = "<group>"; };
 		A88950DB27BBDB2E00E56F9E /* PercentFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentFormatter.swift; sourceTree = "<group>"; };
+		A88950DD27BC099400E56F9E /* AmountFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountFormatterTests.swift; sourceTree = "<group>"; };
 		A88DEDC326726BC100D87F90 /* ResponseDecoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseDecoding.swift; sourceTree = "<group>"; };
 		A88DEDC826726BD500D87F90 /* JSONDecoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecoding.swift; sourceTree = "<group>"; };
 		A88DEDCF26726E4600D87F90 /* ShunkaShop+Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShunkaShop+Authentication.swift"; sourceTree = "<group>"; };
@@ -534,6 +536,7 @@
 			children = (
 				A8B249002657F07E0041B58C /* shunka_shopTests.swift */,
 				A8B249022657F07E0041B58C /* Info.plist */,
+				A88950DD27BC099400E56F9E /* AmountFormatterTests.swift */,
 			);
 			path = "shunka-shopTests";
 			sourceTree = "<group>";
@@ -1144,6 +1147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A88950DE27BC099400E56F9E /* AmountFormatterTests.swift in Sources */,
 				A8B249012657F07E0041B58C /* shunka_shopTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1358,7 +1362,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T86P32J6KM;
 				INFOPLIST_FILE = "shunka-shopTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1380,7 +1384,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T86P32J6KM;
 				INFOPLIST_FILE = "shunka-shopTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1528,7 +1532,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T86P32J6KM;
 				INFOPLIST_FILE = "shunka-shopTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

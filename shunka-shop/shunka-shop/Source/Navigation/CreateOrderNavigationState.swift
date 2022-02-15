@@ -10,7 +10,10 @@ import Combine
 class CreateOrderNavigationState: ObservableObject {
     @Published var isCreateOrderPresented = false
     @Published var isSelectCustomerPresented = false
-    @Published var isShownOrderDetails: Bool = false
+    @Published var isShownOrderActions: Bool = false
+    
+    @Published var test1: Bool = false
+    @Published var test2: Bool = false
 }
 
 extension CreateOrderNavigationState {
@@ -33,9 +36,5 @@ extension CreateOrderNavigationState {
     
     func dismissSelectCustomer() {
         isSelectCustomerPresented = false
-    }
-    
-    func presentOrderDetails(for order: Order) {
-        isShownOrderDetails = true
     }
 }
