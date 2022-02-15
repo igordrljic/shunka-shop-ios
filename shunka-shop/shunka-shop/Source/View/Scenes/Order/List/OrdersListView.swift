@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct OrdersListView: View {
+    @EnvironmentObject var navigationState: CreateOrderNavigationState
     @ObservedObject var viewModel: OrderListViewModel
     
     var body: some View {
@@ -16,7 +17,7 @@ struct OrdersListView: View {
                 Text(Strings.noActiveOrders)
             } else {
                 List(viewModel.orders) { order in
-                    OrderCell(order: order)
+                    navigationLink(for: order)
                 }
                 .alert(item: $viewModel.error) { error in
                     Alert(title: Text(error.title),
@@ -29,6 +30,17 @@ struct OrdersListView: View {
             }
         }
         .onAppear { viewModel.load() }
+    }
+    
+    private func navigationLink(for order: Order) -> some View {
+        NavigationLink(
+            destination: OrderDetailsView(viewModel: OrderDetailsViewModel(order: order))
+                .environmentObject(navigationState)
+                .navigationTitle(order.customerName),
+//            isActive: $navigationState.isShownOrderDetails,
+            label: {
+                OrderCell(order: order)
+            })
     }
 }
 

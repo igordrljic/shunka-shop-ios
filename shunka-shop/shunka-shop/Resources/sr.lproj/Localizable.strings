@@ -26,6 +26,18 @@
 "orderedOn" = "Поручено";
 "total" = "Цена";
 
+// order details
+"order.creator" = "Поруџбину направио";
+"order.customer" = "Муштерија";
+"order.createdAtDate" = "Датум поруџбине";
+"order.total" = "Укупна цена";
+"order.items" = "Ставке";
+"order.item.productName" = "Производ";
+"order.item.quantity" = "Количина";
+"order.item.price" = "Цена ѕа кг";
+"order.item.discount" = "Попуст";
+"order.item.total" = "Цена за ову ставку";
+
 // create order
 "createOrder" = "Направи поруџбину";
 "selectCustomer" = "Додај муштерију";

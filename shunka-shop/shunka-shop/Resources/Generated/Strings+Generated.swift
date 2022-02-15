@@ -108,6 +108,31 @@ internal enum Strings {
   internal static let username = Strings.tr("Localizable", "username")
   /// Field can't be empty
   internal static let validateMustNotBeEmpty = Strings.tr("Localizable", "validateMustNotBeEmpty")
+
+  internal enum Order {
+    /// Created at
+    internal static let createdAtDate = Strings.tr("Localizable", "order.createdAtDate")
+    /// Order creator
+    internal static let creator = Strings.tr("Localizable", "order.creator")
+    /// Customer name
+    internal static let customer = Strings.tr("Localizable", "order.customer")
+    /// Ordered products
+    internal static let items = Strings.tr("Localizable", "order.items")
+    /// Total
+    internal static let total = Strings.tr("Localizable", "order.total")
+    internal enum Item {
+      /// Discount
+      internal static let discount = Strings.tr("Localizable", "order.item.discount")
+      /// Price per kg
+      internal static let price = Strings.tr("Localizable", "order.item.price")
+      /// Product
+      internal static let productName = Strings.tr("Localizable", "order.item.productName")
+      /// Quantity
+      internal static let quantity = Strings.tr("Localizable", "order.item.quantity")
+      /// Total for item
+      internal static let total = Strings.tr("Localizable", "order.item.total")
+    }
+  }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces

@@ -13,7 +13,7 @@ struct OrderItemCell: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 2) {
             Text(orderItem.name)
-            Text(AmountFormatter.shared.format(orderItem.totalPrice))
+            Text(AmountFormatter.format(orderItem.totalPrice))
         }
         .font(.footnote)
         .foregroundColor(.themeSecondaryText)

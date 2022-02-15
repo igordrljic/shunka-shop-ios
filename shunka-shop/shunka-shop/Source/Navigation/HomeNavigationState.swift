@@ -10,6 +10,7 @@ import Combine
 
 class HomeNavigationState: ObservableObject {
     @Published var selectedTab: HomeView.Tabs = .orders
+    
 }
 
 extension HomeNavigationState {

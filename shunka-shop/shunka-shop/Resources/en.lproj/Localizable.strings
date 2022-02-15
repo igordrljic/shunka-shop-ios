@@ -26,6 +26,18 @@
 "orderedOn" = "Ordered on";
 "total" = "Total";
 
+// order details
+"order.creator" = "Order creator";
+"order.customer" = "Customer name";
+"order.createdAtDate" = "Created at";
+"order.total" = "Total";
+"order.items" = "Ordered products";
+"order.item.productName" = "Product";
+"order.item.quantity" = "Quantity";
+"order.item.price" = "Price per kg";
+"order.item.discount" = "Discount";
+"order.item.total" = "Total for item";
+
 // create order
 "createOrder" = "Create order";
 "selectCustomer" = "Select customer";

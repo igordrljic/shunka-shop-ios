@@ -7,27 +7,24 @@
 
 import Foundation
 
-class AmountFormatter {
-    static let shared = AmountFormatter()
-    
-    private let numberFormatter: NumberFormatter
-    
-    init(locale: Locale = Locale.appDefault) {
-        self.numberFormatter = NumberFormatter()
+enum AmountFormatter {
+    private static let numberFormatter: NumberFormatter = {
+        let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .currency
-        numberFormatter.locale = locale
-        numberFormatter.currencySymbol = locale.currencySymbol
-    }
+        numberFormatter.locale = Locale.appDefault
+        numberFormatter.currencySymbol = Locale.appDefault.currencySymbol
+        return numberFormatter
+    }()
         
-    func format(_ amount: Int) -> String {
+    static func format(_ amount: Int) -> String {
         numberFormatter.string(from: NSNumber(value: amount)) ?? Strings.unknown
     }
     
-    func format(_ amount: Float) -> String {
+    static func format(_ amount: Float) -> String {
         numberFormatter.string(from: NSNumber(value: amount)) ?? Strings.unknown
     }
     
-    func format(_ amount: Double) -> String {
+    static func format(_ amount: Double) -> String {
         numberFormatter.string(from: NSNumber(value: amount)) ?? Strings.unknown
     }
 }

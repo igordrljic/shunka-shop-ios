@@ -23,7 +23,7 @@ struct OrderCell: View {
                 }
                 HStack(alignment: .center) {
                     Text(Strings.total + ":").foregroundColor(.themeSecondaryText)
-                    Text(AmountFormatter.shared.format(order.total)).foregroundColor(.themePrimaryText)
+                    Text(AmountFormatter.format(order.total)).foregroundColor(.themePrimaryText)
                 }
             }
             .font(.footnote)
