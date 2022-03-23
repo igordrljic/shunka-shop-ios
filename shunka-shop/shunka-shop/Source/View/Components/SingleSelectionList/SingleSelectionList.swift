@@ -13,7 +13,7 @@ struct SingleSelectionList<Object: CustomStringConvertible>: View {
     
     var body: some View {
         List(viewModel.items, id: \.id) { item in
-            SelectionItemView(item: item, isSelected: viewModel.isSelected(item.id)) { item in
+            SelectionItemView(item: item, isSelected: item.id == viewModel.selectedItemId) { item in
                 self.viewModel.setSelected(item.id)
             }
         }

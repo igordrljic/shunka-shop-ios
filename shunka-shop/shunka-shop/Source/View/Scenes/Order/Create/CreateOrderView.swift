@@ -18,37 +18,38 @@ struct CreateOrderView: View {
     }
     
     var body: some View {
-        ZStack {
-            Button(Strings.selectCustomer) {
-                navigationState.presentSelectCustomer()
-            }
-            .buttonStyle(FormButtonStyle())
-            .padding()
-            .fullScreenCover(isPresented: $navigationState.isSelectCustomerPresented) {
-                NavigationView {
-                    SingleSelectionList<User>(viewModel: viewModel.customerSelectionViewModel)
-                        .navigationBarTitleDisplayMode(.inline)
-                        .navigationBarTitle(Strings.selectCustomer)
-                        .navigationBarItems(
-                            leading: Button(
-                                action: { navigationState.dismissSelectCustomer() },
-                                label: { Text(Strings.cancel) }
-                            ),
-                            trailing: Button(
-                                action: {
-                                    viewModel.customerSelectionViewModel.confirmSelection()
-                                    navigationState.dismissSelectCustomer()
-                                },
-                                label: { Text(Strings.save) }
-                            )
+        VStack {
+            selectCustomerButton()
+            Spacer()
+        }
+        .onAppear(perform: {
+            viewModel.load()
+        })
+        if viewModel.isWorking {
+            ActivityIndicatorView(caption: Strings.loading)
+        }
+    }
+    
+    private func selectCustomerButton() -> some View {
+        return Button(viewModel.selectedCustomer?.description ?? Strings.selectCustomer) {
+            navigationState.presentSelectCustomer()
+        }
+        .buttonStyle(FormButtonStyle())
+        .padding()
+        .fullScreenCover(isPresented: $navigationState.isSelectCustomerPresented) {
+            NavigationView {
+                SingleSelectionList<User>(viewModel: viewModel.customerSelectionViewModel)
+                    .navigationBarTitleDisplayMode(.inline)
+                    .navigationBarTitle(Strings.selectCustomer)
+                    .navigationBarItems(
+                        trailing: Button(
+                            action: {
+                                viewModel.confirmCustomerSelection()
+                                navigationState.dismissSelectCustomer()
+                            },
+                            label: { Text(Strings.save) }
                         )
-                }
-            }
-            .onAppear(perform: {
-                viewModel.load()
-            })
-            if viewModel.isWorking {
-                ActivityIndicatorView(caption: Strings.loading)
+                    )
             }
         }
     }

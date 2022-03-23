@@ -34,7 +34,7 @@
 "order.items" = "Ставке";
 "order.item.productName" = "Производ";
 "order.item.quantity" = "Количина";
-"order.item.price" = "Цена ѕа кг";
+"order.item.price" = "Цена за кг";
 "order.item.discount" = "Попуст";
 "order.item.total" = "Цена за ову ставку";
 
@@ -46,7 +46,7 @@
 "noProducts" = "Нема производа";
 "productDateOfProduction" = "Датум производње";
 "productProducedQuantity" = "Произведена количина";
-"productAvailableQuantity" = "Available quantity";
+"productAvailableQuantity" = "На стању";
 "productPricePerKilo" = "Цена";
 
 // create product
@@ -56,7 +56,7 @@
 "productionYear" = "Година производње";
 "productionMonth" = "Месец производње";
 "producedQuantity" = "Произведена количина";
-"availableQuantity" = "Available quantity (optional)";
+"availableQuantity" = "На стању (опционо)";
 "createProductSuccess" = "Производ је успешно креиран";
 
 // create product error messages

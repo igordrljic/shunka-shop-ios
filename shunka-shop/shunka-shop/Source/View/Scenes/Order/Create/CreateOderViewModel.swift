@@ -21,6 +21,8 @@ extension CreateOrderView {
         private let userService: UserService
         private var isLoaded = false
         
+        private(set) var selectedCustomer: User?
+        
         init(userService: UserService = UserWebservice()) {
             self.userService = userService
         }
@@ -51,6 +53,11 @@ extension CreateOrderView {
                 }
                 self.isWorking = false
             }
+        }
+        
+        func confirmCustomerSelection() {
+            customerSelectionViewModel.confirmSelection()
+            selectedCustomer = customerSelectionViewModel.selectedObject
         }
     }
 }

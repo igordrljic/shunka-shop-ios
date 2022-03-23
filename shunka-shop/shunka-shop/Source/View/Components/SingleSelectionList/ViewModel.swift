@@ -10,10 +10,10 @@ import Combine
 extension SingleSelectionList {
     class ViewModel: ObservableObject {
         @Published private(set) var selectedObject: Object?
+        @Published private(set) var selectedItemId: Int?
         let items: [SelectViewItem]
         
         private let objects: [Object]
-        private var selectedItemId: Int?
         
         init(objects: [Object], selectedItemIndex: Int? = nil) {
             self.objects = objects
@@ -27,15 +27,12 @@ extension SingleSelectionList {
             }
         }
                 
-        func isSelected(_ itemId: Int) -> Bool {
-            guard let selectedItemId = selectedItemId else {
-                return false
-            }
-            return selectedItemId == itemId
-        }
-        
         func setSelected(_ itemId: Int?) {
-            selectedItemId = itemId
+            if let itemId = itemId, selectedItemId == itemId {
+                selectedItemId = nil
+            } else {
+                selectedItemId = itemId
+            }
         }
         
         func confirmSelection() {
