@@ -39,8 +39,15 @@
 "order.item.total" = "Total for item";
 
 // create order
-"createOrder" = "Create order";
-"selectCustomer" = "Select customer";
+"createOrder.title" = "Create order";
+"createOrder.customer" = "Customer";
+"createOrder.shippingDate" = "Shipping date";
+"createOrder.products" = "Products";
+"createOrder.selectCustomer" = "Select customer";
+"createOrder.selectProduct" = "Select product";
+"createOrder.priceFieldTitle" = "Price per kg";
+"createOrder.quantityFieldTitle" = "Quantity in kg";
+"createOrder.addProduct" = "Add product";
 
 // product
 "noProducts" = "No products";

@@ -39,8 +39,15 @@
 "order.item.total" = "Цена за ову ставку";
 
 // create order
-"createOrder" = "Направи поруџбину";
-"selectCustomer" = "Додај муштерију";
+"createOrder.title" = "Направи поруџбину";
+"createOrder.customer" = "Купац";
+"createOrder.shippingDate" = "Датум испоруке";
+"createOrder.products" = "Производи";
+"createOrder.selectCustomer" = "Додај муштерију";
+"createOrder.selectProduct" = "Одабери производ";
+"createOrder.priceFieldTitle" = "Цена за кг";
+"createOrder.quantityFieldTitle" = "Количина у кг";
+"createOrder.addProduct" = "Додај производ";
 
 // product
 "noProducts" = "Нема производа";

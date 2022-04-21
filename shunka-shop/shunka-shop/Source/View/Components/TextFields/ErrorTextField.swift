@@ -9,12 +9,13 @@ import SwiftUI
 
 struct ErrorTextField: View {
     let placeholder: String
+    let alignment: TextAlignment
     @Binding var text: String
     @Binding var error: String?
     
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
-            UnderlinedTextField(placeholder: placeholder, text: $text)
+            UnderlinedTextField(placeholder: placeholder, alignment: alignment, text: $text)
             if !(error?.isEmpty ?? true) {
                 Text(error!)
                     .foregroundColor(.themeError)

@@ -20,3 +20,11 @@ struct Product: Identifiable, Codable {
         case id = "_id", name, pricePerKilo, productionYear, productionMonth, producedQuantity, availableQuantity
     }
 }
+
+extension Product: CustomStringConvertible
+{
+    var description: String
+    {
+        "\(name) (\(AmountFormatter.format(pricePerKilo)))\(Strings.currency)/\(Strings.kilogram)"
+    }
+}

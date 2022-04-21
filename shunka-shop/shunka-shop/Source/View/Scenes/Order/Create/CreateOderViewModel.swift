@@ -6,25 +6,31 @@
 //
 
 import Foundation
+import Combine
+import SwiftUI
 
 extension CreateOrderView {
-    class ViewModel: ObservableObject {
-        @Published var customer: User?
-        
+    class ViewModel: ObservableObject
+    {
         @Published var isWorking = false
         @Published var error: PresentableError? = nil
         
         @Published private(set) var customers: [User] = []
+        @Published private(set) var products: [Product] = []
+        
+        var selectedShippingDate: Date?
+        private(set) var selectedCustomer: User?
+        private(set) var selectedProductsIds: [String] = []
         
         private(set) var customerSelectionViewModel = SingleSelectionList<User>.ViewModel(objects: [])
+        private(set) var productSelectionViewModel = SingleSelectionList<Product>.ViewModel(objects: [])
         
-        private let userService: UserService
+        private let loadUseCase: CreateOrderLoadUseCase
         private var isLoaded = false
+        private var errors = [PresentableError]()
         
-        private(set) var selectedCustomer: User?
-        
-        init(userService: UserService = UserWebservice()) {
-            self.userService = userService
+        init(loadUseCase: CreateOrderLoadUseCase = CreateOrderLoadUseCase()) {
+            self.loadUseCase = loadUseCase
         }
         
         func load() {
@@ -40,18 +46,22 @@ extension CreateOrderView {
                 return
             }
             isWorking = true
-            userService.getCustomers { result in
-                switch result {
-                case let .success(users):
-                    self.customers = users
-                    self.customerSelectionViewModel = SingleSelectionList<User>.ViewModel(objects: users)
-                    self.error = nil
-                case let .failure(error):
-                    self.customers = []
-                    self.customerSelectionViewModel = SingleSelectionList<User>.ViewModel(objects: [])
-                    self.error = PresentableError(message: error.localizedDescription)
-                }
+            
+            errors.removeAll()
+            loadUseCase.execute { result in
+                
                 self.isWorking = false
+                
+                switch result {
+                case let .success(output):
+                    self.customers = output.customers
+                    self.customerSelectionViewModel = SingleSelectionList<User>.ViewModel(objects: output.customers)
+                    self.products = output.products
+                    self.productSelectionViewModel = SingleSelectionList<Product>.ViewModel(objects: output.products)
+                case let .failure(errors):
+                    self.errors = errors.errors.map { PresentableError(message: $0.localizedDescription) }
+                    self.error = self.errors.first
+                }
             }
         }
         
@@ -59,5 +69,6 @@ extension CreateOrderView {
             customerSelectionViewModel.confirmSelection()
             selectedCustomer = customerSelectionViewModel.selectedObject
         }
+        
     }
 }

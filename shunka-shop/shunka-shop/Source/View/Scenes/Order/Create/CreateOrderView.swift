@@ -15,32 +15,60 @@ struct CreateOrderView: View {
     
     init(viewModel: ViewModel) {
         self.viewModel = viewModel
+        viewModel.load()
     }
     
     var body: some View {
-        VStack {
-            selectCustomerButton()
-            Spacer()
-        }
-        .onAppear(perform: {
-            viewModel.load()
-        })
-        if viewModel.isWorking {
-            ActivityIndicatorView(caption: Strings.loading)
+        ZStack {
+            ScrollView {
+                VStack(alignment: .leading, spacing: .zero)
+                {
+                    
+                    Spacer().frame(height: EdgeInsets.padding_x2)
+                    
+                    HStack
+                    {
+                        Spacer().frame(width: EdgeInsets.padding)
+                        Text(Strings.CreateOrder.customer)
+                    }
+                    selectCustomerButton()
+                    Spacer().frame(height: EdgeInsets.padding)
+                    
+                    HStack
+                    {
+                        Spacer().frame(width: EdgeInsets.padding)
+                        Text(Strings.CreateOrder.products)
+                    }
+                    addProductButton()
+                    Spacer().frame(height: EdgeInsets.padding)
+                    
+                    shippingDatePicker()
+                    Spacer().frame(height: EdgeInsets.padding)
+                    
+                }
+            }
+            
+            if viewModel.isWorking {
+                ActivityIndicatorView(caption: Strings.loading)
+            }
         }
     }
     
-    private func selectCustomerButton() -> some View {
-        return Button(viewModel.selectedCustomer?.description ?? Strings.selectCustomer) {
+    private func selectCustomerButton() -> some View
+    {
+        return Button(viewModel.selectedCustomer?.description ?? Strings.CreateOrder.selectCustomer)
+        {
             navigationState.presentSelectCustomer()
         }
         .buttonStyle(FormButtonStyle())
-        .padding()
-        .fullScreenCover(isPresented: $navigationState.isSelectCustomerPresented) {
-            NavigationView {
+        .padding(.formButton)
+        .fullScreenCover(isPresented: $navigationState.isSelectCustomerPresented)
+        {
+            NavigationView
+            {
                 SingleSelectionList<User>(viewModel: viewModel.customerSelectionViewModel)
                     .navigationBarTitleDisplayMode(.inline)
-                    .navigationBarTitle(Strings.selectCustomer)
+                    .navigationBarTitle(Strings.CreateOrder.selectCustomer)
                     .navigationBarItems(
                         trailing: Button(
                             action: {
@@ -50,6 +78,46 @@ struct CreateOrderView: View {
                             label: { Text(Strings.save) }
                         )
                     )
+            }
+        }
+    }
+    
+    private func shippingDatePicker() -> some View {
+        return DatePicker(
+            Strings.CreateOrder.shippingDate,
+            selection: Binding<Date>(
+                get: {
+                    viewModel.selectedShippingDate ?? Date()
+                },
+                set: {
+                    newValue in viewModel.selectedShippingDate = newValue
+                }
+            ),
+            displayedComponents: [.date]
+        )
+        .padding(.formItem)
+    }
+    
+    private func addProductButton() -> some View {
+        return Button(Strings.CreateOrder.addProduct) {
+            navigationState.presentAddProduct()
+        }
+        .buttonStyle(FormButtonStyle())
+        .padding()
+        .fullScreenCover(isPresented: $navigationState.isAddProductPresented) {
+            NavigationView {
+                CreateOrderAddProductView(viewModel: .init(products: viewModel.products))
+                    .navigationBarTitleDisplayMode(.inline)
+                    .navigationBarTitle(Strings.CreateOrder.addProduct)
+                    .navigationBarItems(
+                        trailing: Button(
+                            action: {
+                                navigationState.dismissAddProduct()
+                            },
+                            label: { Text(Strings.save) }
+                        )
+                    )
+                    .environmentObject(navigationState)
             }
         }
     }

@@ -23,6 +23,6 @@ struct SingleSelectionScene<Object: CustomStringConvertible>: View {
 struct SingleSelectionScene_Previews: PreviewProvider {
     static var previews: some View {
         let viewModel = SingleSelectionList.ViewModel(objects: ["select 1", "select 2"], selectedItemIndex: 1)
-        SingleSelectionScene(viewModel: viewModel, screenTitle: Strings.selectCustomer)
+        SingleSelectionScene(viewModel: viewModel, screenTitle: Strings.CreateOrder.selectCustomer)
     }
 }

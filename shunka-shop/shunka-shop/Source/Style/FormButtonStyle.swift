@@ -20,7 +20,7 @@ private extension FormButtonStyle {
         
         var body: some View {
             configuration.label
-                .padding()
+                .padding(.formButton)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .multilineTextAlignment(.leading)
                 .font(Font.system(.body))

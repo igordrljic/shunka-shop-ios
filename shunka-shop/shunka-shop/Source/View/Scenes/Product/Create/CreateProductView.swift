@@ -53,36 +53,42 @@ struct CreateProductView: View {
         case .productName:
             return AnyView (
                 ErrorTextField(placeholder: Strings.productName,
+                               alignment: .leading,
                                text: $viewModel.productName,
                                error: $viewModel.productNameError)
             )
         case .pricePerKilo:
             return AnyView(
                 ErrorTextField(placeholder: Strings.pricePerKilo,
+                               alignment: .leading,
                                text: $viewModel.pricePerKilo,
                                error: $viewModel.pricePerKiloError)
             )
         case .producedQuantity:
             return AnyView(
                 ErrorTextField(placeholder: Strings.productProducedQuantity,
+                               alignment: .leading,
                                text: $viewModel.producedQuantity,
                                error: $viewModel.producedQuantityError)
             )
         case .availableQuantity:
             return AnyView(
                 ErrorTextField(placeholder: Strings.availableQuantity,
+                               alignment: .leading,
                                text: $viewModel.availableQuantity,
                                error: $viewModel.availableQuantityError)
             )
         case .productionYear:
             return AnyView(
                 ErrorTextField(placeholder: Strings.productionYear,
+                               alignment: .leading,
                                text: $viewModel.productionYear,
                                error: $viewModel.productionYearError)
             )
         case .productionMonth:
             return AnyView(
                 ErrorTextField(placeholder: Strings.productionMonth,
+                               alignment: .leading,
                                text: $viewModel.productionMonth,
                                error: $viewModel.productionMonthError)
             )

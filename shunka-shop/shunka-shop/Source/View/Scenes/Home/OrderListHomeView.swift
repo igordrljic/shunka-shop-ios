@@ -40,7 +40,7 @@ struct OrderListHomeView: View {
         NavigationView {
             CreateOrderView(viewModel: createOrderViewModel)
                 .environmentObject(navigationState)
-                .navigationBarTitle(Strings.createOrder)
+                .navigationBarTitle(Strings.CreateOrder.title)
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationBarItems(trailing:
                         Button(

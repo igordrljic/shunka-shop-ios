@@ -18,8 +18,6 @@ internal enum Strings {
   internal static let availableQuantity = Strings.tr("Localizable", "availableQuantity")
   /// Cancel
   internal static let cancel = Strings.tr("Localizable", "cancel")
-  /// Create order
-  internal static let createOrder = Strings.tr("Localizable", "createOrder")
   /// Product name is alredy taken. Choose some other name.
   internal static let createProductNameTaken = Strings.tr("Localizable", "createProductNameTaken")
   /// Product created successfuly
@@ -96,8 +94,6 @@ internal enum Strings {
   internal static let registerProduct = Strings.tr("Localizable", "registerProduct")
   /// Save
   internal static let save = Strings.tr("Localizable", "save")
-  /// Select customer
-  internal static let selectCustomer = Strings.tr("Localizable", "selectCustomer")
   /// September
   internal static let september = Strings.tr("Localizable", "september")
   /// Total
@@ -108,6 +104,27 @@ internal enum Strings {
   internal static let username = Strings.tr("Localizable", "username")
   /// Field can't be empty
   internal static let validateMustNotBeEmpty = Strings.tr("Localizable", "validateMustNotBeEmpty")
+
+  internal enum CreateOrder {
+    /// Add product
+    internal static let addProduct = Strings.tr("Localizable", "createOrder.addProduct")
+    /// Customer
+    internal static let customer = Strings.tr("Localizable", "createOrder.customer")
+    /// Price per kg
+    internal static let priceFieldTitle = Strings.tr("Localizable", "createOrder.priceFieldTitle")
+    /// Products
+    internal static let products = Strings.tr("Localizable", "createOrder.products")
+    /// Quantity in kg
+    internal static let quantityFieldTitle = Strings.tr("Localizable", "createOrder.quantityFieldTitle")
+    /// Select customer
+    internal static let selectCustomer = Strings.tr("Localizable", "createOrder.selectCustomer")
+    /// Select product
+    internal static let selectProduct = Strings.tr("Localizable", "createOrder.selectProduct")
+    /// Shipping date
+    internal static let shippingDate = Strings.tr("Localizable", "createOrder.shippingDate")
+    /// Create order
+    internal static let title = Strings.tr("Localizable", "createOrder.title")
+  }
 
   internal enum Order {
     /// Created at

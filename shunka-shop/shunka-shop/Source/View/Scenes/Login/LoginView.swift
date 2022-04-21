@@ -17,11 +17,12 @@ struct LoginView: View {
                 VStack(spacing: 30) {
                     Group {
                         ErrorTextField(placeholder: Strings.username,
-                                                 text: $viewModel.username,
-                                                 error: $viewModel.usernameError)
+                                       alignment: .leading,
+                                       text: $viewModel.username,
+                                       error: $viewModel.usernameError)
                         SecureErrorTextField(placeholder: Strings.password,
-                                                 text: $viewModel.password,
-                                                 error: $viewModel.passwordError)
+                                             text: $viewModel.password,
+                                             error: $viewModel.passwordError)
                     }.autocapitalization(.none)
                     .disableAutocorrection(true)
                 }

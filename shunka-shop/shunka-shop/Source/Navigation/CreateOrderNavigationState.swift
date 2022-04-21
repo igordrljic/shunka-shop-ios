@@ -10,10 +10,9 @@ import Combine
 class CreateOrderNavigationState: ObservableObject {
     @Published var isCreateOrderPresented = false
     @Published var isSelectCustomerPresented = false
-    @Published var isShownOrderActions: Bool = false
-    
-    @Published var test1: Bool = false
-    @Published var test2: Bool = false
+    @Published var isShownOrderActions = false
+    @Published var isAddProductPresented = false
+    @Published var isSelectProductPresented = false
 }
 
 extension CreateOrderNavigationState {
@@ -36,5 +35,21 @@ extension CreateOrderNavigationState {
     
     func dismissSelectCustomer() {
         isSelectCustomerPresented = false
+    }
+    
+    func presentAddProduct() {
+        isAddProductPresented = true
+    }
+    
+    func dismissAddProduct() {
+        isAddProductPresented = false
+    }
+    
+    func presentSelectProduct() {
+        isSelectProductPresented = true
+    }
+    
+    func dismissSelectProduct() {
+        isSelectProductPresented = false
     }
 }
