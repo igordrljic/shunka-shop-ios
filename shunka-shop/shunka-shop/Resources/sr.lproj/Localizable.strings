@@ -17,6 +17,12 @@
 "cancel" = "Откажи";
 "save" = "Сачувај";
 
+// form validation
+"form_validation.mandatory_field" = "Обавезно поље";
+"form_validation.must_be_integer_value" = "Мора бити целобројна вредност";
+"form_validation.must_be_decimal_value" = "Мора бити децимална вредност";
+"form_validation.must_be_greater_then_zero" = "Вредност мора бити већа од нуле";
+
 // main tab items
 "mainTabItemProducts" = "Производи";
 "mainTabItemOrders" = "Поруџбине";
@@ -39,15 +45,18 @@
 "order.item.total" = "Цена за ову ставку";
 
 // create order
-"createOrder.title" = "Направи поруџбину";
-"createOrder.customer" = "Купац";
-"createOrder.shippingDate" = "Датум испоруке";
-"createOrder.products" = "Производи";
-"createOrder.selectCustomer" = "Додај муштерију";
-"createOrder.selectProduct" = "Одабери производ";
-"createOrder.priceFieldTitle" = "Цена за кг";
-"createOrder.quantityFieldTitle" = "Количина у кг";
-"createOrder.addProduct" = "Додај производ";
+"create_order.title" = "Направи поруџбину";
+"create_order.customer" = "Купац";
+"create_order.shippingDate" = "Датум испоруке";
+"create_order.products" = "Производи";
+"create_order.selectCustomer" = "Додај муштерију";
+"create_order.selectProduct" = "Одабери производ";
+"create_order.priceFieldTitle" = "Цена за кг";
+"create_order.quantityFieldTitle" = "Количина у кг";
+"create_order.addProduct" = "Додај производ";
+
+// create order - add product - form validation
+"create_order.add_product.validation_error.productIsMandatory" = "Нисте одабрали производ";
 
 // product
 "noProducts" = "Нема производа";

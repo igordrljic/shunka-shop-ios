@@ -107,23 +107,40 @@ internal enum Strings {
 
   internal enum CreateOrder {
     /// Add product
-    internal static let addProduct = Strings.tr("Localizable", "createOrder.addProduct")
+    internal static let addProduct = Strings.tr("Localizable", "create_order.addProduct")
     /// Customer
-    internal static let customer = Strings.tr("Localizable", "createOrder.customer")
+    internal static let customer = Strings.tr("Localizable", "create_order.customer")
     /// Price per kg
-    internal static let priceFieldTitle = Strings.tr("Localizable", "createOrder.priceFieldTitle")
+    internal static let priceFieldTitle = Strings.tr("Localizable", "create_order.priceFieldTitle")
     /// Products
-    internal static let products = Strings.tr("Localizable", "createOrder.products")
+    internal static let products = Strings.tr("Localizable", "create_order.products")
     /// Quantity in kg
-    internal static let quantityFieldTitle = Strings.tr("Localizable", "createOrder.quantityFieldTitle")
+    internal static let quantityFieldTitle = Strings.tr("Localizable", "create_order.quantityFieldTitle")
     /// Select customer
-    internal static let selectCustomer = Strings.tr("Localizable", "createOrder.selectCustomer")
+    internal static let selectCustomer = Strings.tr("Localizable", "create_order.selectCustomer")
     /// Select product
-    internal static let selectProduct = Strings.tr("Localizable", "createOrder.selectProduct")
+    internal static let selectProduct = Strings.tr("Localizable", "create_order.selectProduct")
     /// Shipping date
-    internal static let shippingDate = Strings.tr("Localizable", "createOrder.shippingDate")
+    internal static let shippingDate = Strings.tr("Localizable", "create_order.shippingDate")
     /// Create order
-    internal static let title = Strings.tr("Localizable", "createOrder.title")
+    internal static let title = Strings.tr("Localizable", "create_order.title")
+    internal enum AddProduct {
+      internal enum ValidationError {
+        /// Please select a product
+        internal static let productIsMandatory = Strings.tr("Localizable", "create_order.add_product.validation_error.productIsMandatory")
+      }
+    }
+  }
+
+  internal enum FormValidation {
+    /// Mandatory field
+    internal static let mandatoryField = Strings.tr("Localizable", "form_validation.mandatory_field")
+    /// Must be decimal value
+    internal static let mustBeDecimalValue = Strings.tr("Localizable", "form_validation.must_be_decimal_value")
+    /// Must be greater then zero
+    internal static let mustBeGreaterThenZero = Strings.tr("Localizable", "form_validation.must_be_greater_then_zero")
+    /// Must be integer value
+    internal static let mustBeIntegerValue = Strings.tr("Localizable", "form_validation.must_be_integer_value")
   }
 
   internal enum Order {

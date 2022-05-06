@@ -24,6 +24,7 @@ extension CreateOrderView {
         
         private(set) var customerSelectionViewModel = SingleSelectionList<User>.ViewModel(objects: [])
         private(set) var productSelectionViewModel = SingleSelectionList<Product>.ViewModel(objects: [])
+        private(set) var addProductViewModel = CreateOrderAddProductView.ViewModel(products: [])
         
         private let loadUseCase: CreateOrderLoadUseCase
         private var isLoaded = false
@@ -33,34 +34,45 @@ extension CreateOrderView {
             self.loadUseCase = loadUseCase
         }
         
-        func load() {
-            guard !isLoaded else {
+        func load()
+        {
+            guard !isLoaded else
+            {
                 return
             }
             isLoaded = true
             reload()
         }
         
-        func reload() {
-            guard !isWorking else {
+        func reload()
+        {
+            guard !isWorking else
+            {
                 return
             }
             isWorking = true
             
             errors.removeAll()
-            loadUseCase.execute { result in
+            loadUseCase.execute
+            {
+                result in
                 
                 self.isWorking = false
                 
                 switch result {
                 case let .success(output):
+                    
                     self.customers = output.customers
-                    self.customerSelectionViewModel = SingleSelectionList<User>.ViewModel(objects: output.customers)
+                    self.customerSelectionViewModel = .init(objects: output.customers)
                     self.products = output.products
-                    self.productSelectionViewModel = SingleSelectionList<Product>.ViewModel(objects: output.products)
+                    self.productSelectionViewModel = .init(objects: output.products)
+                    self.addProductViewModel = .init(products: output.products)
+                    
                 case let .failure(errors):
+                    
                     self.errors = errors.errors.map { PresentableError(message: $0.localizedDescription) }
                     self.error = self.errors.first
+                    
                 }
             }
         }

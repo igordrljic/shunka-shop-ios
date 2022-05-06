@@ -7,16 +7,16 @@
 
 import SwiftUI
 
-struct FormButtonStyle: ButtonStyle {
+struct FormSelectButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
-        FormButton(configuration: configuration)
+        FormSelectButton(configuration: configuration)
     }
 }
 
-private extension FormButtonStyle {
-    struct FormButton: View {
+private extension FormSelectButtonStyle {
+    struct FormSelectButton: View {
         @Environment(\.isEnabled) var isEnabled
-        let configuration: FormButtonStyle.Configuration
+        let configuration: FormSelectButtonStyle.Configuration
         
         var body: some View {
             configuration.label

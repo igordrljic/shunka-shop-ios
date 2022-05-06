@@ -9,12 +9,13 @@ import SwiftUI
 
 struct CreateOrderView: View {
     @EnvironmentObject var navigationState: CreateOrderNavigationState
-    @ObservedObject private(set) var viewModel: ViewModel
-    
+    @StateObject private var viewModel: ViewModel
+
     @State private var isLoaded = false
     
     init(viewModel: ViewModel) {
-        self.viewModel = viewModel
+        log()
+        _viewModel = StateObject(wrappedValue: viewModel)
         viewModel.load()
     }
     
@@ -60,7 +61,7 @@ struct CreateOrderView: View {
         {
             navigationState.presentSelectCustomer()
         }
-        .buttonStyle(FormButtonStyle())
+        .buttonStyle(FormSelectButtonStyle())
         .padding(.formButton)
         .fullScreenCover(isPresented: $navigationState.isSelectCustomerPresented)
         {
@@ -102,7 +103,7 @@ struct CreateOrderView: View {
         return Button(Strings.CreateOrder.addProduct) {
             navigationState.presentAddProduct()
         }
-        .buttonStyle(FormButtonStyle())
+        .buttonStyle(FormSelectButtonStyle())
         .padding()
         .fullScreenCover(isPresented: $navigationState.isAddProductPresented) {
             NavigationView {
@@ -114,7 +115,7 @@ struct CreateOrderView: View {
                             action: {
                                 navigationState.dismissAddProduct()
                             },
-                            label: { Text(Strings.save) }
+                            label: { Text(Strings.cancel) }
                         )
                     )
                     .environmentObject(navigationState)

@@ -25,6 +25,6 @@ extension Product: CustomStringConvertible
 {
     var description: String
     {
-        "\(name) (\(AmountFormatter.format(pricePerKilo)))\(Strings.currency)/\(Strings.kilogram)"
+        "\(name) (\(AmountFormatter.format(pricePerKilo))/\(Strings.kilogram))"
     }
 }

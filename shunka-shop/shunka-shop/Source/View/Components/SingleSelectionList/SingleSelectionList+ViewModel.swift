@@ -33,6 +33,7 @@ extension SingleSelectionList {
             } else {
                 selectedItemId = itemId
             }
+            log(message: "\(selectedItemId)")
         }
         
         func confirmSelection() {
@@ -41,6 +42,7 @@ extension SingleSelectionList {
             } else {
                 self.selectedObject = nil
             }
+            log(message: "\(selectedObject)")
         }
     }
 }

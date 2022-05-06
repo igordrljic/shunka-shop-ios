@@ -17,6 +17,12 @@
 "cancel" = "Cancel";
 "save" = "Save";
 
+// form validation
+"form_validation.mandatory_field" = "Mandatory field";
+"form_validation.must_be_integer_value" = "Must be integer value";
+"form_validation.must_be_decimal_value" = "Must be decimal value";
+"form_validation.must_be_greater_then_zero" = "Must be greater then zero";
+
 // main tab items
 "mainTabItemProducts" = "Products";
 "mainTabItemOrders" = "Orders";
@@ -39,15 +45,18 @@
 "order.item.total" = "Total for item";
 
 // create order
-"createOrder.title" = "Create order";
-"createOrder.customer" = "Customer";
-"createOrder.shippingDate" = "Shipping date";
-"createOrder.products" = "Products";
-"createOrder.selectCustomer" = "Select customer";
-"createOrder.selectProduct" = "Select product";
-"createOrder.priceFieldTitle" = "Price per kg";
-"createOrder.quantityFieldTitle" = "Quantity in kg";
-"createOrder.addProduct" = "Add product";
+"create_order.title" = "Create order";
+"create_order.customer" = "Customer";
+"create_order.shippingDate" = "Shipping date";
+"create_order.products" = "Products";
+"create_order.selectCustomer" = "Select customer";
+"create_order.selectProduct" = "Select product";
+"create_order.priceFieldTitle" = "Price per kg";
+"create_order.quantityFieldTitle" = "Quantity in kg";
+"create_order.addProduct" = "Add product";
+
+// create order - add product - form validation
+"create_order.add_product.validation_error.productIsMandatory" = "Please select a product";
 
 // product
 "noProducts" = "No products";
